@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        
+        <!-- title of site -->
+        <title>Directory Landing Page</title>
+
+        <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/grass.png"/>
+       
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+        <!--linear icon css-->
+		<link rel="stylesheet" href="assets/css/linearicons.css">
+
+		<!--animate.css-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+
+		<!--flaticon.css-->
+        <link rel="stylesheet" href="assets/css/flaticon.css">
+
+		<!--slick.css-->
+        <link rel="stylesheet" href="assets/css/slick.css">
+		<link rel="stylesheet" href="assets/css/slick-theme.css">
+		
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        .task-item {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 10px;
+            border-radius: 30px;
+            transition: background 0.3s;
+            font-weight: bold;
+            cursor: pointer;
+            justify-content: space-between;
+            border: 2px solid #059c14;
+            width: 100%;
+        }
+        .task-item span {
+            flex-grow: 1;
+            text-align: left;
+            padding-left: 10px;
+        }
+        .task-item.completed {
+            background: #059c14;
+            color: white;
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        .task-item .checkmark {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #059c14;
+            border: 2px solid #059c14;
+        }
+        .task-item.completed .checkmark {
+            background: #059c14;
+            color: white;
+        }
+        .progress-bar {
+            width: 94%;
+            margin-left: 3%;
+            background-color: #ddd;
+            height: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress {
+            height: 100%;
+            width: 0%;
+            background-color: #4caf50;
+            text-align: center;
+            color: white;
+            line-height: 25px;
+            font-weight: bold;
+            border-radius: 12px;
+            transition: width 0.3s ease-in-out;
+        }
+        .rigt {
+            margin-top: 30px;
+            margin-left: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            float: left;
+        }
+        .head {
+            background-color: #4caf50;
+            color: white;
+            font-size: 40px;
+            padding: 20px;
+        }
+        .lef {
+            margin-top: 30px;
+            margin-left: 25px;
+            background-color:  #f0f4f9;
+            color: black;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 23%;
+            height: 560px;
+            float: left;
+        }
+        .his {
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 20px;
+            /* Add a transition so the shadow appears smoothly */
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .his:hover {
+            /* Add a box shadow on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background-color: #f0f4f9;
+        }
+    </style>
+</head>
+<body>
+        <div class="header-area">
+            <!-- Start Navigation -->
+            <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+
+                <div class="container">
+
+                    <!-- Start Header Navigation -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="index.html">mates<span>up</span></a>
+
+                    </div><!--/.navbar-header-->
+                    <!-- End Header Navigation -->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class=" scroll active"><a href="#home">home</a></li>
+                            <li class="scroll"><a href="#works">introduction</a></li>
+                            <li class="scroll"><a href="#explore">investment</a></li>
+                            <li class="scroll"><a href="#reviews">project</a></li>
+                            <li class="scroll"><a href="#blog">blog</a></li>
+                            <li class="scroll"><a href="#contact">about me</a></li>
+                        </ul><!--/.nav -->
+                    </div><!-- /.navbar-collapse -->
+                </div><!--/.container-->
+            </nav><!--/nav-->
+            <!-- End Navigation -->
+        </div><!--/.header-area-->
+        <div class="clearfix"></div>
+    
+        <div class="rigt">
+            <div class="head">
+                Task List
+            </div>
+            <div class="grid-container" id="todo-list">
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 1</span></div>
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 2</span></div>
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 3</span></div>
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 4</span></div>
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 5</span></div>
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 6</span></div>
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 7</span></div>
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 8</span></div>
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 9</span></div>
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 10</span></div>
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 11</span></div>
+                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 12</span></div>
+            </div>
+            <div class="progress-bar">
+                <div id="progress" class="progress">0%</div>
+            </div>
+        </div>
+
+        <div class="lef">
+            <div style="font-size: 25px; padding: 20px">History Completed</div>
+            <div class="his">
+                <div>Mission 1</div>
+                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
+            </div>
+            <div class="his">
+                <div>Mission 2</div>
+                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
+            </div>
+            <div class="his">
+                <div>Mission 3</div>
+                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
+            </div>
+            <div class="his">
+                <div>Mission 5</div>
+                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
+            </div>
+            <div class="his">
+                <div>Mission 8</div>
+                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
+            </div>
+            <div class="his">
+                <div>Mission 10</div>
+                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
+            </div>
+        </div>
+    
+        <script>
+            function toggleTask(element) {
+                element.classList.toggle('completed');
+                updateProgress();
+            }
+            
+            function updateProgress() {
+                let tasks = document.querySelectorAll('.task-item');
+                let completed = document.querySelectorAll('.task-item.completed').length;
+                let percent = tasks.length ? (completed / tasks.length) * 100 : 0;
+                document.getElementById('progress').style.width = percent + '%';
+                document.getElementById('progress').textContent = Math.round(percent) + '%';
+            }
+        </script>
+    
+    <script src="assets/js/jquery.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+</body>
+</html>

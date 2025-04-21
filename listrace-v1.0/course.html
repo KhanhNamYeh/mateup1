@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        
+        <!-- title of site -->
+        <title>Directory Landing Page</title>
+
+        <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/grass.png"/>
+       
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+        <!--linear icon css-->
+		<link rel="stylesheet" href="assets/css/linearicons.css">
+
+		<!--animate.css-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+
+		<!--flaticon.css-->
+        <link rel="stylesheet" href="assets/css/flaticon.css">
+
+		<!--slick.css-->
+        <link rel="stylesheet" href="assets/css/slick.css">
+		<link rel="stylesheet" href="assets/css/slick-theme.css">
+		
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            height: 1000px;
+        }
+        .bod {
+            font-family: Arial, sans-serif;
+            padding-left: 10%;
+            padding-right: 10%;
+            color: black;
+        }
+
+        .th {
+            padding: 10px;
+            margin-top: 50px;
+            margin-left: 100px;
+            width: 15%;
+            height: 600px;
+            margin-right: 30px;
+            float: left;
+        }
+        .tt {
+            margin-top: 100px;
+            width: 70%;
+            height: 200px;
+            float: left;
+        }
+
+        .the {
+            color: black;
+            font-size: 20px;
+            padding: 10px;
+            width: 23%;
+            height: 350px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            float: left;
+        }
+        .filters {
+            font-size: 20px;
+            max-width: 100%;
+          }
+      
+          /* Main heading */
+          .filters h3 {
+            margin-bottom: 1rem;
+            font-size: 30px;
+          }
+      
+          /* Each filter group (Price, Product type, etc.) */
+          .filter-group {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 1rem;
+          }
+      
+          /* Title row for each filter group (e.g., "Price", with a toggle sign) */
+          .filter-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+          }
+      
+          /* Toggle signs (e.g., "+" or "−") */
+          .toggle {
+            font-weight: normal;
+          }
+      
+          /* Container for the price inputs */
+          .price-range {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+      
+          /* Each price field (dollar sign + input) */
+          .price-field {
+            display: flex;
+            align-items: center;
+            border: 1px solid #000;
+            padding: 0.5rem;
+          }
+      
+          .price-field .currency {
+            margin-right: 0.5rem;
+            color: #333;
+          }
+      
+          .price-field input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 1rem;
+            color: #333;
+          }
+      
+          /* Make placeholder text a lighter color */
+          .price-field input::placeholder {
+            color: #aaa;
+          }
+      
+          /* Style for the product-type select dropdown */
+          .product-type-select {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #000;
+            background-color: #fff;
+            outline: none;
+            cursor: pointer;
+          }
+    </style>
+</head>
+<body>
+        <div class="header-area">
+            <!-- Start Navigation -->
+            <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+
+                <div class="container">
+
+                    <!-- Start Header Navigation -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="index.html">mates<span>up</span></a>
+
+                    </div><!--/.navbar-header-->
+                    <!-- End Header Navigation -->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class=" scroll active"><a href="#home">home</a></li>
+                            <li class="scroll"><a href="#works">introduction</a></li>
+                            <li class="scroll"><a href="#explore">investment</a></li>
+                            <li class="scroll"><a href="#reviews">project</a></li>
+                            <li class="scroll"><a href="#blog">blog</a></li>
+                            <li class="scroll"><a href="#contact">about me</a></li>
+                        </ul><!--/.nav -->
+                    </div><!-- /.navbar-collapse -->
+                </div><!--/.container-->
+            </nav><!--/nav-->
+            <!-- End Navigation -->
+        </div><!--/.header-area-->
+        <div class="clearfix"></div>
+        <div class="bod">
+            <div style="font-size: 40px"><strong>Certification Course Catalog</strong></div>
+        </div>
+        <div class="th">
+            <div class="filters">
+                <h3>Filters</h3>
+            
+                <div class="filter-group">
+                  <div class="filter-title">
+                    <span>Price</span>
+                    <span class="toggle">−</span>
+                  </div>
+                  <div class="price-range">
+                    <div class="price-field">
+                      <span class="currency">$</span>
+                      <input type="text" placeholder="From">
+                    </div>
+                    <div class="price-field">
+                      <span class="currency">$</span>
+                      <input type="text" placeholder="To">
+                    </div>
+                  </div>
+                </div>
+            
+                <div class="filter-group">
+                    <div class="filter-title">
+                      <span>Product type</span>
+                      <span class="toggle">+</span>
+                    </div>
+                    <!-- Select dropdown for product types -->
+                    <select class="product-type-select">
+                      <option value="" disabled selected>Choose an option</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="tt">
+            <div class="the">
+                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
+                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
+                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            </div>
+            <div class="the">
+                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
+                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
+                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            </div>
+            <div class="the">
+                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
+                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
+                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            </div>
+            <div class="the">
+                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
+                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
+                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            </div>
+            <div class="the">
+                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
+                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
+                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            </div>
+            <div class="the">
+                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
+                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
+                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            </div>
+            <div class="the">
+                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
+                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
+                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            </div>
+            <div class="the">
+                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
+                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
+                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            </div>
+            <div class="the">
+                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
+                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
+                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            </div>
+        </div>
+    
+    <script src="assets/js/jquery.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slick Slider Example</title>
+    
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slider {
+            width: 80%;
+            height: 500px;
+            margin: 50px auto;
+        }
+
+        .slider1 {
+            width: 80%;
+            height: 500px;
+            margin: 50px auto;
+        }
+
+        .slick-slide {
+            text-align: center;
+            padding: 40px;
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            border-radius: 10px;
+            width: 80%;
+            height: 500px;
+            margin: 50px auto;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .slick-prev, .slick-next {
+            font-size: 24px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slider Container -->
+    <div class="slider">
+        <div>Slide 1</div>
+        <div>Slide 2</div>
+        <div>Slide 3</div>
+        <div>Slide 4</div>
+        <div>Slide 5</div>
+    </div>
+
+    <!-- jQuery and Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: false,         // Auto slide
+                autoplaySpeed: 2000,    // 2 seconds
+                dots: true,             // Show dots navigation
+                arrows: false,           // Show next/prev arrows
+                infinite: true,         // Looping
+                speed: 500,             // Transition speed
+                slidesToShow: 1,        // Show 1 slide at a time
+                slidesToScroll: 1       // Scroll 1 slide at a time
+                
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('.slider1').slick({
+                autoplay: false,         // Auto slide
+                autoplaySpeed: 2000,    // 2 seconds
+                dots: true,             // Show dots navigation
+                arrows: false,           // Show next/prev arrows
+                infinite: true,         // Looping
+                speed: 500,             // Transition speed
+                slidesToShow: 2,        // Show 1 slide at a time
+                slidesToScroll: 1       // Scroll 1 slide at a time
+                
+            });
+        });
+    </script>
+</body>
+</html>
