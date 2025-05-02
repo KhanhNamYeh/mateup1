@@ -1,303 +1,381 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-        
-        <!-- title of site -->
-        <title>Directory Landing Page</title>
-
-        <!-- For favicon png -->
-		<link rel="shortcut icon" type="image/icon" href="assets/logo/grass.png"/>
-       
-        <!--font-awesome.min.css-->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
-        <!--linear icon css-->
-		<link rel="stylesheet" href="assets/css/linearicons.css">
-
-		<!--animate.css-->
-        <link rel="stylesheet" href="assets/css/animate.css">
-
-		<!--flaticon.css-->
-        <link rel="stylesheet" href="assets/css/flaticon.css">
-
-		<!--slick.css-->
-        <link rel="stylesheet" href="assets/css/slick.css">
-		<link rel="stylesheet" href="assets/css/slick-theme.css">
-		
-        <!--bootstrap.min.css-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		
-		<!-- bootsnav -->
-		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <title>Document</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            height: 1000px;
-        }
-        .bod {
-            font-family: Arial, sans-serif;
-            padding-left: 10%;
-            padding-right: 10%;
-            color: black;
-        }
-
-        .th {
-            padding: 10px;
-            margin-top: 50px;
-            margin-left: 100px;
-            width: 15%;
-            height: 600px;
-            margin-right: 30px;
-            float: left;
-        }
-        .tt {
-            margin-top: 100px;
-            width: 70%;
-            height: 200px;
-            float: left;
-        }
-
-        .the {
-            color: black;
-            font-size: 20px;
-            padding: 10px;
-            width: 23%;
-            height: 350px;
-            margin-right: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            float: left;
-        }
-        .filters {
-            font-size: 20px;
-            max-width: 100%;
-          }
-      
-          /* Main heading */
-          .filters h3 {
-            margin-bottom: 1rem;
-            font-size: 30px;
-          }
-      
-          /* Each filter group (Price, Product type, etc.) */
-          .filter-group {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 1rem;
-          }
-      
-          /* Title row for each filter group (e.g., "Price", with a toggle sign) */
-          .filter-title {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-          }
-      
-          /* Toggle signs (e.g., "+" or "−") */
-          .toggle {
-            font-weight: normal;
-          }
-      
-          /* Container for the price inputs */
-          .price-range {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-          }
-      
-          /* Each price field (dollar sign + input) */
-          .price-field {
-            display: flex;
-            align-items: center;
-            border: 1px solid #000;
-            padding: 0.5rem;
-          }
-      
-          .price-field .currency {
-            margin-right: 0.5rem;
-            color: #333;
-          }
-      
-          .price-field input {
-            border: none;
-            outline: none;
-            flex: 1;
-            font-size: 1rem;
-            color: #333;
-          }
-      
-          /* Make placeholder text a lighter color */
-          .price-field input::placeholder {
-            color: #aaa;
-          }
-      
-          /* Style for the product-type select dropdown */
-          .product-type-select {
-            width: 100%;
-            padding: 0.5rem;
-            font-size: 1rem;
-            border: 1px solid #000;
-            background-color: #fff;
-            outline: none;
-            cursor: pointer;
-          }
-    </style>
+    <title>Suggested Courses - MatesUp</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-        <div class="header-area">
-            <!-- Start Navigation -->
-            <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+    <div class="header-area">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">mates<span>up</span></a>
+                </div><!--/.navbar-header-->
+                <!-- End Header Navigation -->
 
-                <div class="container">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="introduction.html">introduction</a></li>
+                        <li><a href="investment.html">investment</a></li>
+                        <!-- Assuming course is related to project -->
+                        <li class="active"><a href="project.html">project</a></li>
+                        <li><a href="blog.html">blog</a></li>
+                        <li><a href="about.html">about me</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#loginModal">LOG IN</a></li>
+                    </ul><!--/.nav -->
+                </div><!-- /.navbar-collapse -->
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        <!-- End Navigation -->
+    </div><!--/.header-area-->
+    <div class="clearfix"></div>
 
-                    <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href="index.html">mates<span>up</span></a>
-
-                    </div><!--/.navbar-header-->
-                    <!-- End Header Navigation -->
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class=" scroll active"><a href="#home">home</a></li>
-                            <li class="scroll"><a href="#works">introduction</a></li>
-                            <li class="scroll"><a href="#explore">investment</a></li>
-                            <li class="scroll"><a href="#reviews">project</a></li>
-                            <li class="scroll"><a href="#blog">blog</a></li>
-                            <li class="scroll"><a href="#contact">about me</a></li>
-                        </ul><!--/.nav -->
-                    </div><!-- /.navbar-collapse -->
-                </div><!--/.container-->
-            </nav><!--/nav-->
-            <!-- End Navigation -->
-        </div><!--/.header-area-->
-        <div class="clearfix"></div>
-        <div class="bod">
-            <div style="font-size: 40px"><strong>Certification Course Catalog</strong></div>
-        </div>
-        <div class="th">
-            <div class="filters">
-                <h3>Filters</h3>
-            
-                <div class="filter-group">
-                  <div class="filter-title">
-                    <span>Price</span>
-                    <span class="toggle">−</span>
-                  </div>
-                  <div class="price-range">
-                    <div class="price-field">
-                      <span class="currency">$</span>
-                      <input type="text" placeholder="From">
-                    </div>
-                    <div class="price-field">
-                      <span class="currency">$</span>
-                      <input type="text" placeholder="To">
-                    </div>
-                  </div>
-                </div>
-            
-                <div class="filter-group">
-                    <div class="filter-title">
-                      <span>Product type</span>
-                      <span class="toggle">+</span>
-                    </div>
-                    <!-- Select dropdown for product types -->
-                    <select class="product-type-select">
-                      <option value="" disabled selected>Choose an option</option>
-                    </select>
+    <!-- Success Message Area -->
+    <section class="success-message">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 bg-success p-4">
+                    <h3 class="text-white"><i class="fa fa-check-circle"></i> Suggested Courses</h3>
                 </div>
             </div>
         </div>
-        <div class="tt">
-            <div class="the">
-                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
-                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
-                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center mb-5">
+                    <h2>Recommended Courses for Your Project</h2>
+                    <p class="text-muted">Based on your project details and connection partner, we recommend these courses to help you succeed together.</p>
+                </div>
             </div>
-            <div class="the">
-                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
-                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
-                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course1.jpg" alt="Project Management" class="img-fluid">
+                            <div class="course-badge">Bestseller</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <span class="course-category">Project Management</span>
+                                <div class="course-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                    <span>4.7 (2,145)</span>
+                                </div>
+                            </div>
+                            <h4 class="course-title">Agile Project Management for Startups</h4>
+                            <p class="course-desc">Learn how to apply agile methodologies to manage your startup project effectively.</p>
+                            <div class="course-meta">
+                                <span><i class="fa fa-clock-o"></i> 12 hours</span>
+                                <span><i class="fa fa-list-ul"></i> 8 modules</span>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">$49.99</div>
+                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course2.jpg" alt="Travel Industry" class="img-fluid">
+                            <div class="course-badge course-badge-new">New</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <span class="course-category">Travel Industry</span>
+                                <div class="course-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <span>5.0 (418)</span>
+                                </div>
+                            </div>
+                            <h4 class="course-title">Building Travel Apps with Modern Technologies</h4>
+                            <p class="course-desc">Learn AR/VR integration, AI recommendations, and modern UX design for travel applications.</p>
+                            <div class="course-meta">
+                                <span><i class="fa fa-clock-o"></i> 18 hours</span>
+                                <span><i class="fa fa-list-ul"></i> 12 modules</span>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">$79.99</div>
+                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course3.jpg" alt="Startup Funding" class="img-fluid">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <span class="course-category">Startup Funding</span>
+                                <div class="course-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <span>4.3 (956)</span>
+                                </div>
+                            </div>
+                            <h4 class="course-title">Securing Investment for Your Travel Startup</h4>
+                            <p class="course-desc">Learn how to create pitches, approach investors, and secure funding for travel-tech startups.</p>
+                            <div class="course-meta">
+                                <span><i class="fa fa-clock-o"></i> 10 hours</span>
+                                <span><i class="fa fa-list-ul"></i> 7 modules</span>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">$59.99</div>
+                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="the">
-                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
-                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
-                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            
+            <div class="row mt-3">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course4.jpg" alt="UX Design" class="img-fluid">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <span class="course-category">UX Design</span>
+                                <div class="course-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                    <span>4.8 (1,327)</span>
+                                </div>
+                            </div>
+                            <h4 class="course-title">UX Design for Travel and Map Applications</h4>
+                            <p class="course-desc">Master the essential UX principles for creating intuitive, engaging travel and mapping applications.</p>
+                            <div class="course-meta">
+                                <span><i class="fa fa-clock-o"></i> 15 hours</span>
+                                <span><i class="fa fa-list-ul"></i> 10 modules</span>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">$69.99</div>
+                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course5.jpg" alt="AR Development" class="img-fluid">
+                            <div class="course-badge">Popular</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <span class="course-category">AR Development</span>
+                                <div class="course-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <span>4.2 (758)</span>
+                                </div>
+                            </div>
+                            <h4 class="course-title">Augmented Reality for Travel Experiences</h4>
+                            <p class="course-desc">Learn to build AR overlays for travel guides, historical sites, and interactive tourist experiences.</p>
+                            <div class="course-meta">
+                                <span><i class="fa fa-clock-o"></i> 20 hours</span>
+                                <span><i class="fa fa-list-ul"></i> 14 modules</span>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">$89.99</div>
+                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/course6.jpg" alt="Marketing" class="img-fluid">
+                        </div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <span class="course-category">Marketing</span>
+                                <div class="course-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <span>4.9 (632)</span>
+                                </div>
+                            </div>
+                            <h4 class="course-title">Marketing Strategies for Travel Tech Startups</h4>
+                            <p class="course-desc">Discover effective strategies to market your travel tech product and achieve rapid user growth.</p>
+                            <div class="course-meta">
+                                <span><i class="fa fa-clock-o"></i> 14 hours</span>
+                                <span><i class="fa fa-list-ul"></i> 9 modules</span>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">$54.99</div>
+                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="the">
-                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
-                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
-                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
-            </div>
-            <div class="the">
-                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
-                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
-                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
-            </div>
-            <div class="the">
-                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
-                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
-                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
-            </div>
-            <div class="the">
-                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
-                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
-                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
-            </div>
-            <div class="the">
-                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
-                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
-                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
-            </div>
-            <div class="the">
-                <img src="assets/a.png" alt="" style="width: 100%; height: 70%">
-                <div style="margin-left: 10px; margin-top: 10px">$495.99</div>
-                <div style="margin-left: 10px; margin-top: 3px; font-size: 14px">W3WSchool Full Access</div>
+            
+            <div class="text-center mt-4">
+                <a href="connection.html" class="btn btn-success">Return to Connection</a>
             </div>
         </div>
-    
-    <script src="assets/js/jquery.js"></script>
+    </section>
+
+    <style>
+        .course-card {
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
         
-        <!--modernizr.min.js-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		
-		<!--bootstrap.min.js-->
-        <script src="assets/js/bootstrap.min.js"></script>
-		
-		<!-- bootsnav js -->
-		<script src="assets/js/bootsnav.js"></script>
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .course-image {
+            position: relative;
+        }
+        
+        .course-image img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .course-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffc107;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .course-badge-new {
+            background: #28a745;
+            color: white;
+        }
+        
+        .course-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .course-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        
+        .course-category {
+            background: #f1f1f1;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #555;
+        }
+        
+        .course-rating {
+            font-size: 14px;
+        }
+        
+        .course-rating i {
+            color: #ffc107;
+        }
+        
+        .course-title {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .course-desc {
+            color: #666;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .course-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
 
-        <!--feather.min.js-->
-        <script  src="assets/js/feather.min.js"></script>
-
-        <!-- counter js -->
-		<script src="assets/js/jquery.counterup.min.js"></script>
-		<script src="assets/js/waypoints.min.js"></script>
-
-        <!--slick.min.js-->
-        <script src="assets/js/slick.js"></script>
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-		     
-        <!--Custom JS-->
-        <script src="assets/js/custom.js"></script>
+    <!-- JavaScript Files -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

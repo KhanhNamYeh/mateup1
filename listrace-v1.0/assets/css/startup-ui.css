@@ -1,0 +1,482 @@
+/*
+* MatesUp UI CSS
+* Custom styles for MatesUp startup project
+*/
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #008000 !important;
+    font-size: 24px;
+}
+
+.navbar {
+    padding: 15px 0;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #555 !important;
+    margin: 0 10px;
+}
+
+.nav-item.active .nav-link {
+    color: #008000 !important;
+}
+
+.section-gap {
+    padding: 70px 0;
+}
+
+.section-gap-small {
+    padding: 50px 0;
+}
+
+/* Section Headers */
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-subtitle {
+    display: block;
+    color: #008000;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    color: #666;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Success Message Area */
+.success-message {
+    margin-bottom: 0;
+}
+
+.success-message h3 {
+    font-weight: 400;
+    margin: 0;
+}
+
+.success-message i {
+    margin-right: 10px;
+}
+
+.bg-success {
+    background-color: #008000 !important;
+}
+
+/* Investment Header Area */
+.investment-intro h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.investment-intro .lead {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.investment-stats {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.stat-item {
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+.stat-item h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #008000;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+}
+
+.investment-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Investment Card Styles */
+.investment-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.investment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.investment-card.featured {
+    border: 2px solid #008000;
+    box-shadow: 0 10px 30px rgba(0, 128, 0, 0.1);
+    transform: translateY(-10px) scale(1.03);
+}
+
+.card-badge {
+    display: inline-block;
+    background: #f1f1f1;
+    color: #333;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.card-badge.recommended {
+    background: #008000;
+    color: white;
+}
+
+.investment-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.price {
+    margin: 20px 0;
+    color: #008000;
+}
+
+.price .currency {
+    font-size: 24px;
+    vertical-align: top;
+    position: relative;
+    top: -10px;
+}
+
+.price .amount {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.price .period {
+    display: block;
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.features li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    align-items: center;
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+.check-icon {
+    color: #008000;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.btn-success {
+    background-color: #008000;
+    border-color: #008000;
+}
+
+.btn-outline-success {
+    color: #008000;
+    border-color: #008000;
+}
+
+.btn-outline-success:hover {
+    background-color: #008000;
+    color: #fff;
+}
+
+/* Process Step Styles */
+.process-step {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.step-icon {
+    width: 70px;
+    height: 70px;
+    background: #f1f8f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.step-icon i {
+    font-size: 30px;
+    color: #008000;
+}
+
+.step-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 48px;
+    font-weight: 700;
+    color: #f1f8f1;
+    z-index: 0;
+}
+
+.process-step h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.process-step p {
+    color: #666;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+
+/* Testimonial Card Styles */
+.testimonial-card {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.rating {
+    margin-bottom: 20px;
+}
+
+.rating i {
+    color: #FFD700;
+    margin-right: 2px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    quotes: """ """ "'" "'";
+}
+
+.testimonial-text::before {
+    content: open-quote;
+    color: #008000;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+}
+
+.testimonial-text::after {
+    content: close-quote;
+    color: #008000;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+}
+
+.investor-profile {
+    display: flex;
+    align-items: center;
+}
+
+.investor-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.investor-info h5 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.investor-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Recommended Card Styles */
+.recommended-card {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.investor-details {
+    width: 35%;
+    padding: 20px;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.investor-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.investor-details h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.investor-details p {
+    margin: 5px 0 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+.similarity {
+    background: #f0f8f0;
+    color: #008000;
+    font-weight: 700;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.similarity span {
+    font-weight: 400;
+}
+
+.project-details {
+    width: 65%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-description {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.action-buttons .btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .recommended-card {
+        flex-direction: column;
+    }
+    
+    .investor-details,
+    .project-details {
+        width: 100%;
+    }
+    
+    .process-step,
+    .testimonial-card,
+    .investment-card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-gap {
+        padding: 50px 0;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .investment-intro h2 {
+        font-size: 30px;
+    }
+    
+    .investment-stats {
+        justify-content: space-between;
+    }
+    
+    .stat-item {
+        margin-right: 0;
+    }
+    
+    .price .amount {
+        font-size: 36px;
+    }
+    
+    .price .currency {
+        font-size: 20px;
+    }
+}

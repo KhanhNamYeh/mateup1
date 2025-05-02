@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Connection - MatesUp</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/startup-ui.css"> <!-- Include if needed for styling -->
+    <style>
+        .profile-summary { background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
+        .profile-summary h4 { margin-bottom: 15px; }
+        .profile-summary .skills span { background-color: #e9ecef; padding: 5px 10px; border-radius: 15px; margin-right: 5px; margin-bottom: 5px; display: inline-block; font-size: 14px; }
+        .shared-projects .project-item { border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px; }
+        .shared-projects .project-item:last-child { border-bottom: none; margin-bottom: 0; }
+        .connection-avatar img { width: 120px; height: 120px; border: 4px solid #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        .connection-header { margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+    <div class="header-area">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">mates<span>up</span></a>
+                </div><!--/.navbar-header-->
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="introduction.html">introduction</a></li>
+                        <li><a href="investment.html">investment</a></li>
+                        <!-- Assuming connection is related to project -->
+                        <li class="active"><a href="project.html">project</a></li>
+                        <li><a href="blog.html">blog</a></li>
+                        <li><a href="about.html">about me</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#loginModal">LOG IN</a></li>
+                    </ul><!--/.nav -->
+                </div><!-- /.navbar-collapse -->
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        <!-- End Navigation -->
+    </div><!--/.header-area-->
+    <div class="clearfix"></div>
+
+    <!-- Success Message Area -->
+    <section class="success-message">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 bg-success p-4">
+                    <h3 class="text-white"><i class="fa fa-check-circle"></i> Connection Established</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connection Details -->
+    <section class="connection-section section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="connection-header text-center">
+                        <div class="connection-avatar">
+                            <img src="assets/images/user-placeholder.jpg" alt="Connection User" id="connectionAvatar" class="rounded-circle">
+                        </div>
+                        <h2 id="connectionTitle">You are now connected with <span id="connectionName">User</span></h2>
+                        <p class="text-muted" id="connectionLocation">Location, Industry</p>
+                        <p class="text-muted" id="connectionInfo">Start collaborating on projects together</p>
+                    </div>
+
+                    <!-- Profile Summary -->
+                    <div class="profile-summary">
+                         <h4>Profile Summary</h4>
+                         <p id="profileBio">Brief bio about the connected user. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                         <div class="skills">
+                             <strong>Skills:</strong>
+                             <span id="skill1">Skill 1</span>
+                             <span id="skill2">Skill 2</span>
+                             <span id="skill3">Skill 3</span>
+                             <span id="skill4">Skill 4</span>
+                         </div>
+                         <div class="interests mt-2">
+                             <strong>Interested In:</strong> <span id="userInterests">Project types, industries, collaboration styles...</span>
+                         </div>
+                    </div>
+
+                    <!-- Collaboration Options -->
+                    <div class="connection-options mt-4">
+                         <h4 class="text-center mb-4">Collaboration Tools</h4>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body text-center">
+                                        <i class="fa fa-list-ul fa-3x text-success mb-3"></i>
+                                        <h5>Create a Todo List</h5>
+                                        <p>Collaborate on tasks and track progress for your shared project.</p>
+                                        <a href="clist.html" class="btn btn-success btn-block mt-3">Go to Task List</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body text-center">
+                                        <i class="fa fa-graduation-cap fa-3x text-info mb-3"></i>
+                                        <h5>View Suggested Courses</h5>
+                                        <p>Discover courses that can enhance your skills for this collaboration.</p>
+                                        <a href="course.html" class="btn btn-info btn-block mt-3">View Courses</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shared Projects (Placeholder) -->
+                    <div class="card mt-4 shadow-sm">
+                        <div class="card-header bg-light">
+                            <h4 class="mb-0">Shared Projects / History</h4>
+                        </div>
+                        <div class="card-body shared-projects">
+                            <div class="project-item">
+                                <h5>Project Alpha (In Progress)</h5>
+                                <p>Brief description of the shared project or past collaboration. Status: 75% Complete.</p>
+                                <a href="clist.html?project=alpha" class="btn btn-sm btn-outline-secondary">View Tasks</a>
+                            </div>
+                            <div class="project-item">
+                                <h5>Project Beta (Completed)</h5>
+                                <p>Another shared project or past collaboration. Completed on [Date].</p>
+                            </div>
+                            <p class="text-muted text-center mt-3">No shared projects yet.</p> <!-- Show this if no projects -->
+                        </div>
+                    </div>
+
+                    <!-- Communication -->
+                    <div class="card mt-4 shadow-sm">
+                        <div class="card-header bg-light">
+                            <h4 class="mb-0">Communication</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="contact-options mb-4">
+                                <h5 class="mb-3">Contact Options</h5>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <a href="#" class="btn btn-outline-primary btn-block">
+                                            <i class="fa fa-envelope"></i> Send Email
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <a href="#" class="btn btn-outline-secondary btn-block disabled">
+                                            <i class="fa fa-phone"></i> Call (Not Available)
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <a href="#" class="btn btn-outline-info btn-block">
+                                            <i class="fa fa-video-camera"></i> Schedule Video Chat
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quick-message">
+                                <h5>Send a Quick Message</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="3" placeholder="Type your message here..."></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/popper.js"></script> <!-- Ensure Popper.js is included if using Bootstrap tooltips/popovers -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootsnav.js"></script> <!-- If using bootsnav -->
+    <script src="assets/js/main.js"></script> <!-- Your custom main JS -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get connection details from localStorage
+            const connectionName = localStorage.getItem('connectionName') || 'Partner';
+            const connectionUserId = localStorage.getItem('connectionUserId'); // Get user ID if stored
+
+            document.getElementById('connectionName').textContent = connectionName;
+
+            // --- Placeholder Data based on Name/ID ---
+            // In a real app, you'd fetch this data from a server using the connectionUserId
+            let location = "Unknown Location";
+            let industry = "Various Industries";
+            let bio = "A passionate individual looking for collaboration opportunities.";
+            let skills = ["Skill A", "Skill B", "Skill C"];
+            let interests = "Technology, Travel, Sustainability";
+            let avatar = "assets/images/user-placeholder.jpg";
+
+            if (connectionName.includes('Ciao Di En')) {
+                avatar = 'assets/images/clients/c6.png'; // Use correct image path
+                location = "West Ninh, Canada";
+                industry = "Travel Tech, AR/VR";
+                bio = "Expert in AR/VR development and travel tech. Looking for innovative projects involving interactive maps and AI assistants.";
+                skills = ["AR/VR Dev", "AI", "Mobile Apps", "UX Design"];
+                interests = "AI Assistants, Interactive Maps, Food Tech";
+            } else if (connectionName.includes('Feriu Tuoi')) {
+                avatar = 'assets/images/clients/c2.png'; // Use correct image path
+                location = "Ca Mu, VN";
+                industry = "AI Platforms, Collaboration Tools";
+                bio = "Specializes in AI-powered platforms and collaborative tools. Seeking partners for travel projects focused on social recommendations.";
+                skills = ["AI/ML", "Platform Dev", "Social APIs", "Data Analysis"];
+                interests = "Collaborative Platforms, Social Travel, Big Data";
+            } else if (connectionName.includes('Dil An Nhi')) {
+                 avatar = 'assets/images/clients/c7.png'; // Use correct image path
+                 location = "London, UK";
+                 industry = "AI, Travel Tech";
+                 bio = "Focused on AI-driven travel assistants, optimizing itineraries with real-time data and suggesting unique experiences.";
+                 skills = ["AI Personalization", "API Integration", "Data Science", "UX Research"];
+                 interests = "Personalized Travel, Real-time Data, Hidden Gems";
+            } else if (connectionName.includes('Khoa Nam Nguyen')) {
+                 avatar = 'assets/images/clients/c1.png'; // Use correct image path
+                 location = "Ben Tre, VN";
+                 industry = "Game Development, Storytelling";
+                 bio = "Experienced in campaign-style game development with a focus on narrative and character recruitment.";
+                 skills = ["Game Design", "Narrative Design", "Unity/Unreal", "Project Management"];
+                 interests = "Space Adventures, RPGs, Character Development";
+            }
+            // --- End Placeholder Data ---
+
+
+            document.getElementById('connectionAvatar').src = avatar;
+            document.getElementById('connectionLocation').textContent = `${location}, ${industry}`;
+            document.getElementById('profileBio').textContent = bio;
+            document.getElementById('userInterests').textContent = interests;
+
+            // Populate skills dynamically
+            const skillsContainer = document.querySelector('.profile-summary .skills');
+            // Clear existing placeholder skills first if needed
+            skillsContainer.querySelectorAll('span[id^="skill"]').forEach(span => span.remove());
+            skills.forEach(skill => {
+                const span = document.createElement('span');
+                span.textContent = skill;
+                skillsContainer.appendChild(span);
+            });
+
+
+            // Set the connection message if exists
+            const connectionMessage = localStorage.getItem('connectionMessage');
+            if (connectionMessage) {
+                document.getElementById('connectionInfo').textContent = 'Initial Message: "' + connectionMessage + '"';
+            } else {
+                 document.getElementById('connectionInfo').textContent = 'You connected via recommendation.'; // Default if no message
+            }
+
+            // Clear message from localStorage after displaying it? Optional.
+            // localStorage.removeItem('connectionMessage');
+        });
+    </script>
+</body>
+</html>

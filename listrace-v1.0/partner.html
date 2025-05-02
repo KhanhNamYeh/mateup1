@@ -1,260 +1,243 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-        
-        <!-- title of site -->
-        <title>Directory Landing Page</title>
-
-        <!-- For favicon png -->
-		<link rel="shortcut icon" type="image/icon" href="assets/logo/grass.png"/>
-       
-        <!--font-awesome.min.css-->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
-        <!--linear icon css-->
-		<link rel="stylesheet" href="assets/css/linearicons.css">
-
-		<!--animate.css-->
-        <link rel="stylesheet" href="assets/css/animate.css">
-
-		<!--flaticon.css-->
-        <link rel="stylesheet" href="assets/css/flaticon.css">
-
-		<!--slick.css-->
-        <link rel="stylesheet" href="assets/css/slick.css">
-		<link rel="stylesheet" href="assets/css/slick-theme.css">
-		
-        <!--bootstrap.min.css-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		
-		<!-- bootsnav -->
-		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <title>Document</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        /*  Gợi ý màu:
-
-            + Nền body: #fff8df
-            + Nút 'Register': #dd2c2c
-            + Nút 'Reset': #e3a73f
-            + Chữ báo lỗi (error message): #bc1313
-            + nền input khi hover: #fff5cf
-            + nền input khi focus: #f3de8e
-            + viền input khi focus: #d97000
-
-        */
-
-        form {
-            font-family: 'Times New Roman', Times, serif;
-            padding: 40px;
-            height: 800px;
-            background-color: #09153f;
-            width: 100%;
-            padding: 20px;
-        }
-
-        .content {
-            color: black;
-            width: 50%;
-            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
-            font-size: 25px;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: white;
-            border-radius: 10px;
-            padding: 50px;
-            float: left;
-            
-        }
-
-        .content1 {
-            padding-top: 100px;
-            padding-left: 200px;
-            color: white;
-            width: 40%;
-            font-size: 25px;
-            font-family: Arial, Helvetica, sans-serif;
-            border-radius: 10px;
-            float: left;
-        }
-
-        .content2 {
-            padding-top: 170px;
-            margin-right: 10%;
-            float: left;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-control {
-            height: 40px;
-            margin-top: 10px;
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .form-control:focus {
-            background-color: #ecf2ed;
-            border-color: #d97000;
-        }
-
-        .form-control:hover {
-            background-color: #ecf2ed;
-        }
-    </style>
+    <title>Register Project - MatesUp</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-        <div class="header-area">
-            <!-- Start Navigation -->
-            <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+    <div class="header-area">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">mates<span>up</span></a>
+                </div><!--/.navbar-header-->
+                <!-- End Header Navigation -->
 
-                <div class="container">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="introduction.html">introduction</a></li>
+                        <li><a href="investment.html">investment</a></li>
+                        <!-- Assuming partner is related to project -->
+                        <li class="active"><a href="project.html">project</a></li>
+                        <li><a href="partner.html">partner</a></li> <!-- Added partner link -->
+                        <li><a href="blog.html">blog</a></li>
+                        <li><a href="about.html">about me</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#loginModal">LOG IN</a></li>
+                    </ul><!--/.nav -->
+                </div><!-- /.navbar-collapse -->
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        <!-- End Navigation -->
+    </div><!--/.header-area-->
+    <div class="clearfix"></div>
 
-                    <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href="index.html">mates<span>up</span></a>
-
-                    </div><!--/.navbar-header-->
-                    <!-- End Header Navigation -->
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class=" scroll active"><a href="#home">home</a></li>
-                            <li class="scroll"><a href="#works">introduction</a></li>
-                            <li class="scroll"><a href="#explore">investment</a></li>
-                            <li class="scroll"><a href="#reviews">project</a></li>
-                            <li class="scroll"><a href="#blog">blog</a></li>
-                            <li class="scroll"><a href="#contact">about me</a></li>
-                        </ul><!--/.nav -->
-                    </div><!-- /.navbar-collapse -->
-                </div><!--/.container-->
-            </nav><!--/nav-->
-            <!-- End Navigation -->
-        </div><!--/.header-area-->
-        <div class="clearfix"></div>
-    
-    
-    <form method="post" action="partner1.html" novalidate>
-        <div class="content1" style="margin-right: 5%;">
-            <div style="font-size:40px">Become a</div>
-            <div style="font-size:40px">MatesUp Partner</div>
-            <div style="font-size:25px; margin-bottom: 10px; margin-top:10px"><i>Free to use, easy to love</i></div>
-            <div style="font-size:14px; padding-left:20px;">
-                <div class="testimonial-person-star">
-                    <i class="fa fa-star"></i>Track your progress     
+    <!-- Success Message Area -->
+    <section class="success-message">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 bg-success p-4">
+                    <h3 class="text-white"><i class="fa fa-check-circle"></i> Register Your Project</h3>
                 </div>
-                <div class="testimonial-person-star">          
-                    <i class="fa fa-star"></i>Set your goals
-                </div>
-                <div class="testimonial-person-star">
-                    <i class="fa fa-star"></i>Get a personalized learning path
-                </div>
-                <div class="testimonial-person-star">
-                    <i class="fa fa-star"></i>Test your skills
-                </div>
-                <div class="testimonial-person-star">
-                    <i class="fa fa-star"></i>Practice more
-                </div>
-                <div class="testimonial-person-star">
-                    <i class="fa fa-star"></i>Build and host
-                </div>
-                <div class="testimonial-person-star">
-                    <i class="fa fa-star"></i>Toolbox
-                </div>
-            </div>
-            <img style="margin-left: 200px;" src="assets/images/a.png" width="200px" height="300px">
-        </div>
-        <div class="content">
-            <div style="margin-bottom: 30px; font-size:30px;">
-                <strong>Register project</strong>
-            </div>
-            <div class="form-group">
-                <select id="country" class="form-control"> 
-                    <option>Choose your project</option>
-                        <option>Art</option>
-                        <option>Comics</option>
-                        <option>Crafts</option>
-                        <option>Design</option>
-                        <option>Fashion</option>
-                        <option>Films</option>
-                        <option>Food</option>
-                        <option>Game</option>
-                        <option>Technology</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <select id="country" class="form-control">
-                    <option>Choose your country partner</option>
-                        <option>Asia</option>
-                        <option>Vietnam</option>
-                        <option>Laos</option>
-                        <option>Cambodia</option>
-                        <option>Singapore</option>
-                        <option>Europe</option>
-                        <option>France</option>
-                        <option>Belgium</option>
-                        <option>Italy</option>
-                        <option>Finland</option>
-                        <option>Ireland</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <textarea class="form-control" name="message" rows="1" cols="30">Name project</textarea>
-            </div>
-            <div class="form-group">
-                <textarea class="form-control" name="message" rows="7" cols="30">Write your idea here</textarea>
-            </div>
-            <div class="form-group">
-                <textarea class="form-control" name="message" rows="2" cols="30">What you want at partner</textarea>
-            </div>
-            <div class="form-group">
-                <input type="file" id="myFile" name="filename" style="width: 50px; border-radius: 5px; padding: 10px; width: 80%; margin-top: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); font-size: 14px; float: left">
-                <a href="partner1.html" type="submit" style="border-radius: 5px; padding: 10px; width: 20%; margin-top: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); font-size: 14px; text-align: center; background-color: rgb(225, 225, 225)">Submit</a>
-                <a type="submit" href="rcm.html" style="margin-left: 520px;background-color: #057e11; color: white; border: none; padding:10px; padding-left: 20px; padding-right: 20px;  font-size: 18px; margin-top:20px;">Register</a>
             </div>
         </div>
-    </form>
-    <script src="assets/js/jquery.js"></script>
-        
-        <!--modernizr.min.js-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		
-		<!--bootstrap.min.js-->
-        <script src="assets/js/bootstrap.min.js"></script>
-		
-		<!-- bootsnav js -->
-		<script src="assets/js/bootsnav.js"></script>
+    </section>
 
-        <!--feather.min.js-->
-        <script  src="assets/js/feather.min.js"></script>
+    <!-- Project Registration Form -->
+    <section class="registration-form section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="section-header text-center mb-5">
+                        <h2>Tell Us About Your Project</h2>
+                        <p>Complete this form to register your project and find matching partners</p>
+                    </div>
+                    
+                    <form id="projectForm" action="rcm.html">
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0">Basic Information</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="projectName">Project Name *</label>
+                                    <input type="text" class="form-control" id="projectName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="projectCategory">Category *</label>
+                                    <select class="form-control" id="projectCategory" required>
+                                        <option value="">Select a category</option>
+                                        <option value="technology">Technology</option>
+                                        <option value="healthcare">Healthcare</option>
+                                        <option value="education">Education</option>
+                                        <option value="finance">Finance</option>
+                                        <option value="travel">Travel</option>
+                                        <option value="environment">Environment</option>
+                                        <option value="food">Food & Agriculture</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="projectDescription">Project Description *</label>
+                                    <textarea class="form-control" id="projectDescription" rows="4" required></textarea>
+                                    <small class="form-text text-muted">Describe your project in detail (min 100 characters)</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0">Project Details</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="projectStage">Current Stage *</label>
+                                    <select class="form-control" id="projectStage" required>
+                                        <option value="">Select current stage</option>
+                                        <option value="idea">Idea/Concept</option>
+                                        <option value="prototype">Prototype</option>
+                                        <option value="mvp">Minimum Viable Product</option>
+                                        <option value="growth">Growth/Scaling</option>
+                                        <option value="established">Established</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Target Markets *</label>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="northAmerica" id="market1">
+                                                <label class="form-check-label" for="market1">North America</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="europe" id="market2">
+                                                <label class="form-check-label" for="market2">Europe</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="asia" id="market3">
+                                                <label class="form-check-label" for="market3">Asia</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="latinAmerica" id="market4">
+                                                <label class="form-check-label" for="market4">Latin America</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="africa" id="market5">
+                                                <label class="form-check-label" for="market5">Africa</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="oceania" id="market6">
+                                                <label class="form-check-label" for="market6">Oceania</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fundingNeeds">Funding Needs</label>
+                                    <select class="form-control" id="fundingNeeds">
+                                        <option value="">Select funding range</option>
+                                        <option value="bootstrap">Bootstrapping/No external funding</option>
+                                        <option value="small">$10K - $50K</option>
+                                        <option value="medium">$50K - $250K</option>
+                                        <option value="large">$250K - $1M</option>
+                                        <option value="enterprise">$1M+</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-light">
+                                <h5 class="mb-0">Partner Requirements</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>What kind of partners are you looking for? *</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="technical" id="partner1">
+                                                <label class="form-check-label" for="partner1">Technical Co-founder</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="business" id="partner2">
+                                                <label class="form-check-label" for="partner2">Business Co-founder</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="investor" id="partner3">
+                                                <label class="form-check-label" for="partner3">Investor</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="advisor" id="partner4">
+                                                <label class="form-check-label" for="partner4">Advisor/Mentor</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="supplier" id="partner5">
+                                                <label class="form-check-label" for="partner5">Supplier/Vendor</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="other" id="partner6">
+                                                <label class="form-check-label" for="partner6">Other</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="partnerSkills">Required Skills/Expertise</label>
+                                    <input type="text" class="form-control" id="partnerSkills" placeholder="e.g., AI development, marketing, UX design">
+                                    <small class="form-text text-muted">Separate skills with commas</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="additionalInfo">Additional Information</label>
+                                    <textarea class="form-control" id="additionalInfo" rows="3"></textarea>
+                                    <small class="form-text text-muted">Any other details about your project or partnership requirements</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-success btn-lg px-5">Submit Project</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- counter js -->
-		<script src="assets/js/jquery.counterup.min.js"></script>
-		<script src="assets/js/waypoints.min.js"></script>
-
-        <!--slick.min.js-->
-        <script src="assets/js/slick.js"></script>
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-		     
-        <!--Custom JS-->
-        <script src="assets/js/custom.js"></script>
+    <!-- JavaScript Files -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Form validation and submission
+        document.getElementById('projectForm').addEventListener('submit', function(event) {
+            // Store project info in localStorage for use in rcm.html
+            localStorage.setItem('projectName', document.getElementById('projectName').value);
+            localStorage.setItem('projectCategory', document.getElementById('projectCategory').value);
+            localStorage.setItem('projectDescription', document.getElementById('projectDescription').value);
+        });
+    </script>
 </body>
 </html>

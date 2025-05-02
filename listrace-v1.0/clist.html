@@ -1,286 +1,338 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-        
-        <!-- title of site -->
-        <title>Directory Landing Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task List - MatesUp</title>
 
-        <!-- For favicon png -->
-		<link rel="shortcut icon" type="image/icon" href="assets/logo/grass.png"/>
-       
-        <!--font-awesome.min.css-->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
-        <!--linear icon css-->
-		<link rel="stylesheet" href="assets/css/linearicons.css">
-
-		<!--animate.css-->
-        <link rel="stylesheet" href="assets/css/animate.css">
-
-		<!--flaticon.css-->
-        <link rel="stylesheet" href="assets/css/flaticon.css">
-
-		<!--slick.css-->
-        <link rel="stylesheet" href="assets/css/slick.css">
-		<link rel="stylesheet" href="assets/css/slick-theme.css">
-		
-        <!--bootstrap.min.css-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		
-		<!-- bootsnav -->
-		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootsnav.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/startup-ui.css">
+
     <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-        }
-        .task-item {
-            display: flex;
-            align-items: center;
-            background: #fff;
-            padding: 10px;
-            border-radius: 30px;
-            transition: background 0.3s;
-            font-weight: bold;
-            cursor: pointer;
-            justify-content: space-between;
-            border: 2px solid #059c14;
-            width: 100%;
-        }
-        .task-item span {
-            flex-grow: 1;
-            text-align: left;
-            padding-left: 10px;
-        }
-        .task-item.completed {
-            background: #059c14;
-            color: white;
-            text-decoration: line-through;
-            opacity: 0.6;
-        }
-        .task-item .checkmark {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: bold;
-            color: #059c14;
-            border: 2px solid #059c14;
-        }
-        .task-item.completed .checkmark {
-            background: #059c14;
-            color: white;
-        }
-        .progress-bar {
-            width: 94%;
-            margin-left: 3%;
-            background-color: #ddd;
-            height: 25px;
-            border-radius: 12px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            position: relative;
-        }
-        .progress {
-            height: 100%;
-            width: 0%;
-            background-color: #4caf50;
-            text-align: center;
-            color: white;
-            line-height: 25px;
-            font-weight: bold;
-            border-radius: 12px;
-            transition: width 0.3s ease-in-out;
-        }
-        .rigt {
-            margin-top: 30px;
-            margin-left: 30px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 70%;
-            float: left;
-        }
-        .head {
-            background-color: #4caf50;
-            color: white;
-            font-size: 40px;
-            padding: 20px;
-        }
-        .lef {
-            margin-top: 30px;
-            margin-left: 25px;
-            background-color:  #f0f4f9;
-            color: black;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 23%;
-            height: 560px;
-            float: left;
-        }
-        .his {
-            width: 100%;
-            padding: 10px 20px;
-            font-size: 20px;
-            /* Add a transition so the shadow appears smoothly */
-            transition: box-shadow 0.3s ease, background-color 0.3s ease;
-        }
-        
-        .his:hover {
-            /* Add a box shadow on hover */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            background-color: #f0f4f9;
-        }
+        .task-list-section { padding: 60px 0; }
+        .task-item { display: flex; justify-content: space-between; align-items: center; padding: 15px; border-bottom: 1px solid #eee; }
+        .task-item:last-child { border-bottom: none; }
+        .task-item .form-check { flex-grow: 1; margin-right: 15px; }
+        .task-item .form-check-label { transition: all 0.3s ease; }
+        .task-item .form-check-input:checked + .form-check-label { text-decoration: line-through; color: #6c757d; font-style: italic; }
+        .task-actions .btn { margin-left: 5px; }
+        .progress-wrapper { background-color: #e9ecef; border-radius: .25rem; padding: 20px; margin-bottom: 30px; }
+        .progress { height: 25px; font-size: 1rem; }
+        .project-status-badge { font-size: 1rem; padding: .5em .8em; vertical-align: middle; }
+        #taskList .list-group-item { border-left: 0; border-right: 0; border-radius: 0; }
+        #taskList .list-group-item:first-child { border-top: 0; }
+        .no-tasks { text-align: center; color: #6c757d; padding: 30px 0; }
     </style>
 </head>
 <body>
-        <div class="header-area">
-            <!-- Start Navigation -->
-            <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+    <div class="header-area">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">mates<span>up</span></a>
+                </div><!--/.navbar-header-->
+                <!-- End Header Navigation -->
 
-                <div class="container">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="introduction.html">introduction</a></li>
+                        <li><a href="investment.html">investment</a></li>
+                        <li class="active"><a href="project.html">project</a></li>
+                        <li><a href="blog.html">blog</a></li>
+                        <li><a href="about.html">about me</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#loginModal">LOG IN</a></li>
+                    </ul><!--/.nav -->
+                </div><!-- /.navbar-collapse -->
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        <!-- End Navigation -->
+    </div><!--/.header-area-->
+    <div class="clearfix"></div>
 
-                    <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
+    <!-- Success Message Area -->
+    <section class="success-message">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 bg-success p-4">
+                    <h3 class="text-white"><i class="fa fa-list-check"></i> Project Task List</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task List Section -->
+    <section class="task-list-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+
+                    <!-- Project Progress -->
+                    <div class="progress-wrapper shadow-sm">
+                        <h3 id="projectNameDisplay" class="text-center mb-3">Project Tasks</h3>
+                        <div class="progress mb-2">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" id="projectProgress" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span><strong id="completedTasks">0</strong> of <strong id="totalTasks">0</strong> tasks completed</span>
+                            <span id="projectStatus" class="badge project-status-badge badge-secondary">Not Started</span>
+                        </div>
+                    </div>
+
+                    <!-- Task List Card -->
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                            <h4 class="mb-0">Tasks</h4>
+                            <button class="btn btn-success" data-toggle="modal" data-target="#addTaskModal">
+                                <i class="fa fa-plus"></i> Add New Task
+                            </button>
+                        </div>
+                        <div class="card-body p-0">
+                            <ul class="list-group list-group-flush task-list" id="taskList">
+                                <!-- Tasks will be loaded/added here by JavaScript -->
+                                <li class="list-group-item no-tasks" id="noTasksMessage">No tasks added yet.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation Button -->
+                    <div class="text-center mt-4">
+                        <button id="recommendButton" class="btn btn-primary btn-lg" disabled>
+                            <i class="fa fa-rocket"></i> Recommend to Investors
                         </button>
-                        <a class="navbar-brand" href="index.html">mates<span>up</span></a>
-
-                    </div><!--/.navbar-header-->
-                    <!-- End Header Navigation -->
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class=" scroll active"><a href="#home">home</a></li>
-                            <li class="scroll"><a href="#works">introduction</a></li>
-                            <li class="scroll"><a href="#explore">investment</a></li>
-                            <li class="scroll"><a href="#reviews">project</a></li>
-                            <li class="scroll"><a href="#blog">blog</a></li>
-                            <li class="scroll"><a href="#contact">about me</a></li>
-                        </ul><!--/.nav -->
-                    </div><!-- /.navbar-collapse -->
-                </div><!--/.container-->
-            </nav><!--/nav-->
-            <!-- End Navigation -->
-        </div><!--/.header-area-->
-        <div class="clearfix"></div>
-    
-        <div class="rigt">
-            <div class="head">
-                Task List
-            </div>
-            <div class="grid-container" id="todo-list">
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 1</span></div>
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 2</span></div>
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 3</span></div>
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 4</span></div>
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 5</span></div>
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 6</span></div>
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 7</span></div>
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 8</span></div>
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 9</span></div>
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 10</span></div>
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 11</span></div>
-                <div class="task-item" onclick="toggleTask(this)"><div class="checkmark">✓</div> <span>Mission 12</span></div>
-            </div>
-            <div class="progress-bar">
-                <div id="progress" class="progress">0%</div>
+                        <p class="text-muted mt-2"><small>Complete all tasks (100%) to enable recommendation.</small></p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="lef">
-            <div style="font-size: 25px; padding: 20px">History Completed</div>
-            <div class="his">
-                <div>Mission 1</div>
-                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
-            </div>
-            <div class="his">
-                <div>Mission 2</div>
-                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
-            </div>
-            <div class="his">
-                <div>Mission 3</div>
-                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
-            </div>
-            <div class="his">
-                <div>Mission 5</div>
-                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
-            </div>
-            <div class="his">
-                <div>Mission 8</div>
-                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
-            </div>
-            <div class="his">
-                <div>Mission 10</div>
-                <i style="font-size: 14px; color:gray">February 22, 7:08 PM</i>
+    <!-- Add Task Modal -->
+    <div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTaskModalLabel">Add New Task</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addTaskForm">
+                        <div class="form-group">
+                            <label for="taskName">Task Description *</label>
+                            <input type="text" class="form-control" id="taskName" placeholder="Enter task description" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" id="saveTaskButton">Add Task</button>
+                </div>
             </div>
         </div>
-    
-        <script>
-            function toggleTask(element) {
-                element.classList.toggle('completed');
+    </div>
+
+    <!-- Recommendation Success Modal -->
+    <div class="modal fade" id="recommendSuccessModal" tabindex="-1" role="dialog" aria-labelledby="recommendSuccessModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="recommendSuccessModalLabel">Project Recommended!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fa fa-check-circle text-success fa-4x mb-3"></i>
+                    <h4>Congratulations!</h4>
+                    <p>Your project, "<span id="recommendedProjectName"></span>", is now ready for investor review. You'll be notified about any interest.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="investment.html" class="btn btn-success">View Investment Opportunities</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootsnav.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const taskList = document.getElementById('taskList');
+            const addTaskForm = document.getElementById('addTaskForm');
+            const taskNameInput = document.getElementById('taskName');
+            const saveTaskButton = document.getElementById('saveTaskButton');
+            const projectNameDisplay = document.getElementById('projectNameDisplay');
+            const projectProgress = document.getElementById('projectProgress');
+            const completedTasksSpan = document.getElementById('completedTasks');
+            const totalTasksSpan = document.getElementById('totalTasks');
+            const projectStatusBadge = document.getElementById('projectStatus');
+            const recommendButton = document.getElementById('recommendButton');
+            const noTasksMessage = document.getElementById('noTasksMessage');
+            const recommendedProjectNameSpan = document.getElementById('recommendedProjectName');
+
+            const projectName = localStorage.getItem('projectName') || "My Project";
+            projectNameDisplay.textContent = projectName + " - Tasks";
+            recommendedProjectNameSpan.textContent = projectName;
+
+            const storageKey = `tasks_${projectName.replace(/\s+/g, '_')}`;
+            let tasks = JSON.parse(localStorage.getItem(storageKey)) || [];
+
+            function renderTask(task) {
+                const taskItem = document.createElement('li');
+                taskItem.className = 'list-group-item task-item';
+                taskItem.dataset.id = task.id;
+
+                taskItem.innerHTML = `
+                    <div class="form-check">
+                        <input class="form-check-input task-checkbox" type="checkbox" id="task-${task.id}" ${task.completed ? 'checked' : ''}>
+                        <label class="form-check-label" for="task-${task.id}">
+                            ${escapeHTML(task.name)}
+                        </label>
+                    </div>
+                    <div class="task-actions">
+                        <button class="btn btn-sm btn-outline-danger task-delete" title="Delete Task">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+
+                const checkbox = taskItem.querySelector('.task-checkbox');
+                checkbox.addEventListener('change', () => toggleTaskCompletion(task.id));
+
+                const deleteButton = taskItem.querySelector('.task-delete');
+                deleteButton.addEventListener('click', () => deleteTask(task.id));
+
+                taskList.appendChild(taskItem);
+            }
+
+            function renderAllTasks() {
+                taskList.innerHTML = '';
+                if (tasks.length === 0) {
+                    taskList.appendChild(noTasksMessage);
+                } else {
+                    noTasksMessage.remove();
+                    tasks.forEach(renderTask);
+                }
                 updateProgress();
             }
-            
-            function updateProgress() {
-                let tasks = document.querySelectorAll('.task-item');
-                let completed = document.querySelectorAll('.task-item.completed').length;
-                let percent = tasks.length ? (completed / tasks.length) * 100 : 0;
-                document.getElementById('progress').style.width = percent + '%';
-                document.getElementById('progress').textContent = Math.round(percent) + '%';
+
+            function saveTasks() {
+                localStorage.setItem(storageKey, JSON.stringify(tasks));
             }
-        </script>
-    
-    <script src="assets/js/jquery.js"></script>
-        
-        <!--modernizr.min.js-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		
-		<!--bootstrap.min.js-->
-        <script src="assets/js/bootstrap.min.js"></script>
-		
-		<!-- bootsnav js -->
-		<script src="assets/js/bootsnav.js"></script>
 
-        <!--feather.min.js-->
-        <script  src="assets/js/feather.min.js"></script>
+            function updateProgress() {
+                const totalTasks = tasks.length;
+                const completedTasks = tasks.filter(task => task.completed).length;
 
-        <!-- counter js -->
-		<script src="assets/js/jquery.counterup.min.js"></script>
-		<script src="assets/js/waypoints.min.js"></script>
+                totalTasksSpan.textContent = totalTasks;
+                completedTasksSpan.textContent = completedTasks;
 
-        <!--slick.min.js-->
-        <script src="assets/js/slick.js"></script>
+                const progressPercentage = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+                projectProgress.style.width = progressPercentage + '%';
+                projectProgress.textContent = progressPercentage + '%';
+                projectProgress.setAttribute('aria-valuenow', progressPercentage);
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-		     
-        <!--Custom JS-->
-        <script src="assets/js/custom.js"></script>
+                if (progressPercentage === 0 && totalTasks === 0) {
+                    projectStatusBadge.textContent = "No Tasks";
+                    projectStatusBadge.className = "badge project-status-badge badge-secondary";
+                } else if (progressPercentage === 0) {
+                    projectStatusBadge.textContent = "Not Started";
+                    projectStatusBadge.className = "badge project-status-badge badge-secondary";
+                } else if (progressPercentage < 50) {
+                    projectStatusBadge.textContent = "In Progress";
+                    projectStatusBadge.className = "badge project-status-badge badge-warning";
+                } else if (progressPercentage < 100) {
+                    projectStatusBadge.textContent = "Advanced";
+                    projectStatusBadge.className = "badge project-status-badge badge-primary";
+                } else {
+                    projectStatusBadge.textContent = "Completed";
+                    projectStatusBadge.className = "badge project-status-badge badge-success";
+                }
+
+                recommendButton.disabled = progressPercentage < 100;
+            }
+
+            function addTask(name) {
+                if (!name) return;
+
+                const newTask = {
+                    id: Date.now(),
+                    name: name,
+                    completed: false
+                };
+                tasks.push(newTask);
+                saveTasks();
+                renderAllTasks();
+            }
+
+            function toggleTaskCompletion(id) {
+                tasks = tasks.map(task => {
+                    if (task.id === id) {
+                        return { ...task, completed: !task.completed };
+                    }
+                    return task;
+                });
+                saveTasks();
+                renderAllTasks();
+            }
+
+            function deleteTask(id) {
+                if (confirm('Are you sure you want to delete this task?')) {
+                    tasks = tasks.filter(task => task.id !== id);
+                    saveTasks();
+                    renderAllTasks();
+                }
+            }
+
+            function escapeHTML(str) {
+                const div = document.createElement('div');
+                div.appendChild(document.createTextNode(str));
+                return div.innerHTML;
+            }
+
+            saveTaskButton.addEventListener('click', () => {
+                const taskName = taskNameInput.value.trim();
+                addTask(taskName);
+                addTaskForm.reset();
+                $('#addTaskModal').modal('hide');
+            });
+
+            taskNameInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    saveTaskButton.click();
+                }
+            });
+
+            recommendButton.addEventListener('click', function() {
+                if (!this.disabled) {
+                    $('#recommendSuccessModal').modal('show');
+                }
+            });
+
+            renderAllTasks();
+        });
+    </script>
+
 </body>
 </html>

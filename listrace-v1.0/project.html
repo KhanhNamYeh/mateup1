@@ -3,93 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slick Slider Example</title>
-    
-    <!-- Slick CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        .slider {
-            width: 80%;
-            height: 500px;
-            margin: 50px auto;
-        }
-
-        .slider1 {
-            width: 80%;
-            height: 500px;
-            margin: 50px auto;
-        }
-
-        .slick-slide {
-            text-align: center;
-            padding: 40px;
-            color: rgb(0, 0, 0);
-            font-size: 24px;
-            border-radius: 10px;
-            width: 80%;
-            height: 500px;
-            margin: 50px auto;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .slick-prev, .slick-next {
-            font-size: 24px;
-            color: black;
-        }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Investment - MatesUp</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+     
+    <!-- CSS Files -->
+    <link rel="shortcut icon" type="image/icon" href="assets/logo/grass.png"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/linearicons.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootsnav.css" >	
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/startup-ui.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
-    <!-- Slider Container -->
-    <div class="slider">
-        <div>Slide 1</div>
-        <div>Slide 2</div>
-        <div>Slide 3</div>
-        <div>Slide 4</div>
-        <div>Slide 5</div>
-    </div>
+    <div class="header-area">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">mates<span>up</span></a>
+                </div><!--/.navbar-header-->
+                <!-- End Header Navigation -->
 
-    <!-- jQuery and Slick JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="introduction.html">introduction</a></li>
+                        <li><a href="investment.html">investment</a></li>
+                        <li class="active"><a href="project.html">project</a></li>
+                        <li><a href="blog.html">blog</a></li>
+                        <li><a href="about.html">about me</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#loginModal">LOG IN</a></li>
+                    </ul><!--/.nav -->
+                </div><!-- /.navbar-collapse -->
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        <!-- End Navigation -->
+    </div><!--/.header-area-->
+    <div class="clearfix"></div>
 
-    <script>
-        $(document).ready(function(){
-            $('.slider').slick({
-                autoplay: false,         // Auto slide
-                autoplaySpeed: 2000,    // 2 seconds
-                dots: true,             // Show dots navigation
-                arrows: false,           // Show next/prev arrows
-                infinite: true,         // Looping
-                speed: 500,             // Transition speed
-                slidesToShow: 1,        // Show 1 slide at a time
-                slidesToScroll: 1       // Scroll 1 slide at a time
+    <!-- Project Header Area -->
+    <section class="investment-header section-gap-small">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="investment-intro">
+                        <h2>Our Innovative Projects</h2>
+                        <p class="lead">Explore our groundbreaking innovations and solutions that are changing the world.</p>
+                        <div class="investment-stats">
+                            <div class="stat-item">
+                                <h3>15+</h3>
+                                <p>Projects Launched</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>5</h3>
+                                <p>Countries</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>85%</h3>
+                                <p>Success Rate</p>
+                            </div>
+                        </div>
+                        <a href="#project-list" class="btn btn-success btn-lg mt-4 mr-3">View Projects</a>
+                        <a href="partner.html" class="btn btn-outline-success btn-lg mt-4">Register Your Project</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="investment-image">
+                        <img src="assets/images/project-hero.jpg" alt="Project Innovations" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects List Area -->
+    <section id="project-list" class="investment-area section-gap">
+        <div class="container">
+            <div class="section-header text-center">
+                <p class="section-subtitle">CURRENT PROJECTS</p>
+                <h2>Our Featured Projects</h2>
+                <p class="section-desc">Explore our current innovations and solutions</p>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="investment-card">
+                        <div class="card-badge">Top Rated</div>
+                        <h3>EcoTech Solution</h3>
+                        <p>Sustainable technology platform that reduces carbon footprint for enterprises by 35%</p>
+                        <ul class="features">
+                            <li><span class="check-icon">✓</span> Started: Jan 2023</li>
+                            <li><span class="check-icon">✓</span> Stage: Growth</li>
+                            <li><span class="check-icon">✓</span> Region: North America</li>
+                            <li><span class="check-icon">✓</span> Impact: Environmental</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-success btn-block">Project Details</a>
+                    </div>
+                </div>
                 
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function(){
-            $('.slider1').slick({
-                autoplay: false,         // Auto slide
-                autoplaySpeed: 2000,    // 2 seconds
-                dots: true,             // Show dots navigation
-                arrows: false,           // Show next/prev arrows
-                infinite: true,         // Looping
-                speed: 500,             // Transition speed
-                slidesToShow: 2,        // Show 1 slide at a time
-                slidesToScroll: 1       // Scroll 1 slide at a time
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="investment-card featured">
+                        <div class="card-badge recommended">Featured</div>
+                        <h3>FinLedger</h3>
+                        <p>Blockchain-based financial platform for emerging markets with 200,000+ users</p>
+                        <ul class="features">
+                            <li><span class="check-icon">✓</span> Started: Mar 2022</li>
+                            <li><span class="check-icon">✓</span> Stage: Scaling</li>
+                            <li><span class="check-icon">✓</span> Region: Global</li>
+                            <li><span class="check-icon">✓</span> Impact: Financial Inclusion</li>
+                        </ul>
+                        <a href="#" class="btn btn-success btn-block">Project Details</a>
+                    </div>
+                </div>
                 
-            });
-        });
-    </script>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="investment-card">
+                        <div class="card-badge">New</div>
+                        <h3>HealthAI</h3>
+                        <p>AI-powered diagnostics platform improving healthcare access in rural communities</p>
+                        <ul class="features">
+                            <li><span class="check-icon">✓</span> Started: Oct 2022</li>
+                            <li><span class="check-icon">✓</span> Stage: Validation</li>
+                            <li><span class="check-icon">✓</span> Region: Asia</li>
+                            <li><span class="check-icon">✓</span> Impact: Healthcare</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-success btn-block">Project Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Process Area -->
+    <section class="process-area section-gap bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <p class="section-subtitle">OUR APPROACH</p>
+                <h2>How We Develop Projects</h2>
+                <p class="section-desc">Our systematic approach to turning ideas into impactful solutions</p>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fa fa-lightbulb-o"></i>
+                        </div>
+                        <div class="step-number">01</div>
+                        <h4>Ideation</h4>
+                        <p>We identify problems and brainstorm innovative solutions</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                        <div class="step-number">02</div>
+                        <h4>Prototyping</h4>
+                        <p>We create functional prototypes to test concepts</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <div class="step-number">03</div>
+                        <h4>Validation</h4>
+                        <p>We test with real users and refine our approach</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fa fa-rocket"></i>
+                        </div>
+                        <div class="step-number">04</div>
+                        <h4>Scale</h4>
+                        <p>We build and scale solutions for maximum impact</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best For You Section -->
+    <section class="recommended-area section-gap">
+        <div class="container">
+            <div class="section-header text-center">
+                <p class="section-subtitle">BEST FOR YOU</p>
+                <h2>Recommended Projects</h2>
+                <p class="section-desc">Based on your interests and profile</p>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-6 mb-4">
+                    <div class="recommended-card">
+                        <div class="investor-details text-center">
+                            <img src="assets/images/user3.jpg" alt="User" class="investor-pic">
+                            <h4>Dil An Nhi</h4>
+                            <p>London, UK</p>
+                            <div class="similarity">99% <span>Similarly</span></div>
+                        </div>
+                        <div class="project-details">
+                            <p class="project-description">An AI-driven travel assistant that customizes itineraries based on user preferences, budget, and travel style, integrating real-time weather, local events, and transportation options.</p>
+                            <div class="action-buttons">
+                                <a href="#" class="btn btn-success">Invite</a>
+                                <a href="#" class="btn btn-outline-success">Request</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="section-title mb-4">
+                        <h3>Recommended You</h3>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-4 text-center">
+                            <img src="assets/images/user1.jpg" alt="Ciao Di En" class="rounded-circle" style="width:100px; height:100px;">
+                            <h5 class="mt-3">Ciao Di En</h5>
+                            <p>West Ninh, Canada</p>
+                            <p><strong>99% - Similarly</strong></p>
+                        </div>
+                        <div class="col-md-8">
+                            <p>A travel map with augmented reality (AR) overlays providing real-time navigation, historical insights, and local tips.</p>
+                            <div class="action-buttons">
+                                <a href="#" class="btn btn-success">Invite</a>
+                                <a href="#" class="btn btn-outline-success">Request</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <img src="assets/images/user2.jpg" alt="Feriu Tuoi" class="rounded-circle" style="width:100px; height:100px;">
+                            <h5 class="mt-3">Feriu Tuoi</h5>
+                            <p>Ca Mu, VN</p>
+                            <p><strong>99% - Similarly</strong></p>
+                        </div>
+                        <div class="col-md-8">
+                            <p>A collaborative AI-powered travel map where users can pin locations, share experiences, and receive real-time recommendations.</p>
+                            <div class="action-buttons">
+                                <a href="#" class="btn btn-success">Invite</a>
+                                <a href="#" class="btn btn-outline-success">Request</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Files -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

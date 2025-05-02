@@ -60,51 +60,73 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 		
-		<!--header-top start -->
-					
-		</header><!--/.header-top-->
-		<!--header-top end -->
+		<div class="header-area">
+			<!-- Start Navigation -->
+			<nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+				<div class="container">
+					<!-- Start Header Navigation -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+							<i class="fa fa-bars"></i>
+						</button>
+						<a class="navbar-brand" href="index.html">mates<span>up</span></a>
+					</div><!--/.navbar-header-->
+					<!-- End Header Navigation -->
 
-		<!-- top-area Start -->
-		<section class="top-area">
-			<div class="header-area">
-				<!-- Start Navigation -->
-			    <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+						<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+							<li class="active"><a href="index.html">home</a></li>
+							<li><a href="introduction.html">introduction</a></li>
+							<li><a href="investment.html">investment</a></li>
+							<li><a href="project.html">project</a></li>
+							<li><a href="blog.html">blog</a></li>
+							<li><a href="about.html">about me</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#loginModal">LOG IN</a></li>
+						</ul><!--/.nav -->
+					</div><!-- /.navbar-collapse -->
+				</div><!--/.container-->
+			</nav><!--/nav-->
+			<!-- End Navigation -->
+		</div><!--/.header-area-->
+		<div class="clearfix"></div>
 
-			        <div class="container">
+		 <!-- Add Login Modal -->
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="loginModalLabel">Login to MatesUp</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <form id="loginForm" action="project.html">
+		          <div class="form-group">
+		            <label for="email">Email address</label>
+		            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+		          </div>
+		          <div class="form-group">
+		            <label for="password">Password</label>
+		            <input type="password" class="form-control" id="password" placeholder="Password" required>
+		          </div>
+		          <div class="form-check">
+		            <input type="checkbox" class="form-check-input" id="rememberMe">
+		            <label class="form-check-label" for="rememberMe">Remember me</label>
+		          </div>
+		          <button type="submit" class="btn btn-success btn-block mt-4">Login</button>
+		        </form>
+		        <div class="text-center mt-3">
+		          <a href="#" class="text-muted">Forgot password?</a>
+		          <p class="mt-2">Don't have an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</a></p>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 
-			            <!-- Start Header Navigation -->
-			            <div class="navbar-header">
-			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-			                    <i class="fa fa-bars"></i>
-			                </button>
-			                <a class="navbar-brand" href="index.html">mates<span>up</span></a>
-
-			            </div><!--/.navbar-header-->
-			            <!-- End Header Navigation -->
-
-			            <!-- Collect the nav links, forms, and other content for toggling -->
-			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-			                <ul style="margin-left: 50px;" class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-			                    <li class=" scroll active"><a href="#home">home</a></li>
-			                    <li class="scroll"><a href="#works">introduction</a></li>
-			                    <li class="scroll"><a href="#explore">investment</a></li>
-			                    <li class="scroll"><a href="#reviews">project</a></li>
-			                    <li class="scroll"><a href="#blog">blog</a></li>
-			                    <li class="scroll"><a href="#contact">about me</a></li>
-								<li class="login"><a style="padding: 10px 24px; font-size: 24px; color: white" href="login.html">Log in</a></li>
-			                </ul><!--/.nav -->
-			            </div><!-- /.navbar-collapse -->
-			        </div><!--/.container-->
-			    </nav><!--/nav-->
-			    <!-- End Navigation -->
-			</div><!--/.header-area-->
-		    <div class="clearfix"></div>
-
-		</section><!-- /.top-area-->
-		<!-- top-area End -->
-
-		<!--welcome-hero start -->
+		 <!--welcome-hero start -->
 		<section id="home" class="welcome-hero">
 			<div class="container">
 				<div class="welcome-hero-txt">
@@ -259,7 +281,6 @@
 		
 		</section><!--/.works-->
 		<!--works end -->
-		<!--explore start đâsdasdasdasdasdasdasdasddasdasdasdasdasdasdasdasdadasdasdasdasdawdsawdsawdsawdsawdsawdsawdsadaasdasdasdasdasdasdasdmmn  m nmmnnfjnjakndasfmmdgmmmjmjmjmmjmjmjmjmjmjf mmjdasmjnmmmmmmmvmmndmlkmmbm cnb jvfjfmfjmjfv fdgdmfgjdfgdfjgdfmgjdfđámlá;ldmas;ldmas;lfmds;lmds;lfds;fkds;lfksd;fks;ldfks;ldkf;ldskf;ldskf;ldskfdsk;lfdsfk;ldsfkdsk;lfdsk;lfdskfkldsfk;ldsfkds;ld;lskfs;ldk;cm;ascmas;cmas;lcas098unjsfndm jdnbvnvb bv vjmjd vh,djhmdnhvmcjcmasjmasdmashfkmdsfkdsfhdsjfifrmgfjgflgbpguy;hlcvncvmds,vds,fdlfds,fsdf,sdaf,asdmfadsklf;kladsfk;ladsfk;ladfsklkdsfklsadfk;lsdk;lfsk;ldafk;ladsfk;ladsfk;ldsafk;ladsflsadfsadfkl;asdfkl;sdfsadfsadflkk;lfadsk;lfask;ldfaskdf;lkdas;lfks;ladfk;lsadfk;ladsflsadfk;lkl;kl;k;lk;lfk;lsdfkds;lfk;asldfk;aslfkas;lfk;lasdfkas;ldfkas;ldfkas;ldfk;lasdfk;ldskf;ladskfl;klk;ladsfkl;asdfk;lsadkf;ladskf;lkasd;lfkas;ldfk;lasdfk;lasdfk;lasdkf;lsdkf;lksdf;lkasdf;lkad;lfdsa;lfkas;ldfk;lasdkf;lsdkf;ldskaf;lkadsf;lkas;ldfk;lsadkđấldsllasdannndnasdnasndasndnasdhasndhasdnashdansdhadnasndnasdnasdnasdnas-->
 		<!--explore start -->
 		<section id="explore" class="explore">
 			<div class="container">
