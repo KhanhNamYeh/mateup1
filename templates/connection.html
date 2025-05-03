@@ -1,273 +1,300 @@
+<!-- filepath: templates/connection.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Connection - MatesUp</title>
-    
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/startup-ui.css"> <!-- Include if needed for styling -->
+    <title>Connections</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css"> <!-- Adjust path as needed -->
+    <!-- Font Awesome for Icons (Optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        .profile-summary { background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
-        .profile-summary h4 { margin-bottom: 15px; }
-        .profile-summary .skills span { background-color: #e9ecef; padding: 5px 10px; border-radius: 15px; margin-right: 5px; margin-bottom: 5px; display: inline-block; font-size: 14px; }
-        .shared-projects .project-item { border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px; }
-        .shared-projects .project-item:last-child { border-bottom: none; margin-bottom: 0; }
-        .connection-avatar img { width: 120px; height: 120px; border: 4px solid #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 15px; }
-        .connection-header { margin-bottom: 40px; }
+        /* Custom styles for connection page */
+        .section-gap {
+            padding: 60px 0;
+        }
+        #pendingRequestsSection {
+             background-color: #fff3cd; /* Lighter yellow for pending requests */
+             border-radius: 8px;
+             margin-bottom: 30px; /* Space below pending requests */
+             padding: 30px 0; /* Adjusted padding */
+        }
+        .list-group-item {
+            margin-bottom: 10px;
+            border-radius: .25rem; /* Bootstrap default */
+            border-color: #dee2e6;
+        }
+        .accept-request-btn {
+            margin-left: 10px;
+        }
+        #sharedTodoSection .card-header { /* Style the card header if using cards */
+            background-color: #f8f9fa;
+        }
+        .todo-list-item {
+            margin-bottom: 1.75rem !important; /* More space between todo lists */
+            padding: 1.25rem; /* Padding inside the list item */
+            border: 1px solid #dee2e6;
+            border-radius: .25rem;
+            background-color: #fff;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+        }
+        .task-item {
+            padding: 0.3rem 0; /* Add some padding to task items */
+            border-bottom: 1px solid #eee; /* Separator line */
+        }
+        .task-item:last-child {
+            border-bottom: none; /* No line for the last item */
+        }
+        .task-item.task-done .form-check-label {
+            text-decoration: line-through;
+            color: #6c757d !important; /* Bootstrap's muted color */
+            font-style: italic;
+        }
+        .progress {
+            height: 10px; /* Make progress bar slimmer */
+            margin-top: 1rem; /* Add some space above progress bar */
+            margin-bottom: 0.25rem; /* Space below progress bar */
+            background-color: #e9ecef; /* Lighter background for progress bar */
+        }
+        .progress-text {
+            font-size: 0.8em; /* Smaller text for percentage */
+            color: #6c757d;
+        }
+        .form-check-input {
+            cursor: pointer; /* Indicate checkbox is clickable */
+            margin-top: 0.2rem; /* Align checkbox better */
+        }
+        .form-check-label {
+            margin-left: 0.5rem; /* Space between checkbox and label */
+        }
+        .add-task-btn {
+            font-size: 0.85em; /* Slightly larger add task button */
+        }
+        .task-actions { /* Container for buttons if needed later */
+            margin-left: auto; /* Push actions to the right */
+            padding-left: 10px;
+        }
+        .no-tasks-msg {
+            padding: 0.5rem 0;
+        }
+        /* Spinner alignment */
+        .spinner-border-sm {
+            vertical-align: text-bottom;
+        }
+        .congratulations-banner {
+            background: linear-gradient(135deg, #4CAF50, #8BC34A);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .congratulations-text {
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        .dismiss-congrats {
+            background: rgba(255,255,255,0.3);
+            border: none;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes celebrate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .celebrate {
+            animation: celebrate 0.5s ease-in-out;
+        }
+        
+        /* Connection styling */
+        #connectionsSection {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        
+        .badge {
+            font-size: 0.75rem;
+        }
     </style>
 </head>
-<body>
-    <div class="header-area">
-        <!-- Start Navigation -->
-        <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+<!-- Pass username from Jinja2 if available -->
+<body data-username="{{ username if is_logged_in else '' }}">
+
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
             <div class="container">
-                <!-- Start Header Navigation -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="index.html">mates<span>up</span></a>
-                </div><!--/.navbar-header-->
-                <!-- End Header Navigation -->
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a href="index.html">home</a></li>
-                        <li><a href="introduction.html">introduction</a></li>
-                        <li><a href="investment.html">investment</a></li>
-                        <!-- Assuming connection is related to project -->
-                        <li class="active"><a href="project.html">project</a></li>
-                        <li><a href="blog.html">blog</a></li>
-                        <li><a href="about.html">about me</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#loginModal">LOG IN</a></li>
-                    </ul><!--/.nav -->
-                </div><!-- /.navbar-collapse -->
-            </div><!--/.container-->
-        </nav><!--/nav-->
-        <!-- End Navigation -->
-    </div><!--/.header-area-->
-    <div class="clearfix"></div>
-
-    <!-- Success Message Area -->
-    <section class="success-message">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 bg-success p-4">
-                    <h3 class="text-white"><i class="fa fa-check-circle"></i> Connection Established</h3>
+                <div class="banner_content text-center">
+                    <h2>Connections</h2>
+                    <div class="page_link">
+                        <a href="/">Home</a>
+                        <a href="/connection">Connections</a>
+                        <!-- Dynamically add partner name if viewing specific connection -->
+                        <span id="breadcrumbPartnerName"></span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- ================ End Banner Area ================= -->
 
-    <!-- Connection Details -->
-    <section class="connection-section section-gap">
+
+    <!-- Area to display pending connection requests -->
+    <section id="pendingRequestsSection" style="display: none;"> <!-- Removed section-gap, handled by container padding -->
+        <div class="container">
+            <h3 class="text-center mb-4">Pending Connection Requests</h3>
+            <div id="pendingRequestsList" class="list-group col-md-8 offset-md-2">
+                <!-- Pending requests will be loaded here by JavaScript -->
+                <p class="text-center text-muted">Loading requests...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Display all connections -->
+    <section id="connectionsSection" style="display: none;">
+        <div class="container">
+            <h3 class="text-center mb-4">Your Active Connections</h3>
+            <div id="connectionsList" class="list-group col-md-8 offset-md-2">
+                <!-- Active connections will be loaded here -->
+                <p class="text-center text-muted">Loading connections...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Connection Details Section -->
+    <section class="connection-section section-gap" style="padding-top: 30px;"> <!-- Adjusted top padding -->
+        <div class="container">
+            <h2 class="text-center mb-4" id="connectionSectionTitle">Your Connections</h2>
+            <div id="connectionInfo" class="text-center mb-5"> <!-- Increased bottom margin -->
+                 <p id="connectionDetailsDisplay" class="lead text-muted">Manage your connections and shared tasks.</p>
+                 <!-- This section might list all connections or show details for one -->
+            </div>
+
+
+            <!-- Placeholder for Shared ToDo Lists (shown if viewing a specific connection) -->
+            <div id="sharedTodoSection" class="mt-4" style="display: none;">
+                <div class="mb-3">
+                    <button id="backToConnectionsBtn" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left mr-1"></i> Back to Connections
+                    </button>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3"> <!-- Increased spacing -->
+                    <h4 class="mb-0">Shared To-Do Lists with <span id="todoPartnerName" class="font-weight-bold">User</span></h4>
+                    <button id="createTodoListBtn" class="btn btn-sm btn-primary">
+                        <i class="fas fa-plus mr-1"></i> Create New List
+                    </button>
+                </div>
+                <div id="sharedTodoLists">
+                    <!-- Shared lists will be loaded here -->
+                    <p id="noSharedListsMsg" class="text-center text-muted" style="display: none;">No shared to-do lists yet.</p>
+                    <div class="text-center" id="loadingSharedListsMsg"><p class="text-muted">Loading shared lists...</p></div>
+                </div>
+            </div>
+
+             <!-- Create ToDo List Modal -->
+            <div class="modal fade" id="createTodoListModal" tabindex="-1" role="dialog" aria-labelledby="createTodoListModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="createTodoListModalLabel">Create New To-Do List</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="createTodoListForm">
+                                <div class="form-group">
+                                    <label for="todoListTitle">List Title</label>
+                                    <input type="text" class="form-control" id="todoListTitle" placeholder="Enter list title" required>
+                                </div>
+                                <input type="hidden" id="todoPartnerUsername">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" id="saveTodoListBtn">Create List</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Add Task Modal -->
+            <div class="modal fade" id="addTaskModal" tabindex="-1" role="dialog" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addTaskModalLabel">Add New Task</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="addTaskForm">
+                                <div class="form-group">
+                                    <label for="taskTitle">Task Title</label>
+                                    <input type="text" class="form-control" id="taskTitle" placeholder="Enter task description" required>
+                                </div>
+                                <input type="hidden" id="addTaskModalListId"> <!-- Stores the list ID -->
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" id="saveTaskBtn">Add Task</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================ Start Footer Area ================= -->
+    <footer class="footer-area section_gap">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="connection-header text-center">
-                        <div class="connection-avatar">
-                            <img src="assets/images/user-placeholder.jpg" alt="Connection User" id="connectionAvatar" class="rounded-circle">
-                        </div>
-                        <h2 id="connectionTitle">You are now connected with <span id="connectionName">User</span></h2>
-                        <p class="text-muted" id="connectionLocation">Location, Industry</p>
-                        <p class="text-muted" id="connectionInfo">Start collaborating on projects together</p>
-                    </div>
-
-                    <!-- Profile Summary -->
-                    <div class="profile-summary">
-                         <h4>Profile Summary</h4>
-                         <p id="profileBio">Brief bio about the connected user. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                         <div class="skills">
-                             <strong>Skills:</strong>
-                             <span id="skill1">Skill 1</span>
-                             <span id="skill2">Skill 2</span>
-                             <span id="skill3">Skill 3</span>
-                             <span id="skill4">Skill 4</span>
-                         </div>
-                         <div class="interests mt-2">
-                             <strong>Interested In:</strong> <span id="userInterests">Project types, industries, collaboration styles...</span>
-                         </div>
-                    </div>
-
-                    <!-- Collaboration Options -->
-                    <div class="connection-options mt-4">
-                         <h4 class="text-center mb-4">Collaboration Tools</h4>
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100 shadow-sm">
-                                    <div class="card-body text-center">
-                                        <i class="fa fa-list-ul fa-3x text-success mb-3"></i>
-                                        <h5>Create a Todo List</h5>
-                                        <p>Collaborate on tasks and track progress for your shared project.</p>
-                                        <a href="clist.html" class="btn btn-success btn-block mt-3">Go to Task List</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="card h-100 shadow-sm">
-                                    <div class="card-body text-center">
-                                        <i class="fa fa-graduation-cap fa-3x text-info mb-3"></i>
-                                        <h5>View Suggested Courses</h5>
-                                        <p>Discover courses that can enhance your skills for this collaboration.</p>
-                                        <a href="course.html" class="btn btn-info btn-block mt-3">View Courses</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Shared Projects (Placeholder) -->
-                    <div class="card mt-4 shadow-sm">
-                        <div class="card-header bg-light">
-                            <h4 class="mb-0">Shared Projects / History</h4>
-                        </div>
-                        <div class="card-body shared-projects">
-                            <div class="project-item">
-                                <h5>Project Alpha (In Progress)</h5>
-                                <p>Brief description of the shared project or past collaboration. Status: 75% Complete.</p>
-                                <a href="clist.html?project=alpha" class="btn btn-sm btn-outline-secondary">View Tasks</a>
-                            </div>
-                            <div class="project-item">
-                                <h5>Project Beta (Completed)</h5>
-                                <p>Another shared project or past collaboration. Completed on [Date].</p>
-                            </div>
-                            <p class="text-muted text-center mt-3">No shared projects yet.</p> <!-- Show this if no projects -->
-                        </div>
-                    </div>
-
-                    <!-- Communication -->
-                    <div class="card mt-4 shadow-sm">
-                        <div class="card-header bg-light">
-                            <h4 class="mb-0">Communication</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="contact-options mb-4">
-                                <h5 class="mb-3">Contact Options</h5>
-                                <div class="row">
-                                    <div class="col-md-4 mb-3">
-                                        <a href="#" class="btn btn-outline-primary btn-block">
-                                            <i class="fa fa-envelope"></i> Send Email
-                                        </a>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <a href="#" class="btn btn-outline-secondary btn-block disabled">
-                                            <i class="fa fa-phone"></i> Call (Not Available)
-                                        </a>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <a href="#" class="btn btn-outline-info btn-block">
-                                            <i class="fa fa-video-camera"></i> Schedule Video Chat
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="quick-message">
-                                <h5>Send a Quick Message</h5>
-                                <form>
-                                    <div class="form-group">
-                                        <textarea class="form-control" rows="3" placeholder="Type your message here..."></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-success">Send Message</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-12">
+                    <p class="footer-text text-center">
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | MateUp
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
+    </footer>
+    <!-- ================ End Footer Area ================= -->
 
-    <!-- JavaScript Files -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/popper.js"></script> <!-- Ensure Popper.js is included if using Bootstrap tooltips/popovers -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootsnav.js"></script> <!-- If using bootsnav -->
-    <script src="assets/js/main.js"></script> <!-- Your custom main JS -->
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get connection details from localStorage
-            const connectionName = localStorage.getItem('connectionName') || 'Partner';
-            const connectionUserId = localStorage.getItem('connectionUserId'); // Get user ID if stored
-
-            document.getElementById('connectionName').textContent = connectionName;
-
-            // --- Placeholder Data based on Name/ID ---
-            // In a real app, you'd fetch this data from a server using the connectionUserId
-            let location = "Unknown Location";
-            let industry = "Various Industries";
-            let bio = "A passionate individual looking for collaboration opportunities.";
-            let skills = ["Skill A", "Skill B", "Skill C"];
-            let interests = "Technology, Travel, Sustainability";
-            let avatar = "assets/images/user-placeholder.jpg";
-
-            if (connectionName.includes('Ciao Di En')) {
-                avatar = 'assets/images/clients/c6.png'; // Use correct image path
-                location = "West Ninh, Canada";
-                industry = "Travel Tech, AR/VR";
-                bio = "Expert in AR/VR development and travel tech. Looking for innovative projects involving interactive maps and AI assistants.";
-                skills = ["AR/VR Dev", "AI", "Mobile Apps", "UX Design"];
-                interests = "AI Assistants, Interactive Maps, Food Tech";
-            } else if (connectionName.includes('Feriu Tuoi')) {
-                avatar = 'assets/images/clients/c2.png'; // Use correct image path
-                location = "Ca Mu, VN";
-                industry = "AI Platforms, Collaboration Tools";
-                bio = "Specializes in AI-powered platforms and collaborative tools. Seeking partners for travel projects focused on social recommendations.";
-                skills = ["AI/ML", "Platform Dev", "Social APIs", "Data Analysis"];
-                interests = "Collaborative Platforms, Social Travel, Big Data";
-            } else if (connectionName.includes('Dil An Nhi')) {
-                 avatar = 'assets/images/clients/c7.png'; // Use correct image path
-                 location = "London, UK";
-                 industry = "AI, Travel Tech";
-                 bio = "Focused on AI-driven travel assistants, optimizing itineraries with real-time data and suggesting unique experiences.";
-                 skills = ["AI Personalization", "API Integration", "Data Science", "UX Research"];
-                 interests = "Personalized Travel, Real-time Data, Hidden Gems";
-            } else if (connectionName.includes('Khoa Nam Nguyen')) {
-                 avatar = 'assets/images/clients/c1.png'; // Use correct image path
-                 location = "Ben Tre, VN";
-                 industry = "Game Development, Storytelling";
-                 bio = "Experienced in campaign-style game development with a focus on narrative and character recruitment.";
-                 skills = ["Game Design", "Narrative Design", "Unity/Unreal", "Project Management"];
-                 interests = "Space Adventures, RPGs, Character Development";
-            }
-            // --- End Placeholder Data ---
-
-
-            document.getElementById('connectionAvatar').src = avatar;
-            document.getElementById('connectionLocation').textContent = `${location}, ${industry}`;
-            document.getElementById('profileBio').textContent = bio;
-            document.getElementById('userInterests').textContent = interests;
-
-            // Populate skills dynamically
-            const skillsContainer = document.querySelector('.profile-summary .skills');
-            // Clear existing placeholder skills first if needed
-            skillsContainer.querySelectorAll('span[id^="skill"]').forEach(span => span.remove());
-            skills.forEach(skill => {
-                const span = document.createElement('span');
-                span.textContent = skill;
-                skillsContainer.appendChild(span);
-            });
-
-
-            // Set the connection message if exists
-            const connectionMessage = localStorage.getItem('connectionMessage');
-            if (connectionMessage) {
-                document.getElementById('connectionInfo').textContent = 'Initial Message: "' + connectionMessage + '"';
-            } else {
-                 document.getElementById('connectionInfo').textContent = 'You connected via recommendation.'; // Default if no message
-            }
-
-            // Clear message from localStorage after displaying it? Optional.
-            // localStorage.removeItem('connectionMessage');
-        });
-    </script>
+    <!-- ================ Optional JavaScript ================= -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome Script (if using icons) -->
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+    <script src="/static/assets/js/connection.js"></script>
 </body>
 </html>

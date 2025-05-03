@@ -9,6 +9,11 @@
             "username": "abc",
             "email": "abc123@gmail.com",
             "password": "123456"
+        },
+        {
+            "username": "ab",
+            "email": "abc12@gmail.com",
+            "password": "123456"
         }
     ],
     "projects": [
@@ -107,7 +112,53 @@
             "from": "abc",
             "to": "admin",
             "project_id": 3,
-            "status": false
+            "status": true
+        },
+        {
+            "id": 2,
+            "from": "ab",
+            "to": "abc",
+            "project_id": 1,
+            "status": true
+        }
+    ],
+    "connections": [
+        {
+            "id": 1,
+            "users": [
+                "abc",
+                "admin"
+            ],
+            "project_id": 3,
+            "todolist_id": 1
+        },
+        {
+            "id": 2,
+            "users": [
+                "ab",
+                "abc"
+            ],
+            "project_id": 1
+        }
+    ],
+    "todolists": [
+        {
+            "id": 1,
+            "title": "first",
+            "project_id": null,
+            "users": [
+                "ab",
+                "abc"
+            ],
+            "tasks": [
+                {
+                    "id": 1,
+                    "title": "123",
+                    "status": true,
+                    "description": null,
+                    "dueDate": null
+                }
+            ]
         }
     ]
 }
