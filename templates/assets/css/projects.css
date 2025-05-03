@@ -1,0 +1,237 @@
+:root {
+    --primary-color: #28a745;
+    --primary-light: #48c267;
+    --primary-dark: #1e7e34;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+    color: #333;
+}
+
+/* Projects section styling */
+.project-page-title {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+.project-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.project-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card .btn {
+    margin-top: auto;
+}
+
+.project-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-card h5 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.project-card .badge {
+    background-color: var(--primary-light);
+    color: white;
+    font-weight: 500;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+}
+
+.project-card .progress {
+    height: 8px;
+    margin: 15px 0 8px;
+}
+
+.project-card .progress-bar {
+    background-color: var(--primary-color);
+}
+
+.btn-view-project {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-view-project:hover {
+    background-color: var(--primary-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-create-project {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
+}
+
+.btn-create-project:hover {
+    background-color: var(--primary-dark);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.25);
+}
+
+.filter-btn {
+    background: white;
+    border: 1px solid #eee;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.project-modal .modal-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-bottom: none;
+}
+
+.project-modal .modal-footer {
+    border-top: none;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.project-search {
+    border-radius: 30px;
+    padding-left: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.spinner-border {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: text-bottom;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
+}
+
+@keyframes spinner-border {
+    to { transform: rotate(360deg); }
+}
+
+/* Add this at the end of your existing CSS file */
+
+/* Connection Button Styles */
+.connect-btn, .connect-detail-btn {
+    transition: all 0.3s ease;
+}
+
+.connect-btn.btn-success, .connect-detail-btn.btn-success {
+    cursor: default;
+}
+
+/* Notification System */
+.notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 25px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1050;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notification.success {
+    background-color: #28a745;
+}
+
+.notification.error {
+    background-color: #dc3545;
+}
+
+/* Project Card Adjustments */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.creator-info {
+    flex: 1;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.view-project-btn {
+    flex: 0 0 auto;
+}
+
+.connect-btn {
+    flex: 0 0 auto;
+}

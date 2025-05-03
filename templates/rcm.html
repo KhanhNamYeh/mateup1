@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        
+        <!-- title of site -->
+        <title>Directory Landing Page</title>
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/grass.png"/>
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/linearicons.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/flaticon.css">
+        <link rel="stylesheet" href="assets/css/slick.css">
+		<link rel="stylesheet" href="assets/css/slick-theme.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        /*  Gợi ý màu:
+
+            + Nền body: #fff8df
+            + Nút 'Register': #dd2c2c
+            + Nút 'Reset': #e3a73f
+            + Chữ báo lỗi (error message): #bc1313
+            + nền input khi hover: #fff5cf
+            + nền input khi focus: #f3de8e
+            + viền input khi focus: #d97000
+
+        */
+
+        form {
+            font-family: 'Times New Roman', Times, serif;
+            padding: 40px;
+            height: 800px;
+            background-color: #282a35;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .content {
+            color: white;
+            width: 100%;
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #02880f;
+            box-shadow: 0 0 100px rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            float: left;
+            
+        }
+
+        .content1 {
+            padding-left: 10%;
+            width: 90%;
+            padding-top: 50px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 10px;
+            float: left;
+        }
+
+        .board1 {
+            padding-left: 20px;
+            width: 50%;
+            float: left;
+        }
+        .board2 {
+            width: 50%;
+            float: left;
+        }
+
+        .board3 {
+            padding: 10px;
+            padding-top: 20px;
+            width: 50%;
+            float: left;
+        }
+        @keyframes colorChange {
+            0% { background-color: white; color: #059c14;} /* Green */
+            25% { background-color: white; color: #059c14; } /* Orange */
+            50% { background-color: white; color: #059c14;} /* Blue */
+            75% { background-color: white;color: #059c14;} /* Pink */
+            100% { background-color: white; color: #059c14;} /* Green */
+        }
+        .button {
+            background-color: #059c14; /* Green */
+            color: white;
+            border-radius: 25px;
+            padding: 10px 14px;
+            margin-right: 10px;
+            transition: 1s;
+        }
+        .button:hover {
+            background-color: #ffffff; /* Green */
+            color: #059c14;
+            border-radius: 25px;
+            border-radius: 2px solid #059c14;
+            padding: 10px 14px;
+            margin-right: 10px;
+            animation: colorChange 4s infinite;
+        }
+        .tick {
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            border-radius: 50px solid #059c14;
+            background-color: white;
+            color: #059c14;
+            padding: 10px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-area">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">mates<span>up</span></a>
+                </div><!--/.navbar-header-->
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="introduction.html">introduction</a></li>
+                        <li><a href="investment.html">investment</a></li>
+                        <!-- Assuming rcm is related to project -->
+                        <li class="active"><a href="project.html">project</a></li>
+                        <li><a href="blog.html">blog</a></li>
+                        <li><a href="about.html">about me</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#loginModal">LOG IN</a></li>
+                    </ul><!--/.nav -->
+                </div><!-- /.navbar-collapse -->
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        <!-- End Navigation -->
+    </div><!--/.header-area-->
+    <div class="clearfix"></div>
+
+        <div class="content">✓ Congratulation, you have registered successfully</div>
+        <div class="content1" style="background-color: white; color: rgb(106, 106, 106)">
+            <div class="board1">
+                <h1>Best for you</h1>
+                <div class="single-testimonial-box" style="width: 100%; padding: 0; margin-top: 20px;">
+                    <img src="assets/images/explore/b4.jpg" width="100%" height="100px">
+                    <div class="testimonial-description" style="padding: 10px; padding-left: 25px;">
+                        <div class="testimonial-info">
+                            <div class="testimonial-img">
+                                <img src="assets/images/clients/c7.png" width="50px" height="50px" alt="clients">
+                            </div><!--/.testimonial-img-->
+                            <div class="testimonial-person">
+                                <div class="explore-map-icon">
+                                    <a style="font-size: 20px">Dil An Nhi</a>
+                                    <a href="#"><i data-feather="map-pin"></i></a>
+                                    <a>London, UK</a>
+                                    <a style="padding-left: 20px; margin-bottom: 5px">Similarly: 99%</a>
+                                </div>
+                            </div><!--/.testimonial-person-->
+                        </div><!--/.testimonial-info-->
+                        <div class="testimonial-comment">
+                            <p>
+                                An AI-driven travel assistant that customizes itineraries based on user preferences, budget, and travel style, integrating real-time weather, local events, and transportation data to optimize plans dynamically while suggesting hidden gems and off-the-beaten-path experiences.
+                            </p>
+                        </div>
+                        <div style="padding-top: 10px">
+                            <a class="button connect-btn" data-name="Dil An Nhi">Invite</a>
+                            <a class="button request-btn" href="connection.html" data-name="Dil An Nhi" data-user-id="1">Request</a>
+                        </div><!--/.testimonial-comment-->
+                    </div><!--/.testimonial-description-->
+                </div>
+            </div>
+            <div class="board2">
+                <h1 style="margin-left: 20px">Recommended you</h1>
+                <div class="board3">
+                    <div class="single-testimonial-box" style="width: 100%; margin-right:5px">
+                        <div class="testimonial-description">
+                            <div class="testimonial-info">
+                                <div class="testimonial-img">
+                                    <img src="assets/images/clients/c6.png" width="50px" height="50px" alt="clients">
+                                </div><!--/.testimonial-img-->
+                                <div class="testimonial-person">
+                                    <h2>Ciao Di En</h2>
+                                    <h4>West Ninh, Canada</h4>
+                                    <a style="margin-top: 5px">99% - similarly</a>
+                                </div><!--/.testimonial-person-->
+                            </div><!--/.testimonial-info-->
+                            <div class="testimonial-comment">
+                                <p>
+                                    A travel map with augmented reality (AR) overlays providing real-time navigation, historical insights, and local tips, featuring an AI-powered voice assistant for interactive walking tours, translation, and food recommendations.
+                                </p>
+                            </div>
+                            <div style="padding-top: 10px">
+                                <a class="button connect-btn" data-name="Ciao Di En">Invite</a>
+                                <a class="button request-btn" href="connection.html" data-name="Ciao Di En" data-user-id="2">Request</a>
+                            </div><!--/.testimonial-comment-->
+                        </div><!--/.testimonial-description-->
+                    </div>
+                </div>
+                <div class="board3">
+                    <div class="single-testimonial-box" style="width: 100%;">
+                        <div class="testimonial-description">
+                            <div class="testimonial-info">
+                                <div class="testimonial-img">
+                                    <img src="assets/images/clients/c2.png" width="50px" height="50px" alt="clients">
+                                </div><!--/.testimonial-img-->
+                                <div class="testimonial-person">
+                                    <h2>Feriu Tuoi</h2>
+                                    <h4>Ca Mu, VN</h4>
+                                    <a style="margin-top: 5px">99% - similarly</a>
+                                </div><!--/.testimonial-person-->
+                            </div><!--/.testimonial-info-->
+                            <div class="testimonial-comment">
+                                <p>A collaborative AI-powered travel map where users can pin locations, share experiences, and receive real-time recommendations based on trending destinations, social media check-ins, and friends' travel histories</p>
+                            </div>
+                            <div style="padding-top: 10px">
+                                <a class="button connect-btn" data-name="Feriu Tuoi">Invite</a>
+                                <a class="button request-btn" href="connection.html" data-name="Feriu Tuoi" data-user-id="3">Request</a>
+                            </div><!--/.testimonial-comment-->
+                        </div><!--/.testimonial-description-->
+                    </div>
+                </div>
+                <div class="board3" style="padding-top: 10px">
+                    <div class="single-testimonial-box" style="width: 100%;">
+                        <div class="testimonial-description">
+                            <div class="testimonial-info">
+                                <div class="testimonial-img">
+                                    <img src="assets/images/clients/c1.png" width="50px" height="50px" alt="clients">
+                                </div><!--/.testimonial-img-->
+                                <div class="testimonial-person">
+                                    <h2>Khoa Nam Nguyen</h2>
+                                    <h4>Ben Tre, VN</h4>
+                                    <a style="margin-top: 5px">99% - similarly</a>
+                                </div><!--/.testimonial-person-->
+                            </div><!--/.testimonial-info-->
+                            <div class="testimonial-comment">
+                                <p>
+                                    Embark on a campaign-style space adventure, progressing along a continued storyline over multiple sessions.  Travel the stars discovering new planets, collecting bounties on wanted fugitives, and forging alliances with rival stellar factions!  Along the way, your squad will recruit fearsome renegades, outlandish aliens, and elusive agents to join your starship's crew.
+                                </p>
+                            </div>
+                            <div style="padding-top: 10px">
+                                <a class="button connect-btn" data-name="Khoa Nam Nguyen">Invite</a>
+                                <a class="button request-btn" href="connection.html" data-name="Khoa Nam Nguyen" data-user-id="4">Request</a>
+                            </div><!--/.testimonial-comment-->
+                        </div><!--/.testimonial-description-->
+                    </div>
+                </div>
+                <div class="board3" style="padding-top: 10px">
+                    <div class="single-testimonial-box" style="width: 100%;">
+                        <div class="testimonial-description">
+                            <div class="testimonial-info">
+                                <div class="testimonial-img">
+                                    <img src="assets/images/clients/c6.png" width="50px" height="50px" alt="clients">
+                                </div><!--/.testimonial-img-->
+                                <div class="testimonial-person">
+                                    <h2>Ciao Di En</h2>
+                                    <h4>West Ninh, Canada</h4>
+                                    <a style="margin-top: 5px">99% - similarly</a>
+                                </div><!--/.testimonial-person-->
+                            </div><!--/.testimonial-info-->
+                            <div class="testimonial-comment">
+                                <p>
+                                    The Glumdark book does not contain a single piece of AI-Generated content. We made it all with our grubby little hands and unfortunate brains.
+                                </p>
+                            </div>
+                            <div style="padding-top: 10px">
+                                <a class="button connect-btn" data-name="Ciao Di En">Invite</a>
+                                <a class="button request-btn" href="connection.html" data-name="Ciao Di En" data-user-id="5">Request</a>
+                            </div><!--/.testimonial-comment-->
+                        </div><!--/.testimonial-description-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content"></div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Display project details from localStorage
+            if(localStorage.getItem('projectName')) {
+                document.getElementById('yourProjectName').textContent = localStorage.getItem('projectName');
+                document.getElementById('yourProjectCategory').textContent = localStorage.getItem('projectCategory');
+                document.getElementById('yourProjectDesc').textContent = localStorage.getItem('projectDescription');
+            } else {
+                // Default text if no project submitted
+                document.getElementById('yourProjectName').textContent = "No Project Submitted";
+                document.getElementById('yourProjectCategory').textContent = "N/A";
+                document.getElementById('yourProjectDesc').textContent = "Please register your project first.";
+            }
+            
+            // Add event listeners to all connect buttons ("Invite" buttons)
+            const connectButtons = document.querySelectorAll('.connect-btn');
+            connectButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const name = this.getAttribute('data-name');
+                    document.getElementById('connectName').textContent = name;
+                    $('#connectModal').modal('show');
+                });
+            });
+
+            // Update request button functionality ("Request" buttons)
+            const requestButtons = document.querySelectorAll('.request-btn');
+            requestButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const name = this.getAttribute('data-name');
+                    const userId = this.getAttribute('data-user-id'); // Assuming you might need this later
+                    localStorage.setItem('connectionName', name);
+                    localStorage.setItem('connectionUserId', userId); // Store user ID if needed
+                    // Redirect to connection.html
+                    window.location.href = 'connection.html';
+                });
+            });
+            
+            // Handle connection request submission from modal ("Invite" flow)
+            document.getElementById('sendRequest').addEventListener('click', function() {
+                const name = document.getElementById('connectName').textContent;
+                localStorage.setItem('connectionName', name);
+                localStorage.setItem('connectionMessage', document.getElementById('connectMessage').value);
+                // Redirect to connection.html
+                window.location.href = 'connection.html';
+            });
+        });
+        </script>
+
+    <script src="assets/js/jquery.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+</body>
+</html>

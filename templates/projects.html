@@ -1,0 +1,254 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <title>MatesUp - Projects</title>
+    <link rel="shortcut icon" type="image/icon" href="static/assets/logo/grass.png" />
+    <link rel="stylesheet" href="static/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/assets/css/linearicons.css">
+    <link rel="stylesheet" href="static/assets/css/animate.css">
+    <link rel="stylesheet" href="static/assets/css/flaticon.css">
+    <link rel="stylesheet" href="static/assets/css/slick.css">
+    <link rel="stylesheet" href="static/assets/css/slick-theme.css">
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/assets/css/bootsnav.css">
+    <link rel="stylesheet" href="static/assets/css/style.css">
+    <link rel="stylesheet" href="static/assets/css/responsive.css">
+    <link rel="stylesheet" href="static/assets/css/projects.css">
+    
+    <!-- Custom CSS for green and white theme -->
+    <style>
+        
+    </style>
+</head>
+<body data-is-logged-in="{% if is_logged_in %}true{% else %}false{% endif %}" data-username="{{ username }}">
+    <!-- Keep original header-area - NO CHANGES -->
+    <div class="header-area">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">mates<span>up</span></a>
+                </div><!--/.navbar-header-->
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="investment.html">investment</a></li>
+                        <li class="active"><a href="projects">project</a></li>
+                        <li><a href="blog.html">blog</a></li>
+                        <li><a href="about.html">about me</a></li>
+                        {% if is_logged_in %}
+                            <li><a href="/logout">LOG OUT</a></li>
+                        {% else %}
+                            <li><a href="/login">LOG IN</a></li>
+                        {% endif %}
+                    </ul><!--/.nav -->
+                </div><!-- /.navbar-collapse -->
+            </div><!--/.container-->
+        </nav><!--/nav-->
+        <!-- End Navigation -->
+    </div><!--/.header-area-->
+    <div class="clearfix"></div>
+
+    <!-- Project Page Title -->
+    <div class="project-page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Projects</h1>
+                    <p class="lead">Discover innovative projects or create your own</p>
+                </div>
+                <div class="col-md-4 text-right d-flex align-items-center justify-content-end">
+                    <button class="btn btn-create-project" data-toggle="modal" data-target="#createProjectModal">
+                        <i class="fa fa-plus-circle"></i> <a href="project-register">Create New Project </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Listing -->
+    <section class="projects-section">
+        <div class="container">
+            <!-- User's Projects Section -->
+            <div id="myProjectsSection" style="display: none;">
+                <div class="project-container">
+                    <h3 class="mb-4">My Projects</h3>
+                    <!-- Search and Filter -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control project-search" id="myProjectSearch" placeholder="Search my projects...">
+                        </div>
+                    </div>
+                    
+                    <!-- My Projects List -->
+                    <div class="row" id="myProjectsList">
+                        <!-- Projects will be loaded dynamically here -->
+                        <div class="col-12 text-center py-3" id="loadingMyProjects">
+                            <div class="spinner-border text-success" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            <p class="mt-2">Loading your projects...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Other Projects Section -->
+            <div class="project-container mt-4">
+                <h3 class="mb-4" id="otherProjectsTitle">All Projects</h3>
+                <!-- Search and Filter -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control project-search" id="otherProjectSearch" placeholder="Search projects...">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="filter-buttons text-right">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="tech">Tech</button>
+                            <button class="filter-btn" data-filter="finance">Finance</button>
+                            <button class="filter-btn" data-filter="health">Health</button>
+                            <button class="filter-btn" data-filter="education">Education</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Projects List -->
+                <div class="row" id="otherProjectsList">
+                    <!-- Projects will be loaded dynamically here -->
+                    <div class="col-12 text-center py-5" id="loadingOtherProjects">
+                        <div class="spinner-border text-success" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <p class="mt-2">Loading projects...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create Project Modal -->
+    <div class="modal fade project-modal" id="createProjectModal" tabindex="-1" role="dialog" aria-labelledby="createProjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createProjectModalLabel">Create New Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="createProjectForm">
+                        <div class="form-group">
+                            <label for="projectTitle">Project Title</label>
+                            <input type="text" class="form-control" id="projectTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDescription">Description</label>
+                            <textarea class="form-control" id="projectDescription" rows="4" required></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="projectCategory">Category</label>
+                                    <select class="form-control" id="projectCategory" required>
+                                        <option value="">Select a category</option>
+                                        <option value="tech">Technology</option>
+                                        <option value="finance">Finance</option>
+                                        <option value="health">Health</option>
+                                        <option value="education">Education</option>
+                                        <option value="environment">Environment</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="projectStage">Project Stage</label>
+                                    <select class="form-control" id="projectStage" required>
+                                        <option value="">Select a stage</option>
+                                        <option value="idea">Idea</option>
+                                        <option value="prototype">Prototype</option>
+                                        <option value="development">Development</option>
+                                        <option value="validation">Validation</option>
+                                        <option value="scaling">Scaling</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="projectStartDate">Start Date</label>
+                                    <input type="date" class="form-control" id="projectStartDate">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="projectProgress">Progress (%)</label>
+                                    <input type="number" class="form-control" id="projectProgress" min="0" max="100" value="0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectImage">Project Image URL</label>
+                            <input type="url" class="form-control" id="projectImage" placeholder="https://example.com/image.jpg">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" id="saveProjectBtn">Create Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Detail Modal -->
+    <div class="modal fade project-modal" id="projectDetailModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectDetailTitle">Project Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="projectDetailContent">
+                    <!-- Project details will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    {% if is_logged_in %}
+                    <button type="button" class="btn btn-success" id="editProjectBtn">Edit Project</button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- JavaScript Files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="static/assets/js/projects.js"></script>
+    
+    <!-- Custom JavaScript for Project Management -->
+    <script>
+        
+    </script>
+</body>
+</html>

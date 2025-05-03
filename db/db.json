@@ -1,0 +1,113 @@
+{
+    "users": [
+        {
+            "username": "admin",
+            "email": "test@example.com",
+            "password": "password123"
+        },
+        {
+            "username": "abc",
+            "email": "abc123@gmail.com",
+            "password": "123456"
+        }
+    ],
+    "projects": [
+        {
+            "id": 1,
+            "title": "EcoTech Solution",
+            "description": "Sustainable technology platform that reduces carbon footprint for enterprises by 35%. Our innovative approach combines IoT sensors with machine learning algorithms to optimize energy usage and reduce waste in real-time.",
+            "category": "tech",
+            "stage": "Growth",
+            "startDate": "2023-01-15",
+            "progress": 0,
+            "creator": "abc",
+            "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 2,
+            "title": "FinLedger",
+            "description": "Blockchain-based financial platform for emerging markets with 200,000+ users. Providing accessible financial services in regions with limited banking infrastructure.",
+            "category": "finance",
+            "stage": "Scaling",
+            "startDate": "2022-03-10",
+            "progress": 0,
+            "creator": "admin",
+            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 3,
+            "title": "HealthAI",
+            "description": "AI-powered diagnostics platform improving healthcare access in rural communities. Using machine learning to provide preliminary diagnoses for common conditions where medical professionals are scarce.",
+            "category": "health",
+            "stage": "Validation",
+            "startDate": "2022-10-05",
+            "progress": 0,
+            "creator": "admin",
+            "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 4,
+            "title": "EduConnect",
+            "description": "EdTech platform connecting underserved students with global education resources. Breaking down barriers to quality education through technology and community engagement.",
+            "category": "education",
+            "stage": "Early Traction",
+            "startDate": "2023-06-20",
+            "progress": 0,
+            "creator": "admin",
+            "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 5,
+            "title": "AgriTech Platform",
+            "description": "IoT solutions for sustainable farming in developing countries. Our system uses affordable sensors to monitor soil conditions, water usage, and crop health to increase yields while reducing resource consumption.",
+            "category": "environment",
+            "stage": "Development",
+            "startDate": "2023-04-12",
+            "progress": 0,
+            "creator": "admin",
+            "image": "https://images.unsplash.com/photo-1490682143684-14369e18dce8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "id": 6,
+            "title": "Supply Chain Tracker",
+            "description": "Blockchain verification system for ethical sourcing certification. This platform provides end-to-end visibility and verification of product origins, fair labor practices, and sustainable manufacturing processes.",
+            "category": "tech",
+            "stage": "Prototype",
+            "startDate": "2023-09-01",
+            "progress": 0,
+            "creator": "admin",
+            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+            "title": "Triet Max-Lenin",
+            "description": "aaaaaaaaaa",
+            "category": "Technology",
+            "stage": "Idea",
+            "startDate": "2005-01-01",
+            "progress": 0,
+            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "id": 7,
+            "creator": "admin"
+        },
+        {
+            "title": "Triet Max-Lenin",
+            "description": "abc",
+            "category": "Technology",
+            "stage": "Idea",
+            "startDate": "2005-12-31",
+            "progress": 50,
+            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "id": 8,
+            "creator": "abc"
+        }
+    ],
+    "connection_requests": [
+        {
+            "id": 1,
+            "from": "abc",
+            "to": "admin",
+            "project_id": 3,
+            "status": false
+        }
+    ]
+}
