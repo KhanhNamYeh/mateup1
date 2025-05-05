@@ -120,6 +120,13 @@
             "to": "abc",
             "project_id": 1,
             "status": true
+        },
+        {
+            "id": 3,
+            "from": "ab",
+            "to": "abc",
+            "project_id": 8,
+            "status": false
         }
     ],
     "connections": [
@@ -141,24 +148,5 @@
             "project_id": 1
         }
     ],
-    "todolists": [
-        {
-            "id": 1,
-            "title": "first",
-            "project_id": null,
-            "users": [
-                "ab",
-                "abc"
-            ],
-            "tasks": [
-                {
-                    "id": 1,
-                    "title": "123",
-                    "status": true,
-                    "description": null,
-                    "dueDate": null
-                }
-            ]
-        }
-    ]
+    "todolists": []
 }
