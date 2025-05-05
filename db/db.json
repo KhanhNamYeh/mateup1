@@ -89,7 +89,7 @@
             "category": "Technology",
             "stage": "Idea",
             "startDate": "2005-01-01",
-            "progress": 0,
+            "progress": 20,
             "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
             "id": 7,
             "creator": "admin"
@@ -104,6 +104,17 @@
             "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
             "id": 8,
             "creator": "abc"
+        },
+        {
+            "title": "eerevdssdf",
+            "description": "dsdsfdsfsf",
+            "category": "Business",
+            "stage": "In Progress",
+            "startDate": "2025-05-22",
+            "progress": 90,
+            "image": null,
+            "id": 9,
+            "creator": "admin"
         }
     ],
     "connection_requests": [
