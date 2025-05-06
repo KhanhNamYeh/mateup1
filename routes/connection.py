@@ -23,7 +23,7 @@ class Task(BaseModel):
 
 class TodoListCreate(BaseModel):
     title: str
-    project_id: Optional[int] = None # Or however you link it
+    project_id: int # Or however you link it
     partner_username: str # The user you are creating the list with
     tasks: List[Task] = [] # Allow creating with initial tasks if needed
 

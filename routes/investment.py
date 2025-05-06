@@ -11,38 +11,27 @@ router = APIRouter()
 # Templates
 templates = Jinja2Templates(directory="templates")
 
-class Project(BaseModel):
-    title: str
-    description: str
-    category: str
-    stage: str
-    startDate: Optional[str] = None
-    progress: Optional[int] = None
-    image: Optional[str] = None
 
-class ConnectionRequest(BaseModel):
-    to: str
-    project_id: int
 
-@router.get("/projects", response_class=HTMLResponse)
+@router.get("/investment", response_class=HTMLResponse)
 async def projects_page(request: Request):
     # Pass login status and username to the template
-    return templates.TemplateResponse("projects.html", {
+    return templates.TemplateResponse("investment.html", {
         "request": request,
         "is_logged_in": request.session.get("is_logged_in", False),
         "username": request.session.get("username", "")
     })
 
-@router.get("/project-register", response_class=HTMLResponse)
+@router.get("/investment-register", response_class=HTMLResponse)
 async def project_register_page(request: Request):
     # Pass login status and username to the template
-    return templates.TemplateResponse("project_register.html", {
+    return templates.TemplateResponse("investment_register.html", {
         "request": request,
         "is_logged_in": request.session.get("is_logged_in", False),
         "username": request.session.get("username", "")
     })
 
-@router.get("/api/projects")
+@router.get("/api/investments")
 async def get_projects(request: Request):
     try:
         # Get current username from session
@@ -116,29 +105,6 @@ async def create_project(project: Project, request: Request):
         
         return {"success": True, "message": "Project created successfully", "project": new_project}
     
-    except Exception as e:
-        return JSONResponse(
-            status_code=500,
-            content={"success": False, "message": f"Error: {str(e)}"}
-        )
-
-@router.get("/api/projects/{project_id}")
-async def get_project_by_id(project_id: int):
-    try:
-        with open("db/db.json", "r") as file:
-            data = json.load(file)
-            all_projects = data.get("projects", [])
-        
-        project = next((p for p in all_projects if p.get("id") == project_id), None)
-        
-        if not project:
-            raise HTTPException(status_code=404, detail="Project not found")
-        
-        return {
-            "success": True,
-            "project": project
-        }
-
     except Exception as e:
         return JSONResponse(
             status_code=500,

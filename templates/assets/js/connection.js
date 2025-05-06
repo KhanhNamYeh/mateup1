@@ -292,29 +292,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function checkConnectionAndLoadTodos(partnerUsername) {
-         if (!isLoggedIn || !partnerUsername) {
-             sharedTodoSection.style.display = 'none';
-             return;
-         }
-
-         // Update UI elements for the specific partner view
-         todoPartnerNameSpan.textContent = escapeHtml(partnerUsername);
-         todoPartnerUsernameInput.value = partnerUsername;
-         connectionSectionTitle.textContent = `Connection with ${escapeHtml(partnerUsername)}`;
-         connectionDetailsDisplay.textContent = `Manage your shared tasks with ${escapeHtml(partnerUsername)}.`;
-         breadcrumbPartnerName.textContent = `/ ${escapeHtml(partnerUsername)}`;
-
-         // Prepare UI for loading
-         sharedTodoListsContainer.innerHTML = '';
-         loadingSharedListsMsg.style.display = 'block';
-         noSharedListsMsg.style.display = 'none';
-         sharedTodoSection.style.display = 'block';
-         
-         // Hide connections section when viewing specific connection
-         connectionsSection.style.display = 'none';
-
-         // Use the specific API endpoint for shared todolists
-         fetch(`/api/todolists/shared/${partnerUsername}`)
+        if (!isLoggedIn || !partnerUsername) {
+            sharedTodoSection.style.display = 'none';
+            return;
+        }
+    
+        // Update UI elements for the specific partner view
+        todoPartnerNameSpan.textContent = escapeHtml(partnerUsername);
+        todoPartnerUsernameInput.value = partnerUsername;
+        connectionSectionTitle.textContent = `Loading project...`;
+        connectionDetailsDisplay.textContent = `Manage your shared tasks with ${escapeHtml(partnerUsername)}.`;
+        breadcrumbPartnerName.textContent = `/ ${escapeHtml(partnerUsername)}`;
+    
+        // Prepare UI for loading
+        sharedTodoListsContainer.innerHTML = '';
+        loadingSharedListsMsg.style.display = 'block';
+        noSharedListsMsg.style.display = 'none';
+        sharedTodoSection.style.display = 'block';
+    
+        // Hide connections section when viewing specific connection
+        connectionsSection.style.display = 'none';
+    
+        // Fetch shared todo lists
+        fetch(`/api/todolists/shared/${partnerUsername}`)
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.json();
@@ -323,10 +323,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 loadingSharedListsMsg.style.display = 'none';
                 if (data.success) {
                     displaySharedTodoLists(data.todolists, partnerUsername);
+    
+                    // --- NEW: Extract project_id and fetch project title
+                    const firstList = data.todolists[0];
+                    const projectId = firstList?.project_id;
+    
+                    if (projectId) {
+                        fetch(`/api/projects/${projectId}`)
+                            .then(res => res.json())
+                            .then(projectData => {
+                                if (projectData.success && projectData.project) {
+                                    connectionSectionTitle.textContent = `Project: ${escapeHtml(projectData.project.title)}`;
+                                } else {
+                                    connectionSectionTitle.textContent = `Project ID: ${escapeHtml(projectId)}`;
+                                }
+                            })
+                            .catch(err => {
+                                console.warn("Failed to load project title:", err);
+                                connectionSectionTitle.textContent = `Project ID: ${escapeHtml(projectId)}`;
+                            });
+                    } else {
+                        connectionSectionTitle.textContent = `Shared Tasks with ${escapeHtml(partnerUsername)}`;
+                    }
+    
                 } else {
-                     noSharedListsMsg.textContent = "Could not load shared lists or not connected.";
-                     noSharedListsMsg.style.display = 'block';
-                     console.warn("Could not fetch shared lists or API returned success: false.");
+                    noSharedListsMsg.textContent = "Could not load shared lists or not connected.";
+                    noSharedListsMsg.style.display = 'block';
+                    console.warn("Could not fetch shared lists or API returned success: false.");
                 }
             })
             .catch(error => {
@@ -336,6 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Error fetching shared todolists:', error);
             });
     }
+    
 
     function checkExistingCompletedLists() {
         const todoLists = document.querySelectorAll('.todo-list-item');
@@ -532,10 +556,14 @@ document.addEventListener('DOMContentLoaded', function() {
         saveTodoListBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Creating...';
 
         // Match the backend model expected structure
+        const projectIdBadge = document.querySelector('.badge.badge-info'); // lấy từ badge Project ID đang hiển thị
+        const projectId = projectIdBadge ? projectIdBadge.textContent.replace('Project ID: ', '').trim() : null;
+
         const newListData = { 
             title: title,
             partner_username: partnerUsername, 
-            tasks: []
+            tasks: [],
+            project_id: projectId || null  // thêm project_id nếu có
         };
 
         fetch('/api/todolists', {

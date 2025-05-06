@@ -14,6 +14,16 @@
             "username": "ab",
             "email": "abc12@gmail.com",
             "password": "123456"
+        },
+        {
+            "username": "Nguyen Van A",
+            "email": "abcd@gmail.com",
+            "password": "123456"
+        },
+        {
+            "username": "Truong Cong B",
+            "email": "abc@gmail.com",
+            "password": "123456"
         }
     ],
     "projects": [
@@ -35,8 +45,8 @@
             "category": "finance",
             "stage": "Scaling",
             "startDate": "2022-03-10",
-            "progress": 0,
-            "creator": "admin",
+            "progress": 100,
+            "creator": "Nguyen Van A",
             "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -46,8 +56,8 @@
             "category": "health",
             "stage": "Validation",
             "startDate": "2022-10-05",
-            "progress": 0,
-            "creator": "admin",
+            "progress": 100,
+            "creator": "Nguyen Van A",
             "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -57,8 +67,8 @@
             "category": "education",
             "stage": "Early Traction",
             "startDate": "2023-06-20",
-            "progress": 0,
-            "creator": "admin",
+            "progress": 100,
+            "creator": "Nguyen Van A",
             "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -68,8 +78,8 @@
             "category": "environment",
             "stage": "Development",
             "startDate": "2023-04-12",
-            "progress": 0,
-            "creator": "admin",
+            "progress": 100,
+            "creator": "Nguyen Van A",
             "image": "https://images.unsplash.com/photo-1490682143684-14369e18dce8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -79,8 +89,8 @@
             "category": "tech",
             "stage": "Prototype",
             "startDate": "2023-09-01",
-            "progress": 0,
-            "creator": "admin",
+            "progress": 100,
+            "creator": "Nguyen Van A",
             "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
         },
         {
@@ -137,27 +147,315 @@
             "from": "ab",
             "to": "abc",
             "project_id": 8,
-            "status": false
+            "status": true
+        },
+        {
+            "id": 4,
+            "from": "Nguyen Van A",
+            "to": "Truong Cong B",
+            "project_id": 2,
+            "status": true
+        },
+        {
+            "id": 5,
+            "from": "Nguyen Van A",
+            "to": "Truong Cong B",
+            "project_id": 3,
+            "status": true
+        },
+        {
+            "id": 6,
+            "from": "Nguyen Van A",
+            "to": "Truong Cong B",
+            "project_id": 4,
+            "status": true
+        },
+        {
+            "id": 7,
+            "from": "Nguyen Van A",
+            "to": "Truong Cong B",
+            "project_id": 5,
+            "status": true
+        },
+        {
+            "id": 8,
+            "from": "Nguyen Van A",
+            "to": "Truong Cong B",
+            "project_id": 6,
+            "status": true
         }
     ],
     "connections": [
         {
             "id": 1,
             "users": [
-                "abc",
-                "admin"
-            ],
-            "project_id": 3,
-            "todolist_id": 1
-        },
-        {
-            "id": 2,
-            "users": [
                 "ab",
                 "abc"
             ],
             "project_id": 1
+        },
+        {
+            "id": 2,
+            "users": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
+            "project_id": 2
+        },
+        {
+            "id": 3,
+            "users": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
+            "project_id": 3
+        },
+        {
+            "id": 4,
+            "users": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
+            "project_id": 4
+        },
+        {
+            "id": 5,
+            "users": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
+            "project_id": 5
+        },
+        {
+            "id": 6,
+            "users": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
+            "project_id": 6
         }
     ],
-    "todolists": []
+    "todolists": [
+        {
+            "id": 1,
+            "title": "1",
+            "project_id": 3,
+            "users": [
+                "ab",
+                "abc"
+            ],
+            "tasks": [
+                {
+                    "id": 1,
+                    "title": "123",
+                    "status": false,
+                    "description": null,
+                    "dueDate": null
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "1",
+            "project_id": 2,
+            "users": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
+            "tasks": [
+                {
+                    "id": 1,
+                    "title": "123",
+                    "status": true,
+                    "description": null,
+                    "dueDate": null
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "1",
+            "project_id": 3,
+            "users": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
+            "tasks": [
+                {
+                    "id": 1,
+                    "title": "123",
+                    "status": true,
+                    "description": null,
+                    "dueDate": null
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "1",
+            "project_id": 4,
+            "users": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
+            "tasks": [
+                {
+                    "id": 1,
+                    "title": "123",
+                    "status": true,
+                    "description": null,
+                    "dueDate": null
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "1",
+            "project_id": 5,
+            "users": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
+            "tasks": [
+                {
+                    "id": 1,
+                    "title": "123",
+                    "status": true,
+                    "description": null,
+                    "dueDate": null
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "1",
+            "project_id": 6,
+            "users": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
+            "tasks": [
+                {
+                    "id": 1,
+                    "title": "123",
+                    "status": true,
+                    "description": null,
+                    "dueDate": null
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "title": "2",
+            "project_id": 3,
+            "users": [
+                "ab",
+                "abc"
+            ],
+            "tasks": []
+        }
+    ],
+    "investments": [
+        {
+            "project_id": 2,
+            "title": "FinLedger Regional Scale-up",
+            "category": "Finance & Inclusion",
+            "stage": "Series A",
+            "description": "We are expanding FinLedger to underserved regions in Southeast Asia to provide blockchain-powered microfinance services.",
+            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "status": "funding",
+            "target_investment": 400000,
+            "total_invested": 150000,
+            "valuation": 3500000,
+            "min_investment": 2000,
+            "expected_roi": 24,
+            "duration_months": 18,
+            "region": "Southeast Asia",
+            "impact_area": "Financial Inclusion",
+            "risk_level": "Medium",
+            "founding_team": ["Nguyen Van A", "Truong Cong B"],
+            "use_of_funds": "60% product development, 20% operations, 20% market penetration"
+        },
+        {
+            "project_id": 3,
+            "title": "HealthAI Field Trials",
+            "category": "HealthTech",
+            "stage": "Pilot",
+            "description": "This investment phase supports HealthAI's deployment in rural clinics to validate its AI-based diagnosis effectiveness.",
+            "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "status": "invested",
+            "target_investment": 250000,
+            "total_invested": 250000,
+            "valuation": 1800000,
+            "min_investment": 1000,
+            "expected_roi": 30,
+            "duration_months": 24,
+            "region": "Vietnam",
+            "impact_area": "Healthcare Access",
+            "risk_level": "High",
+            "founding_team": ["Nguyen Van A", "Truong Cong B"],
+            "use_of_funds": "AI diagnostic tools, rural deployment, staff training"
+        },
+        {
+            "project_id": 4,
+            "title": "EduConnect SEA Expansion",
+            "category": "EdTech",
+            "stage": "Scaling",
+            "description": "EduConnect aims to reach 1 million students across Southeast Asia by scaling its digital learning platform.",
+            "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "status": "funding",
+            "target_investment": 600000,
+            "total_invested": 200000,
+            "valuation": 4200000,
+            "min_investment": 5000,
+            "expected_roi": 28,
+            "duration_months": 36,
+            "region": "Southeast Asia",
+            "impact_area": "Education Equity",
+            "risk_level": "Medium",
+            "founding_team": ["Nguyen Van A", "Truong Cong B"],
+            "use_of_funds": "Platform localization, teacher onboarding, content creation"
+        },
+        {
+            "project_id": 5,
+            "title": "AgriTech Smart Farming Rollout",
+            "category": "AgriTech",
+            "stage": "Growth",
+            "description": "AgriTech Platform will deploy IoT sensors to 1,000 farms, enhancing soil monitoring and water management.",
+            "image": "https://images.unsplash.com/photo-1490682143684-14369e18dce8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "status": "funding",
+            "target_investment": 500000,
+            "total_invested": 120000,
+            "valuation": 2500000,
+            "min_investment": 1500,
+            "expected_roi": 22,
+            "duration_months": 30,
+            "region": "Mekong Delta",
+            "impact_area": "Sustainable Agriculture",
+            "risk_level": "Low",
+            "founding_team": ["Nguyen Van A", "Truong Cong B"],
+            "use_of_funds": "Sensor deployment, data analytics, farmer support"
+        },
+        {
+            "project_id": 6,
+            "title": "Supply Chain Tracker MVP Build",
+            "category": "Blockchain",
+            "stage": "Prototype",
+            "description": "Investment will support MVP development of the blockchain verification system for ethical sourcing.",
+            "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "status": "invested",
+            "target_investment": 200000,
+            "total_invested": 200000,
+            "valuation": 1600000,
+            "min_investment": 1000,
+            "expected_roi": 26,
+            "duration_months": 20,
+            "region": "Global",
+            "impact_area": "Ethical Supply Chains",
+            "risk_level": "Medium",
+            "founding_team": ["Nguyen Van A", "Truong Cong B"],
+            "use_of_funds": "MVP development, third-party validation, stakeholder onboarding"
+        }
+    ]
+
 }
