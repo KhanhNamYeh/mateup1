@@ -230,37 +230,40 @@ document.addEventListener('DOMContentLoaded', function() {
         const imageUrl = project.image || 'static/assets/logo/grass.png';
         
         col.innerHTML = `
-            <div class="card h-100">
-                <div class="project-image-container">
-                    <img src="${imageUrl}" class="card-img-top project-image" alt="${project.title}">
-                    <span class="category-badge ${project.category}">${getCategoryName(project.category)}</span>
+        <div class="card card-project-detail">
+            <div class="project-image-container">
+                <img src="${imageUrl}" class="project-image" alt="${project.title}">
+                <span class="category-badge ${project.category}">${getCategoryName(project.category)}</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">${project.title}</h5>
+                <p class="project-description">${truncateText(project.description, 100)}</p>
+                <div class="project-meta">
+                    <span class="project-stage">${project.stage}</span>
+                    <span class="project-date">${formattedDate}</span>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">${project.title}</h5>
-                    <p class="card-text project-description">${truncateText(project.description, 100)}</p>
-                    <div class="project-meta">
-                        <span class="project-stage">${project.stage}</span>
-                        <span class="project-date">${formattedDate}</span>
+                <div class="project-progress-wrapper">
+                    <div class="project-progress-bar" style="width: ${project.progress || 0}%"
+                         role="progressbar"
+                         aria-valuenow="${project.progress || 0}"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+                        ${project.progress || 0}%
                     </div>
-                    <div class="progress mt-3">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: ${project.progress || 0}%" 
-                            aria-valuenow="${project.progress || 0}" aria-valuemin="0" aria-valuemax="100">
-                            ${project.progress || 0}%
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-sm btn-outline-success view-project-btn" data-id="${project.id}">
-                        View Details
-                    </button>
-                    <span class="creator-info">by ${project.creator}</span>
-                    ${section === 'otherProjects' && isLoggedIn ? 
-                    `<button class="btn btn-sm btn-outline-success float-right connect-btn" 
-                        data-id="${project.id}" data-creator="${project.creator}">
-                        Connect
-                    </button>` : ''}
                 </div>
             </div>
+            <div class="card-footer">
+                <button class="button view-project-btn" data-id="${project.id}">
+                    View Details
+                </button>
+                <span class="creator-info">by ${project.creator}</span>
+                ${section === 'otherProjects' && isLoggedIn ?
+                `<button class="button connect-btn"
+                         data-id="${project.id}" data-creator="${project.creator}">
+                    Connect
+                 </button>` : ''}
+            </div>
+        </div>
         `;
         
         // Add event listener to view project button
@@ -459,37 +462,49 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set modal content
         const modalContent = document.getElementById('projectDetailContent');
         modalContent.innerHTML = `
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="${project.image || 'static/assets/logo/grass.png'}" class="img-fluid project-detail-image" alt="${project.title}">
+        <div class="project-detail-modal-content">
+            <div class="project-detail-main-info-row">
+                <div class="project-detail-image-wrapper">
+                    <img src="${project.image || 'static/assets/logo/grass.png'}"
+                         class="project-detail-image"
+                         alt="${project.title}">
                 </div>
-                <div class="col-md-6">
+                <div class="project-detail-text-content">
+                    <h4 class="project-detail-title">${project.title}</h4>
+        
                     <div class="project-detail-meta">
-                        <span class="badge badge-${getCategoryClass(project.category)}">${getCategoryName(project.category)}</span>
-                        <span class="badge badge-info">${project.stage}</span>
-                        <span class="badge badge-secondary">Started: ${formattedDate}</span>
+                        <span class="project-detail-badge project-detail-badge-category">${getCategoryName(project.category)}</span>
+                        <span class="project-detail-badge project-detail-badge-stage">${project.stage}</span>
+                        <span class="project-detail-badge project-detail-badge-date">Bắt đầu: ${formattedDate}</span>
                     </div>
-                    <div class="progress mt-3 mb-3">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: ${project.progress || 0}%" 
-                            aria-valuenow="${project.progress || 0}" aria-valuemin="0" aria-valuemax="100">
-                            ${project.progress || 0}% Complete
+        
+                    <div class="project-detail-progress-section">
+                        <p class="project-detail-progress-label">Tiến độ dự án:</p>
+                        <div class="project-detail-progress-bar-container">
+                            <div class="project-detail-progress-bar" style="width: ${project.progress || 0}%">
+                                ${project.progress || 0}%
+                            </div>
                         </div>
                     </div>
-                    <p class="project-creator">Created by: ${project.creator}</p>
-                    ${isLoggedIn && project.creator !== username ? 
-                    `<button class="btn btn-${connectionRequestSent ? 'success' : 'outline-success'} connect-detail-btn" 
-                        data-id="${project.id}" data-creator="${project.creator}" 
-                        ${connectionRequestSent ? 'disabled' : ''}>
-                        ${connectionRequestSent ? 'Connection Request Sent' : 'Connect with Creator'}
-                    </button>` : ''}
+        
+                    <p class="project-detail-creator">Tạo bởi: <strong class="project-detail-creator-name">${project.creator}</strong></p>
+        
+                    <div class="project-detail-actions">
+                        ${isLoggedIn && project.creator !== username ?
+                        `<button class="project-detail-button ${connectionRequestSent ? 'project-detail-button-success' : 'project-detail-button-primary'}"
+                                 data-id="${project.id}" data-creator="${project.creator}"
+                                 ${connectionRequestSent ? 'disabled' : ''}>
+                                 ${connectionRequestSent ? 'Đã gửi yêu cầu' : 'Kết nối với người tạo'}
+                         </button>` : ''}
+                    </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-12">
-                    <h5>Project Description</h5>
-                    <p>${project.description}</p>
-                </div>
+            <hr class="project-detail-divider">
+            <div class="project-detail-description-section">
+                <h5 class="project-detail-description-title">Mô tả dự án</h5>
+                <p class="project-detail-description-text">${project.description}</p>
             </div>
+        </div>
         `;
         
         // Show or hide edit button based on ownership

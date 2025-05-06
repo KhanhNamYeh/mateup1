@@ -47,15 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     data.requests.forEach(req => {
                         const requestElement = document.createElement('div');
                         requestElement.className = 'list-group-item list-group-item-action flex-column align-items-start';
+                        // Lấy project_id, nếu không có thì để là chuỗi rỗng
+                        const projectId = req.project_id || '';
                         requestElement.innerHTML = `
                             <div class="d-flex w-100 justify-content-between">
-                                <p class="mb-1">Connection request from: <strong>${req.from}</strong></p>
-                                <small>Project ID: ${req.project_id || 'N/A'}</small>
+                                <p class="mb-1">Connection request from: <strong>${escapeHtml(req.from)}</strong></p>
+                                <small>Project ID: ${projectId || 'N/A'}</small>
                             </div>
                             <div class="mt-2">
-                                <button class="btn btn-sm btn-success accept-request-btn" data-request-id="${req.id}" data-from-user="${req.from}">Accept</button>
-                                <!-- <button class="btn btn-sm btn-danger decline-request-btn ml-2" data-request-id="${req.id}">Decline</button> -->
-                            </div>
+                                <button class="btn btn-sm btn-success accept-request-btn"
+                                        data-request-id="${req.id}"
+                                        data-from-user="${escapeHtml(req.from)}"
+                                        data-project-id="${projectId}">Accept</button> 
+                                </div>
                         `;
                         pendingRequestsList.appendChild(requestElement);
                     });
@@ -73,10 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    function acceptRequest(requestId, fromUsername, button) {
+    function acceptRequest(requestId, fromUsername, projectId, button) {
         button.disabled = true;
         button.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Accepting...';
-
+    
+        // You can still use console.log for debugging if needed, like this:
+        // console.log('Accepting request ID:', requestId, 'from:', fromUsername, 'with Project ID:', projectId);
         fetch(`/api/connections/accept/${requestId}`, {
             method: 'POST',
             headers: { 'Accept': 'application/json' }
@@ -84,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json().then(data => ({ status: response.status, body: data })))
             .then(({ status, body }) => {
                 if (status === 200 && body.success) {
-                    // alert('Connection accepted!'); // Optional feedback
                     const itemToRemove = button.closest('.list-group-item');
                     itemToRemove.style.transition = 'opacity 0.5s ease-out, height 0.5s ease-out';
                     itemToRemove.style.opacity = '0';
@@ -98,16 +103,14 @@ document.addEventListener('DOMContentLoaded', function() {
                             document.querySelector('.connection-section').style.paddingTop = '60px';
                         }
                     }, 500);
-
-                    // After accepting, refresh the connections list
+    
                     fetchConnections();
-                    
+    
                     const currentPartner = getCurrentPartnerUsername();
                     if (!currentPartner || currentPartner !== fromUsername) {
-                        // Option: Navigate or refresh to show the new connection context
                         window.location.href = `/connection?partner=${fromUsername}`;
                     } else {
-                        checkConnectionAndLoadTodos(fromUsername); // Refresh if already viewing
+                        checkConnectionAndLoadTodos(fromUsername);
                     }
                 } else {
                     alert(`Failed to accept: ${body.detail || body.message || 'Unknown error'}`);
@@ -127,7 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target.classList.contains('accept-request-btn')) {
             const requestId = parseInt(event.target.getAttribute('data-request-id'));
             const fromUsername = event.target.getAttribute('data-from-user');
-            acceptRequest(requestId, fromUsername, event.target);
+            const projectId = event.target.getAttribute('data-project-id'); // <-- LẤY projectId TỪ data attribute
+            acceptRequest(requestId, fromUsername, projectId, event.target); // <-- TRUYỀN projectId VÀO HÀM
         }
     });
 
@@ -171,7 +175,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </div>
                                 <button class="btn btn-primary btn-sm view-connection-btn" 
                                         data-partner="${escapeHtml(partnerUsername)}">
-                                    View To-Do Lists
+                                    View To-Do Listssss
+                                </button>
+                                <button class="btn btn-primary btn-sm view-connection-btn" 
+                                        data-partner="${escapeHtml(partnerUsername)}">
+                                    Chati
                                 </button>
                             `;
                             connectionsList.appendChild(connectionElement);
@@ -563,7 +571,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: title,
             partner_username: partnerUsername, 
             tasks: [],
-            project_id: projectId || null  // thêm project_id nếu có
+            project_id: projectId || 0  // thêm project_id nếu có
         };
 
         fetch('/api/todolists', {

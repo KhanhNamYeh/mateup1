@@ -12,6 +12,7 @@ from routes.login import router as login_router
 from routes.register import router as register_router
 from routes.projects import router as projects_router
 from routes.connection import router as connection_router
+from routes.investment import router as investment_router
 
 # Initialize app
 app = FastAPI()
@@ -42,6 +43,7 @@ app.include_router(login_router)
 app.include_router(register_router)
 app.include_router(projects_router)
 app.include_router(connection_router)
+app.include_router(investment_router)
 
 # Main index route
 @app.get("/", response_class=HTMLResponse)

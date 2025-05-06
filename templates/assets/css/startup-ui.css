@@ -1,215 +1,300 @@
 /*
-* MatesUp UI CSS
-* Custom styles for MatesUp startup project
+* MatesUp UI CSS - Enhanced Version
+* Improved UI/UX design while preserving navbar styles
 */
 
 /* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
     color: #333;
     line-height: 1.6;
     background-color: #fff;
+    scroll-behavior: smooth;
 }
 
-.navbar-brand {
-    font-weight: bold;
-    color: #008000 !important;
-    font-size: 24px;
+:root {
+    --primary-color: #008000;
+    --primary-light: #f1f8f1;
+    --secondary-color: #333;
+    --text-color: #555;
+    --light-gray: #f9f9f9;
+    --border-radius: 10px;
+    --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
 }
 
-.navbar {
-    padding: 15px 0;
-}
+/* Preserve existing navbar styles */
 
-.nav-link {
-    font-weight: 500;
-    color: #555 !important;
-    margin: 0 10px;
-}
-
-.nav-item.active .nav-link {
-    color: #008000 !important;
-}
-
+/* Section Styling */
 .section-gap {
-    padding: 70px 0;
+    padding: 90px 0;
 }
 
 .section-gap-small {
-    padding: 50px 0;
+    padding: 60px 0;
 }
 
-/* Section Headers */
+/* Enhanced Section Headers */
 .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    position: relative;
 }
 
 .section-subtitle {
-    display: block;
-    color: #008000;
+    display: inline-block;
+    color: var(--primary-color);
     font-weight: 600;
-    margin-bottom: 10px;
-    font-size: 14px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 15px;
+}
+
+.section-subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
 }
 
 .section-header h2 {
-    font-size: 32px;
+    font-size: 38px;
     font-weight: 700;
-    color: #333;
-    margin-bottom: 15px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    position: relative;
 }
 
 .section-desc {
-    color: #666;
-    max-width: 650px;
+    color: var(--text-color);
+    max-width: 700px;
     margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
-/* Success Message Area */
-.success-message {
-    margin-bottom: 0;
+/* Buttons with improved styling */
+.btn {
+    padding: 12px 28px;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: var(--transition);
+    font-size: 15px;
+    text-transform: none;
+    letter-spacing: 0.5px;
 }
 
-.success-message h3 {
-    font-weight: 400;
-    margin: 0;
+.btn-success {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 128, 0, 0.2);
 }
 
-.success-message i {
-    margin-right: 10px;
+.btn-success:hover {
+    background-color: #006d00;
+    border-color: #006d00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 128, 0, 0.25);
 }
 
-.bg-success {
-    background-color: #008000 !important;
+.btn-outline-success {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-width: 2px;
 }
 
-/* Investment Header Area */
+.btn-outline-success:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 128, 0, 0.2);
+}
+
+.btn-lg {
+    padding: 14px 35px;
+    font-size: 16px;
+}
+
+/* Investment Header Area - Enhanced */
+.investment-header {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(170deg, #ffffff 60%, #f8f9fa 100%);
+}
+
 .investment-intro h2 {
-    font-size: 36px;
+    font-size: 42px;
     font-weight: 700;
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 25px;
+    color: #222;
+    line-height: 1.2;
 }
 
 .investment-intro .lead {
     font-size: 18px;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 25px;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 30px;
+    font-weight: 400;
 }
 
 .investment-stats {
     display: flex;
     flex-wrap: wrap;
-    margin: 30px 0;
+    margin: 40px 0;
+    gap: 40px;
 }
 
 .stat-item {
-    margin-right: 40px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .stat-item h3 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
-    color: #008000;
-    margin-bottom: 5px;
+    color: var(--primary-color);
+    margin-bottom: 8px;
 }
 
 .stat-item p {
-    font-size: 14px;
-    color: #777;
+    font-size: 15px;
+    color: #666;
     margin: 0;
+    font-weight: 500;
 }
 
 .investment-image img {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
 }
 
-/* Investment Card Styles */
+.investment-image:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Investment Card Styles - Enhanced */
 .investment-card {
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 40px 30px;
     text-align: center;
     position: relative;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.investment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #f1f1f1;
+    transition: var(--transition);
 }
 
 .investment-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.investment-card:hover::before {
+    background: var(--primary-color);
 }
 
 .investment-card.featured {
-    border: 2px solid #008000;
-    box-shadow: 0 10px 30px rgba(0, 128, 0, 0.1);
-    transform: translateY(-10px) scale(1.03);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 15px 35px rgba(0, 128, 0, 0.15);
+    transform: translateY(-15px) scale(1.03);
+    z-index: 1;
+}
+
+.investment-card.featured::before {
+    background: var(--primary-color);
+    height: 7px;
 }
 
 .card-badge {
     display: inline-block;
     background: #f1f1f1;
     color: #333;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 13px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
 }
 
 .card-badge.recommended {
-    background: #008000;
+    background: var(--primary-color);
     color: white;
+    box-shadow: 0 5px 15px rgba(0, 128, 0, 0.2);
 }
 
 .investment-card h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #222;
 }
 
 .price {
-    margin: 20px 0;
-    color: #008000;
+    margin: 25px 0;
+    color: var(--primary-color);
 }
 
 .price .currency {
-    font-size: 24px;
+    font-size: 28px;
     vertical-align: top;
     position: relative;
-    top: -10px;
+    top: -15px;
+    font-weight: 600;
 }
 
 .price .amount {
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1;
 }
 
 .price .period {
     display: block;
-    font-size: 14px;
+    font-size: 15px;
     color: #777;
-    margin-top: 5px;
+    margin-top: 8px;
+    font-weight: 400;
 }
 
 .features {
     list-style: none;
     padding: 0;
-    margin: 30px 0;
+    margin: 35px 0;
     text-align: left;
 }
 
 .features li {
-    padding: 8px 0;
+    padding: 12px 0;
     border-bottom: 1px solid #f1f1f1;
     display: flex;
     align-items: center;
+    font-size: 15px;
+    color: #555;
 }
 
 .features li:last-child {
@@ -217,70 +302,89 @@ body {
 }
 
 .check-icon {
-    color: #008000;
-    margin-right: 10px;
+    color: var(--primary-color);
+    margin-right: 12px;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    font-size: 16px;
 }
 
-.btn-success {
-    background-color: #008000;
-    border-color: #008000;
-}
-
-.btn-outline-success {
-    color: #008000;
-    border-color: #008000;
-}
-
-.btn-outline-success:hover {
-    background-color: #008000;
-    color: #fff;
-}
-
-/* Process Step Styles */
+/* Process Step Styles - Enhanced */
 .process-step {
     background: white;
-    padding: 30px;
-    border-radius: 8px;
+    padding: 40px 30px;
+    border-radius: var(--border-radius);
     text-align: center;
     position: relative;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--box-shadow);
     margin-bottom: 30px;
     height: 100%;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .step-icon {
-    width: 70px;
-    height: 70px;
-    background: #f1f8f1;
+    width: 80px;
+    height: 80px;
+    background: var(--primary-light);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
+    margin: 0 auto 25px;
+    position: relative;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.process-step:hover .step-icon {
+    transform: scale(1.1);
+    background: rgba(0, 128, 0, 0.1);
 }
 
 .step-icon i {
-    font-size: 30px;
-    color: #008000;
+    font-size: 32px;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.process-step:hover .step-icon i {
+    transform: scale(1.1);
 }
 
 .step-number {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 48px;
-    font-weight: 700;
-    color: #f1f8f1;
+    font-size: 60px;
+    font-weight: 800;
+    color: rgba(0, 128, 0, 0.08);
     z-index: 0;
+    line-height: 1;
+    transition: var(--transition);
+}
+
+.process-step:hover .step-number {
+    transform: scale(1.2);
+    color: rgba(0, 128, 0, 0.12);
 }
 
 .process-step h4 {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
     margin-bottom: 15px;
     position: relative;
     z-index: 1;
+    color: #222;
 }
 
 .process-step p {
@@ -288,153 +392,271 @@ body {
     position: relative;
     z-index: 1;
     margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
 }
 
-/* Testimonial Card Styles */
+/* Testimonial Card Styles - Enhanced */
 .testimonial-card {
     background: white;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius);
+    padding: 35px;
+    box-shadow: var(--box-shadow);
     height: 100%;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .rating {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .rating i {
     color: #FFD700;
-    margin-right: 2px;
+    margin-right: 3px;
+    font-size: 16px;
 }
 
 .testimonial-text {
     font-style: italic;
     color: #555;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    quotes: """ """ "'" "'";
+    margin-bottom: 25px;
+    line-height: 1.7;
+    font-size: 16px;
+    position: relative;
+    padding: 0 10px;
 }
 
 .testimonial-text::before {
-    content: open-quote;
-    color: #008000;
-    font-size: 30px;
-    font-weight: bold;
-    position: relative;
-    top: 10px;
-}
-
-.testimonial-text::after {
-    content: close-quote;
-    color: #008000;
-    font-size: 30px;
-    font-weight: bold;
-    position: relative;
-    top: 10px;
+    content: """;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    color: rgba(0, 128, 0, 0.2);
+    font-size: 60px;
+    font-weight: 700;
+    font-family: serif;
+    line-height: 1;
 }
 
 .investor-profile {
     display: flex;
     align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+    margin-top: 15px;
 }
 
 .investor-image {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 15px;
+    border: 3px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .investor-info h5 {
     margin: 0;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #222;
 }
 
 .investor-info p {
-    margin: 0;
+    margin: 5px 0 0;
     font-size: 14px;
     color: #777;
 }
 
-/* Recommended Card Styles */
+/* Recommended Card Styles - Enhanced */
 .recommended-card {
     display: flex;
     background: white;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--box-shadow);
     height: 100%;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.recommended-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .investor-details {
     width: 35%;
-    padding: 20px;
-    background: #f9f9f9;
+    padding: 25px 20px;
+    background: var(--light-gray);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .investor-pic {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
+    border: 4px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.recommended-card:hover .investor-pic {
+    transform: scale(1.05);
 }
 
 .investor-details h4 {
     margin: 0;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
 }
 
 .investor-details p {
-    margin: 5px 0 10px;
+    margin: 8px 0 15px;
     font-size: 14px;
-    color: #777;
+    color: #666;
 }
 
 .similarity {
-    background: #f0f8f0;
-    color: #008000;
-    font-weight: 700;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 14px;
+    background: rgba(0, 128, 0, 0.1);
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 13px;
     display: inline-block;
-}
-
-.similarity span {
-    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 .project-details {
     width: 65%;
-    padding: 25px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+.project-details h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #222;
+    line-height: 1.3;
+}
+
 .project-description {
-    color: #555;
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.investment-metrics {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
     margin-bottom: 20px;
+}
+
+.investment-metrics small {
+    color: #777;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.investment-metrics p {
+    margin-bottom: 5px;
+}
+
+.investment-metrics .text-success {
+    color: var(--primary-color) !important;
+}
+
+.progress {
+    margin: 8px 0 5px;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
 }
 
 .action-buttons .btn {
     margin-right: 10px;
     margin-bottom: 10px;
+    padding: 10px 20px;
 }
 
-/* Responsive Design */
+/* CTA Section - Enhanced */
+.cta-section {
+    background: linear-gradient(45deg, #007000, #009000);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('static/assets/images/pattern.png');
+    opacity: 0.1;
+}
+
+.cta-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.cta-section .lead {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.cta-section .btn-light {
+    font-weight: 600;
+    padding: 14px 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
+.cta-section .btn-light:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design - Enhanced */
+@media (max-width: 1199px) {
+    .section-header h2 {
+        font-size: 34px;
+    }
+    
+    .investment-intro h2 {
+        font-size: 36px;
+    }
+}
+
 @media (max-width: 991px) {
+    .section-gap {
+        padding: 70px 0;
+    }
+    
     .recommended-card {
         flex-direction: column;
     }
@@ -444,16 +666,32 @@ body {
         width: 100%;
     }
     
+    .investor-details {
+        padding: 30px 20px;
+    }
+    
     .process-step,
     .testimonial-card,
     .investment-card {
         margin-bottom: 30px;
     }
+    
+    .investment-card.featured {
+        transform: translateY(-10px) scale(1.01);
+    }
 }
 
 @media (max-width: 767px) {
     .section-gap {
-        padding: 50px 0;
+        padding: 60px 0;
+    }
+    
+    .section-gap-small {
+        padding: 40px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 40px;
     }
     
     .section-header h2 {
@@ -466,6 +704,7 @@ body {
     
     .investment-stats {
         justify-content: space-between;
+        gap: 20px;
     }
     
     .stat-item {
@@ -473,10 +712,43 @@ body {
     }
     
     .price .amount {
-        font-size: 36px;
+        font-size: 42px;
     }
     
     .price .currency {
-        font-size: 20px;
+        font-size: 24px;
+        top: -10px;
+    }
+    
+    .cta-section .text-lg-right {
+        text-align: center !important;
+        margin-top: 20px;
+    }
+    
+    .testimonial-card, 
+    .process-step, 
+    .investment-card {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .investment-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .stat-item {
+        margin-bottom: 10px;
+    }
+    
+    .action-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .cta-section h2 {
+        font-size: 26px;
     }
 }

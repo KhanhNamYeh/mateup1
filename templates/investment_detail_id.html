@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investment Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .investment-img { width: 100%; height: 280px; object-fit: cover; }
+        .badge { margin-right: 5px; }
+    </style>
+</head>
+<body>
+<div class="container mt-5" id="detail-container">
+    <a href="/investment_detail" class="btn btn-link mb-3">&larr; Back to all investments</a>
+    <div id="investment-detail"></div>
+</div>
+<script>
+    function getIdFromPath() {
+        const pathParts = window.location.pathname.split('/');
+        return pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2]; // Phòng khi URL kết thúc bằng dấu /
+    }
+    
+    const id = getIdFromPath();
+    
+    fetch(`/api/investment/${id}`)
+        .then(res => res.json())
+        .then(inv => {
+            const c = document.getElementById('investment-detail');
+            c.innerHTML = `
+                <div class="card">
+                    <img src="${inv.image}" class="card-img-top investment-img" alt="${inv.title}">
+                    <div class="card-body">
+                        <h3 class="card-title">${inv.title}</h3>
+                        <p class="card-text">${inv.description}</p>
+                        <div>
+                            <span class="badge badge-info">${inv.category}</span>
+                            <span class="badge badge-secondary">${inv.stage}</span>
+                            <span class="badge badge-${inv.status === 'funding' ? 'success' : 'dark'}">${inv.status}</span>
+                            <span class="badge badge-warning">${inv.risk_level}</span>
+                        </div>
+                        <ul class="list-group list-group-flush mt-3">
+                            <li class="list-group-item"><strong>Target Investment:</strong> $${inv.target_investment.toLocaleString()}</li>
+                            <li class="list-group-item"><strong>Total Invested:</strong> $${inv.total_invested.toLocaleString()}</li>
+                            <li class="list-group-item"><strong>Valuation:</strong> $${inv.valuation.toLocaleString()}</li>
+                            <li class="list-group-item"><strong>Minimum Investment:</strong> $${inv.min_investment.toLocaleString()}</li>
+                            <li class="list-group-item"><strong>Expected ROI:</strong> ${inv.expected_roi}%</li>
+                            <li class="list-group-item"><strong>Duration:</strong> ${inv.duration_months} months</li>
+                            <li class="list-group-item"><strong>Region:</strong> ${inv.region}</li>
+                            <li class="list-group-item"><strong>Impact Area:</strong> ${inv.impact_area}</li>
+                            <li class="list-group-item"><strong>Founding Team:</strong> ${inv.founding_team.join(', ')}</li>
+                            <li class="list-group-item"><strong>Use of Funds:</strong> ${inv.use_of_funds}</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+    
+</body>
+</html>

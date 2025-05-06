@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Investment - MateUp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0">Register Investment for Project</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="errorMessage" class="alert alert-danger d-none">
+                            </div>
+                        <div id="successMessage" class="alert alert-success d-none">
+                            </div>
+                        <form id="investmentForm">
+                            <input type="hidden" id="project_id" name="project_id" value="{{ default_investment.project_id }}">
+
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Investment Title</label>
+                                <input type="text" class="form-control" id="title" name="title" value="{{ default_investment.title }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="category" class="form-label">Category</label>
+                                <input type="text" class="form-control" id="category" name="category" value="{{ default_investment.category }}" readonly>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="stage" class="form-label">Stage</label>
+                                <input type="text" class="form-control" id="stage" name="stage" value="{{ default_investment.stage }}" readonly>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" name="description" rows="3" readonly>{{ default_investment.description }}</textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Project Image URL (optional)</label>
+                                <input type="text" class="form-control" id="image" name="image" value="{{ default_investment.image }}" placeholder="https://example.com/image.jpg" readonly>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="target_investment" class="form-label">Target Investment</label>
+                                <input type="number" class="form-control" id="target_investment" name="target_investment" value="{{ default_investment.target_investment }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="min_investment" class="form-label">Minimum Investment</label>
+                                <input type="number" class="form-control" id="min_investment" name="min_investment" value="{{ default_investment.min_investment }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="expected_roi" class="form-label">Expected ROI (%)</label>
+                                <input type="number" class="form-control" id="expected_roi" name="expected_roi" value="{{ default_investment.expected_roi }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="duration_months" class="form-label">Duration (Months)</label>
+                                <input type="number" class="form-control" id="duration_months" name="duration_months" value="{{ default_investment.duration_months }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="region" class="form-label">Region</label>
+                                <input type="text" class="form-control" id="region" name="region" value="{{ default_investment.region }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="impact_area" class="form-label">Impact Area</label>
+                                <input type="text" class="form-control" id="impact_area" name="impact_area" value="{{ default_investment.impact_area }}" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="risk_level" class="form-label">Risk Level</label>
+                                <select class="form-select" id="risk_level" name="risk_level" required>
+                                    <option value="" disabled>Select Risk Level</option>
+                                    <option value="low" {{ 'selected' if default_investment.risk_level == 'low' }}>Low</option>
+                                    <option value="medium" {{ 'selected' if default_investment.risk_level == 'medium' }}>Medium</option>
+                                    <option value="high" {{ 'selected' if default_investment.risk_level == 'high' }}>High</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="founding_team" class="form-label">Founding Team (comma-separated)</label>
+                                <input type="text" class="form-control" id="founding_team" name="founding_team" value="{{ ', '.join(default_investment.founding_team) }}">
+                                <small class="form-text text-muted">Enter names separated by commas.</small>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="use_of_funds" class="form-label">Use of Funds</label>
+                                <textarea class="form-control" id="use_of_funds" name="use_of_funds" rows="3" required>{{ default_investment.use_of_funds }}</textarea>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-info">Register Investment</button>
+                                <a href="/investment" class="btn btn-outline-secondary">Back to Investments</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('investmentForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+    
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+            errorMessage.classList.add('d-none');
+            successMessage.classList.add('d-none');
+    
+            // Check login status if needed (though backend checks are more reliable)
+            // const isLoggedIn = {{ is_logged_in|tojson }}; ...
+    
+            const formData = new FormData(this);
+            const investmentData = {
+                // NO 'id' field here
+                project_id: parseInt(formData.get('project_id')),
+                title: formData.get('title'),
+                category: formData.get('category'),
+                stage: formData.get('stage'),
+                description: formData.get('description'),
+                image: formData.get('image') || null, // Send null if empty
+                status: 'pending', // Status set by backend/model default, but can be explicit
+                target_investment: parseInt(formData.get('target_investment')),
+                total_invested: 0, // Explicitly 0 on creation via this form
+                valuation: parseInt(formData.get('valuation')) || ({{ default_investment.valuation|default(0)|int }}),
+                min_investment: parseInt(formData.get('min_investment')),
+                expected_roi: parseInt(formData.get('expected_roi')),
+                duration_months: parseInt(formData.get('duration_months')),
+                region: formData.get('region'),
+                impact_area: formData.get('impact_area'),
+                risk_level: formData.get('risk_level'),
+                founding_team: formData.get('founding_team') ? formData.get('founding_team').split(',').map(item => item.trim().replace(/^"(.*)"$/, '$1').replace(/^'(.*)'$/, '$1')) : [], // Handle comma split and potential quotes
+                use_of_funds: formData.get('use_of_funds')
+            };
+    
+             // Basic validation (example)
+            if (!investmentData.title || !investmentData.target_investment || !investmentData.min_investment /* add others */) {
+                 errorMessage.textContent = "Please fill in all required fields.";
+                 errorMessage.classList.remove('d-none');
+                 return;
+             }
+    
+            try {
+                const response = await fetch('/api/investment/register', { // Use the specific registration endpoint
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(investmentData) // Send data without 'id'
+                });
+    
+                const result = await response.json();
+    
+                if (response.ok && result.success) {
+                    successMessage.textContent = result.message + (result.investment_id ? ` (New ID: ${result.investment_id})` : '');
+                    successMessage.classList.remove('d-none');
+                    document.getElementById('investmentForm').reset();
+                    // Redirect after a short delay
+                    setTimeout(() => {
+                        window.location.href = "/investment"; // Redirect to investments list
+                    }, 2000);
+                } else {
+                    errorMessage.textContent = result.message || `Failed to register investment (Status: ${response.status})`;
+                    errorMessage.classList.remove('d-none');
+                }
+            } catch (error) {
+                errorMessage.textContent = "An error occurred connecting to the server. Please try again.";
+                errorMessage.classList.remove('d-none');
+                console.error("Error:", error);
+            }
+        });
+    </script>
+</body>
+</html>

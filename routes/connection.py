@@ -278,6 +278,25 @@ async def update_task_status(
 
     return {"success": True, "message": "Task status updated"}
 
+@router.get("/api/todolists_projectID/{project_id}", response_class=JSONResponse)
+async def get_todolists_by_project_id(request: Request, project_id: int):
+    try:
+        with open("db/db.json", "r") as file:
+            data = json.load(file)
+            all_todolists = data.get("todolists", [])
+        todolist = next((t for t in all_todolists if t["project_id"] == project_id), None)
+        if todolist:
+            return {"todolist": todolist}
+        else:
+            raise HTTPException(status_code=404, detail="Todolist not found")
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="Database file not found")
+    except Exception as e:
+        return JSONResponse(
+            status_code=500,
+            content={"success": False, "message": f"Error: {str(e)}"}
+        )
+
 @router.post("/api/todolists/{list_id}/tasks", response_class=JSONResponse)
 async def add_task_to_list(
     list_id: int,

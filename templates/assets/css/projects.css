@@ -30,6 +30,7 @@ body {
 }
 
 .project-card {
+    min-height: 800px;
     background: white;
     border-radius: 8px;
     overflow: hidden;
@@ -166,6 +167,466 @@ body {
     border-right-color: transparent;
     border-radius: 50%;
     animation: spinner-border .75s linear infinite;
+}
+
+/* Base for the modal content if needed */
+.project-detail-modal-content {
+    font-family: Arial, sans-serif; /* Or your preferred font */
+    line-height: 1.6;
+    color: #333;
+    padding: 20px; /* Overall padding */
+}
+
+/* Main row for image and text content */
+.project-detail-main-info-row {
+    display: flex;
+    align-items: stretch; /* Ensures columns are of equal height */
+    margin-bottom: 20px; /* Space before the divider */
+    gap: 20px; /* Space between image and text columns */
+}
+
+/* Image column/wrapper */
+.project-detail-image-wrapper {
+    flex: 1 1 40%; /* Flex grow, shrink, basis (adjust percentage as needed) */
+    min-width: 0; /* Important for flex items to shrink properly */
+    border-radius: 8px;
+    overflow: hidden; /* To ensure image respects border-radius */
+}
+
+.project-detail-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+/* Text content column */
+.project-detail-text-content {
+    flex: 1 1 60%; /* Takes up more space */
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Internal padding for the text content area */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.project-detail-title {
+    font-size: 1.8em; /* Larger font for title */
+    font-weight: bold;
+    color: #2c3e50; /* Darker color for title */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Meta information (badges) */
+.project-detail-meta {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Space between badges */
+}
+
+.project-detail-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 0.85em;
+    font-weight: 600;
+    border-radius: 20px; /* Pill-shaped badges */
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.project-detail-badge-category {
+    background-color: #3498db; /* Example: Blue */
+}
+
+.project-detail-badge-stage {
+    background-color: #1abc9c; /* Example: Turquoise */
+}
+
+.project-detail-badge-date {
+    background-color: #95a5a6; /* Example: Grey */
+}
+
+/* Progress section */
+.project-detail-progress-section {
+    margin-bottom: 20px;
+}
+
+.project-detail-progress-label {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.project-detail-progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    height: 16px; /* Slightly taller progress bar */
+    overflow: hidden; /* Ensure inner bar respects border-radius */
+}
+
+.project-detail-progress-bar {
+    height: 100%;
+    background-color: #2ecc71; /* Green for progress */
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px 0 0 6px; /* Rounded only on the left if not full */
+    transition: width 0.5s ease-in-out;
+}
+.project-detail-progress-bar[style*="width: 100%"] {
+    border-radius: 6px; /* Full radius when 100% */
+}
+
+
+/* Creator information */
+.project-detail-creator {
+    font-size: 0.95em;
+    color: #7f8c8d; /* Muted color */
+    margin-bottom: 20px;
+}
+
+.project-detail-creator-name {
+    color: #34495e; /* Darker for the name */
+    font-weight: 600;
+}
+
+/* Actions (button) */
+.project-detail-actions {
+    margin-top: auto; /* Pushes the button to the bottom of the flex container */
+}
+
+.project-detail-button {
+    display: inline-block;
+    width: 100%; /* Full width button */
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-detail-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+.project-detail-button:active {
+    transform: translateY(0px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+
+.project-detail-button-primary {
+    background-color: #007bff; /* Bootstrap primary blue */
+}
+.project-detail-button-primary:hover {
+    background-color: #0056b3;
+}
+
+.project-detail-button-success {
+    background-color: #28a745; /* Bootstrap success green */
+}
+.project-detail-button-success:hover {
+    background-color: #1e7e34;
+}
+
+.project-detail-button[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+/* Divider */
+.project-detail-divider {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/* Description section */
+.project-detail-description-section {
+    padding: 10px;
+}
+
+.project-detail-description-title {
+    font-size: 1.4em;
+    font-weight: 600; /* Semi-bold */
+    color: #34495e;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-detail-description-text {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* --- General Reset/Base for the card context --- */
+.card-project-detail *,
+.card-project-detail *::before,
+.card-project-detail *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.card-project-detail {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Crucial if it's in a grid needing equal height cards */
+    background-color: #ffffff;
+    border-radius: 12px; /* Softer, larger radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    overflow: hidden; /* To clip image and ensure smooth corners */
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+
+.card-project-detail:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.07);
+}
+
+/* --- Image Area --- */
+.card-project-detail .project-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Consistent image height */
+    background-color: #f0f2f5; /* Placeholder color if image fails to load */
+}
+
+.card-project-detail .project-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Best fit for various image aspect ratios */
+}
+
+.card-project-detail .category-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff; /* Default: Primary Blue */
+    border-radius: 20px; /* Pill shape */
+    text-transform: capitalize;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* Example category specific colors (ensure class names match your JS output for project.category) */
+.card-project-detail .category-badge.technology { background-color: #17a2b8; } /* Info Cyan */
+.card-project-detail .category-badge.art { background-color: #fd7e14; } /* Orange */
+.card-project-detail .category-badge.finance { background-color: #20c997; } /* Teal */
+.card-project-detail .category-badge.health { background-color: #dc3545; } /* Red */
+
+/* --- Card Body --- */
+.card-project-detail {
+    height: 200px; 
+    margin-bottom: 200px; 
+}
+.card-project-detail .card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Takes available space, pushing footer down */
+    color: #333;
+}
+
+.card-project-detail .card-title {
+    font-size: 1.25rem;
+    font-weight: 700; /* Semibold or Bold */
+    color: #212529; /* Darker for title */
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.card-project-detail .project-description {
+    font-size: 0.9rem;
+    color: #5a6268; /* Softer grey for description */
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex-grow: 1; /* Allows description to expand */
+
+    /* For multi-line text truncation (CSS line-clamp) */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Show 3 lines, adjust as needed */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: calc(1.6em * 3); /* approx 3 lines of text to ensure space is reserved before clamp */
+}
+
+/* --- Meta Information --- */
+.card-project-detail .project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #6c757d;
+    padding-top: 12px;
+    margin-bottom: 16px;
+    border-top: 1px solid #e9ecef; /* Light separator */
+}
+
+.card-project-detail .project-stage {
+    font-weight: 500;
+    padding: 3px 8px;
+    background-color: #f0f2f5; /* Light grey tag-like background */
+    border-radius: 4px;
+    color: #495057;
+}
+
+.card-project-detail .project-date {
+    font-style: italic;
+}
+
+/* --- Progress Bar --- */
+.card-project-detail .project-progress-wrapper {
+    width: 100%;
+    height: 10px; /* Slim and modern height */
+    background-color: #e9ecef; /* Track color */
+    border-radius: 5px;
+    overflow: hidden; /* To clip the inner bar's corners */
+    margin-top: auto; /* Pushes it to the bottom of card-body if description is short */
+}
+
+.card-project-detail .project-progress-bar {
+    height: 100%;
+    background-color: #28a745; /* Success Green */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Text to the right or center */
+    padding-right: 8px; /* Padding for text if on right */
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 5px 0 0 5px; /* Keep left radius, right if not 100% */
+    transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1); /* Smooth animation */
+    white-space: nowrap;
+}
+/* Adjust radius if progress bar is full */
+.card-project-detail .project-progress-bar[style*="width: 100%"] {
+    border-radius: 5px;
+}
+/* Hide text if progress is very low to avoid overflow */
+.card-project-detail .project-progress-bar[style*="width: 0%"],
+.card-project-detail .project-progress-bar[style*="width: 1%"],
+.card-project-detail .project-progress-bar[style*="width: 2%"],
+.card-project-detail .project-project-bar[style*="width: 3%"],
+.card-project-detail .project-project-bar[style*="width: 4%"],
+.card-project-detail .project-project-bar[style*="width: 5%"] {
+    /* font-size: 0; effectively hiding it */
+    /* Or more robustly */
+    color: transparent;
+}
+
+
+/* --- Card Footer --- */
+.card-project-detail .card-footer {
+    padding: 12px 18px;
+    background-color: #f8f9fa; /* Light background for footer */
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-project-detail .creator-info {
+    font-size: 0.8rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* --- Buttons (Custom Pure CSS Styling) --- */
+.card-project-detail .button {
+    appearance: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.card-project-detail .button:active {
+    transform: translateY(1px);
+}
+
+.card-project-detail .view-project-btn {
+    color: #007bff; /* Primary Blue */
+    background-color: transparent;
+    border: 1.5px solid #007bff;
+}
+
+.card-project-detail .view-project-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+.card-project-detail .connect-btn {
+    color: #fff;
+    background-color: #28a745; /* Success Green */
+    border: 1.5px solid #28a745;
+    margin-left: 8px; /* If it's not floated, ensure some space */
+}
+
+.card-project-detail .connect-btn:hover {
+    background-color: #218838; /* Darker Green */
+    border-color: #1e7e34;
+    box-shadow: 0 2px 5px rgba(40, 167, 69, 0.3);
+}
+
+/* Responsive adjustments (example for smaller screens) */
+@media (max-width: 768px) {
+    .project-detail-main-info-row {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .project-detail-image-wrapper {
+        flex-basis: auto; /* Reset basis */
+        height: 250px; /* Fixed height for image on smaller screens, or adjust as needed */
+        margin-bottom: 20px; /* Space when stacked */
+    }
+
+    .project-detail-text-content {
+        flex-basis: auto; /* Reset basis */
+    }
+
+    .project-detail-title {
+        font-size: 1.5em;
+    }
+
+    .project-detail-button {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
 }
 
 @keyframes spinner-border {

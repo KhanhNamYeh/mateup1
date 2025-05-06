@@ -8,16 +8,14 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <title>MatesUp - Projects</title>
     <link rel="shortcut icon" type="image/icon" href="static/assets/logo/grass.png" />
-    <link rel="stylesheet" href="static/assets/css/font-awesome.min.css">
+    <!-- Dùng Font Awesome 5 CDN (miễn phí, không cần kit ID) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dyZtQ2crGNYFh7w8n1mKHvDwDhdZKx0ivzqzjW6v8E9NvzjBAqVzQph6CEAZnYdUv7MSKt/9FJYN+/qZ5D1NDw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="static/assets/css/linearicons.css">
     <link rel="stylesheet" href="static/assets/css/animate.css">
     <link rel="stylesheet" href="static/assets/css/flaticon.css">
     <link rel="stylesheet" href="static/assets/css/slick.css">
     <link rel="stylesheet" href="static/assets/css/slick-theme.css">
     <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/assets/css/bootsnav.css">
-    <link rel="stylesheet" href="static/assets/css/style.css">
-    <link rel="stylesheet" href="static/assets/css/responsive.css">
     <link rel="stylesheet" href="static/assets/css/projects.css">
     
     <!-- Custom CSS for green and white theme -->
@@ -26,40 +24,7 @@
     </style>
 </head>
 <body data-is-logged-in="{% if is_logged_in %}true{% else %}false{% endif %}" data-username="{{ username }}">
-    <!-- Keep original header-area - NO CHANGES -->
-    <div class="header-area">
-        <!-- Start Navigation -->
-        <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
-            <div class="container">
-                <!-- Start Header Navigation -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="/">mates<span>up</span></a>
-                </div><!--/.navbar-header-->
-                <!-- End Header Navigation -->
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a href="/">home</a></li>
-                        <li><a href="/investment">investment</a></li>
-                        <li class="active"><a href="projects">project</a></li>
-                        <li><a href="/connection">Connection</a></li>
-                        <li><a href="/blog">blog</a></li>
-                        {% if is_logged_in %}
-                            <li><a href="/logout">LOG OUT</a></li>
-                        {% else %}
-                            <li><a href="/login">LOG IN</a></li>
-                        {% endif %}
-                    </ul><!--/.nav -->
-                </div><!-- /.navbar-collapse -->
-            </div><!--/.container-->
-        </nav><!--/nav-->
-        <!-- End Navigation -->
-    </div><!--/.header-area-->
-    <div class="clearfix"></div>
+    {% include "navbar.html" %}
 
     <!-- Project Page Title -->
     <div class="project-page-title">
@@ -244,7 +209,7 @@
     <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="static/assets/js/projects.js"></script>
+    <script src="static/assets/js/project.js"></script>
     
     <!-- Custom JavaScript for Project Management -->
     <script>

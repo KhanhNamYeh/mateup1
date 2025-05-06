@@ -122,9 +122,31 @@
             "stage": "In Progress",
             "startDate": "2025-05-22",
             "progress": 90,
-            "image": null,
+            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
             "id": 9,
             "creator": "admin"
+        },
+        {
+            "title": "Triet Max-Leninnnnn 2",
+            "description": "aaa",
+            "category": "Technology",
+            "stage": "Idea",
+            "startDate": "2005-12-31",
+            "progress": 0,
+            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "id": 10,
+            "creator": "ab"
+        },
+        {
+            "title": "Triet Max-Leninnnnn 3",
+            "description": "abcde",
+            "category": "Business",
+            "stage": "Idea",
+            "startDate": "2005-12-31",
+            "progress": 0,
+            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "id": 11,
+            "creator": "abc"
         }
     ],
     "connection_requests": [
@@ -183,17 +205,23 @@
             "to": "Truong Cong B",
             "project_id": 6,
             "status": true
+        },
+        {
+            "id": 9,
+            "from": "abc",
+            "to": "ab",
+            "project_id": 10,
+            "status": true
+        },
+        {
+            "id": 10,
+            "from": "abc",
+            "to": "Nguyen Van A",
+            "project_id": 2,
+            "status": false
         }
     ],
     "connections": [
-        {
-            "id": 1,
-            "users": [
-                "ab",
-                "abc"
-            ],
-            "project_id": 1
-        },
         {
             "id": 2,
             "users": [
@@ -233,27 +261,17 @@
                 "Truong Cong B"
             ],
             "project_id": 6
-        }
-    ],
-    "todolists": [
+        },
         {
-            "id": 1,
-            "title": "1",
-            "project_id": 3,
+            "id": 7,
             "users": [
                 "ab",
                 "abc"
             ],
-            "tasks": [
-                {
-                    "id": 1,
-                    "title": "123",
-                    "status": false,
-                    "description": null,
-                    "dueDate": null
-                }
-            ]
-        },
+            "project_id": 10
+        }
+    ],
+    "todolists": [
         {
             "id": 2,
             "title": "1",
@@ -346,8 +364,8 @@
         },
         {
             "id": 7,
-            "title": "2",
-            "project_id": 3,
+            "title": "1",
+            "project_id": 10,
             "users": [
                 "ab",
                 "abc"
@@ -357,11 +375,12 @@
     ],
     "investments": [
         {
+            "id": 1,
             "project_id": 2,
             "title": "FinLedger Regional Scale-up",
             "category": "Finance & Inclusion",
             "stage": "Series A",
-            "description": "We are expanding FinLedger to underserved regions in Southeast Asia to provide blockchain-powered microfinance services.",
+            "description": "FinLedger is driving financial inclusion by expanding its blockchain-powered microfinance platform to underserved regions in Southeast Asia. This initiative aims to empower local communities with secure, transparent, and accessible financial services, fostering sustainable economic growth.",
             "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
             "status": "funding",
             "target_investment": 400000,
@@ -373,15 +392,19 @@
             "region": "Southeast Asia",
             "impact_area": "Financial Inclusion",
             "risk_level": "Medium",
-            "founding_team": ["Nguyen Van A", "Truong Cong B"],
+            "founding_team": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
             "use_of_funds": "60% product development, 20% operations, 20% market penetration"
         },
         {
+            "id": 2,
             "project_id": 3,
             "title": "HealthAI Field Trials",
             "category": "HealthTech",
             "stage": "Pilot",
-            "description": "This investment phase supports HealthAI's deployment in rural clinics to validate its AI-based diagnosis effectiveness.",
+            "description": "HealthAI is conducting field trials to deploy its advanced AI-driven diagnostic platform in rural clinics. This phase will validate the technology\u00e2\u20ac\u2122s effectiveness in improving healthcare access and outcomes for underserved populations.",
             "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
             "status": "invested",
             "target_investment": 250000,
@@ -393,15 +416,19 @@
             "region": "Vietnam",
             "impact_area": "Healthcare Access",
             "risk_level": "High",
-            "founding_team": ["Nguyen Van A", "Truong Cong B"],
+            "founding_team": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
             "use_of_funds": "AI diagnostic tools, rural deployment, staff training"
         },
         {
+            "id": 3,
             "project_id": 4,
             "title": "EduConnect SEA Expansion",
             "category": "EdTech",
             "stage": "Scaling",
-            "description": "EduConnect aims to reach 1 million students across Southeast Asia by scaling its digital learning platform.",
+            "description": "EduConnect is scaling its digital learning platform to reach one million students across Southeast Asia. The project focuses on bridging educational gaps through localized content, teacher training, and innovative technology solutions.",
             "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
             "status": "funding",
             "target_investment": 600000,
@@ -413,15 +440,19 @@
             "region": "Southeast Asia",
             "impact_area": "Education Equity",
             "risk_level": "Medium",
-            "founding_team": ["Nguyen Van A", "Truong Cong B"],
+            "founding_team": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
             "use_of_funds": "Platform localization, teacher onboarding, content creation"
         },
         {
+            "id": 4,
             "project_id": 5,
             "title": "AgriTech Smart Farming Rollout",
             "category": "AgriTech",
             "stage": "Growth",
-            "description": "AgriTech Platform will deploy IoT sensors to 1,000 farms, enhancing soil monitoring and water management.",
+            "description": "AgriTech is launching a large-scale deployment of IoT-enabled smart farming solutions to 1,000 farms in the Mekong Delta. The initiative aims to enhance agricultural productivity and sustainability through advanced soil monitoring and water management.",
             "image": "https://images.unsplash.com/photo-1490682143684-14369e18dce8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
             "status": "funding",
             "target_investment": 500000,
@@ -433,15 +464,19 @@
             "region": "Mekong Delta",
             "impact_area": "Sustainable Agriculture",
             "risk_level": "Low",
-            "founding_team": ["Nguyen Van A", "Truong Cong B"],
+            "founding_team": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
             "use_of_funds": "Sensor deployment, data analytics, farmer support"
         },
         {
+            "id": 5,
             "project_id": 6,
             "title": "Supply Chain Tracker MVP Build",
             "category": "Blockchain",
             "stage": "Prototype",
-            "description": "Investment will support MVP development of the blockchain verification system for ethical sourcing.",
+            "description": "This project supports the development of a Minimum Viable Product (MVP) for a blockchain-based supply chain verification system. The solution aims to ensure ethical sourcing and transparency for global supply chains.",
             "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
             "status": "invested",
             "target_investment": 200000,
@@ -453,9 +488,11 @@
             "region": "Global",
             "impact_area": "Ethical Supply Chains",
             "risk_level": "Medium",
-            "founding_team": ["Nguyen Van A", "Truong Cong B"],
+            "founding_team": [
+                "Nguyen Van A",
+                "Truong Cong B"
+            ],
             "use_of_funds": "MVP development, third-party validation, stakeholder onboarding"
         }
     ]
-
 }
