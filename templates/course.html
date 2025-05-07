@@ -3,379 +3,851 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Suggested Courses - MatesUp</title>
-    
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-</head>
-<body>
-    <div class="header-area">
-        <!-- Start Navigation -->
-        <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
-            <div class="container">
-                <!-- Start Header Navigation -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="index.html">mates<span>up</span></a>
-                </div><!--/.navbar-header-->
-                <!-- End Header Navigation -->
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a href="index.html">home</a></li>
-                        <li><a href="introduction.html">introduction</a></li>
-                        <li><a href="investment.html">investment</a></li>
-                        <!-- Assuming course is related to project -->
-                        <li class="active"><a href="project.html">project</a></li>
-                        <li><a href="blog.html">blog</a></li>
-                        <li><a href="about.html">about me</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#loginModal">LOG IN</a></li>
-                    </ul><!--/.nav -->
-                </div><!-- /.navbar-collapse -->
-            </div><!--/.container-->
-        </nav><!--/nav-->
-        <!-- End Navigation -->
-    </div><!--/.header-area-->
-    <div class="clearfix"></div>
-
-    <!-- Success Message Area -->
-    <section class="success-message">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 bg-success p-4">
-                    <h3 class="text-white"><i class="fa fa-check-circle"></i> Suggested Courses</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section class="courses-section section-gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center mb-5">
-                    <h2>Recommended Courses for Your Project</h2>
-                    <p class="text-muted">Based on your project details and connection partner, we recommend these courses to help you succeed together.</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="course-card">
-                        <div class="course-image">
-                            <img src="assets/images/course1.jpg" alt="Project Management" class="img-fluid">
-                            <div class="course-badge">Bestseller</div>
-                        </div>
-                        <div class="course-content">
-                            <div class="course-info">
-                                <span class="course-category">Project Management</span>
-                                <div class="course-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                    <span>4.7 (2,145)</span>
-                                </div>
-                            </div>
-                            <h4 class="course-title">Agile Project Management for Startups</h4>
-                            <p class="course-desc">Learn how to apply agile methodologies to manage your startup project effectively.</p>
-                            <div class="course-meta">
-                                <span><i class="fa fa-clock-o"></i> 12 hours</span>
-                                <span><i class="fa fa-list-ul"></i> 8 modules</span>
-                            </div>
-                            <div class="course-footer">
-                                <div class="course-price">$49.99</div>
-                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="course-card">
-                        <div class="course-image">
-                            <img src="assets/images/course2.jpg" alt="Travel Industry" class="img-fluid">
-                            <div class="course-badge course-badge-new">New</div>
-                        </div>
-                        <div class="course-content">
-                            <div class="course-info">
-                                <span class="course-category">Travel Industry</span>
-                                <div class="course-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span>5.0 (418)</span>
-                                </div>
-                            </div>
-                            <h4 class="course-title">Building Travel Apps with Modern Technologies</h4>
-                            <p class="course-desc">Learn AR/VR integration, AI recommendations, and modern UX design for travel applications.</p>
-                            <div class="course-meta">
-                                <span><i class="fa fa-clock-o"></i> 18 hours</span>
-                                <span><i class="fa fa-list-ul"></i> 12 modules</span>
-                            </div>
-                            <div class="course-footer">
-                                <div class="course-price">$79.99</div>
-                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="course-card">
-                        <div class="course-image">
-                            <img src="assets/images/course3.jpg" alt="Startup Funding" class="img-fluid">
-                        </div>
-                        <div class="course-content">
-                            <div class="course-info">
-                                <span class="course-category">Startup Funding</span>
-                                <div class="course-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <span>4.3 (956)</span>
-                                </div>
-                            </div>
-                            <h4 class="course-title">Securing Investment for Your Travel Startup</h4>
-                            <p class="course-desc">Learn how to create pitches, approach investors, and secure funding for travel-tech startups.</p>
-                            <div class="course-meta">
-                                <span><i class="fa fa-clock-o"></i> 10 hours</span>
-                                <span><i class="fa fa-list-ul"></i> 7 modules</span>
-                            </div>
-                            <div class="course-footer">
-                                <div class="course-price">$59.99</div>
-                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-3">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="course-card">
-                        <div class="course-image">
-                            <img src="assets/images/course4.jpg" alt="UX Design" class="img-fluid">
-                        </div>
-                        <div class="course-content">
-                            <div class="course-info">
-                                <span class="course-category">UX Design</span>
-                                <div class="course-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                    <span>4.8 (1,327)</span>
-                                </div>
-                            </div>
-                            <h4 class="course-title">UX Design for Travel and Map Applications</h4>
-                            <p class="course-desc">Master the essential UX principles for creating intuitive, engaging travel and mapping applications.</p>
-                            <div class="course-meta">
-                                <span><i class="fa fa-clock-o"></i> 15 hours</span>
-                                <span><i class="fa fa-list-ul"></i> 10 modules</span>
-                            </div>
-                            <div class="course-footer">
-                                <div class="course-price">$69.99</div>
-                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="course-card">
-                        <div class="course-image">
-                            <img src="assets/images/course5.jpg" alt="AR Development" class="img-fluid">
-                            <div class="course-badge">Popular</div>
-                        </div>
-                        <div class="course-content">
-                            <div class="course-info">
-                                <span class="course-category">AR Development</span>
-                                <div class="course-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <span>4.2 (758)</span>
-                                </div>
-                            </div>
-                            <h4 class="course-title">Augmented Reality for Travel Experiences</h4>
-                            <p class="course-desc">Learn to build AR overlays for travel guides, historical sites, and interactive tourist experiences.</p>
-                            <div class="course-meta">
-                                <span><i class="fa fa-clock-o"></i> 20 hours</span>
-                                <span><i class="fa fa-list-ul"></i> 14 modules</span>
-                            </div>
-                            <div class="course-footer">
-                                <div class="course-price">$89.99</div>
-                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="course-card">
-                        <div class="course-image">
-                            <img src="assets/images/course6.jpg" alt="Marketing" class="img-fluid">
-                        </div>
-                        <div class="course-content">
-                            <div class="course-info">
-                                <span class="course-category">Marketing</span>
-                                <div class="course-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <span>4.9 (632)</span>
-                                </div>
-                            </div>
-                            <h4 class="course-title">Marketing Strategies for Travel Tech Startups</h4>
-                            <p class="course-desc">Discover effective strategies to market your travel tech product and achieve rapid user growth.</p>
-                            <div class="course-meta">
-                                <span><i class="fa fa-clock-o"></i> 14 hours</span>
-                                <span><i class="fa fa-list-ul"></i> 9 modules</span>
-                            </div>
-                            <div class="course-footer">
-                                <div class="course-price">$54.99</div>
-                                <a href="#" class="btn btn-outline-success">Enroll Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-4">
-                <a href="connection.html" class="btn btn-success">Return to Connection</a>
-            </div>
-        </div>
-    </section>
-
+    <title>Course Marketplace</title>
     <style>
-        .course-card {
-            border: 1px solid #e8e8e8;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+        :root {
+            --primary-color: #2c974b;
+            --primary-hover: #218838;
+            --secondary-color: #6c757d;
+            --light-gray: #f8f9fa;
+            --border-color: #dee2e6;
+            --text-color: #343a40;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --radius: 8px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
         }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            background-color: var(--light-gray);
+            padding: var(--spacing-lg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: var(--spacing-sm) var(--spacing-md);
+            margin: 0 var(--spacing-sm) var(--spacing-sm) 0;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover {
+            background-color: var(--light-gray);
+        }
+
+        .category-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .course-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
         .course-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        
+
         .course-image {
-            position: relative;
-        }
-        
-        .course-image img {
             width: 100%;
-            height: 180px;
+            height: 160px;
             object-fit: cover;
         }
-        
-        .course-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ffc107;
-            color: #333;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
+
+        .course-info {
+            padding: var(--spacing-md);
         }
-        
-        .course-badge-new {
-            background: #28a745;
-            color: white;
+
+        .course-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
         }
-        
-        .course-content {
-            padding: 20px;
+
+        .course-category {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .course-instructor {
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .course-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .rating {
+            color: #ffc107;
+            font-size: 0.9rem;
+        }
+
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(-50px);
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--secondary-color);
+        }
+
+        .modal-body {
+            padding: var(--spacing-md);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .modal-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-info-item {
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
         }
-        
-        .course-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            align-items: center;
+
+        .modal-info-label {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
         }
-        
-        .course-category {
-            background: #f1f1f1;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            color: #555;
-        }
-        
-        .course-rating {
-            font-size: 14px;
-        }
-        
-        .course-rating i {
-            color: #ffc107;
-        }
-        
-        .course-title {
-            margin-bottom: 10px;
-            font-size: 18px;
+
+        .modal-info-value {
             font-weight: 600;
         }
-        
-        .course-desc {
-            color: #666;
-            margin-bottom: 15px;
-            flex-grow: 1;
+
+        .curriculum {
+            margin-top: var(--spacing-md);
         }
-        
-        .course-meta {
-            display: flex;
-            justify-content: space-between;
-            color: #777;
-            font-size: 14px;
-            margin-bottom: 15px;
+
+        .curriculum-item {
+            background-color: var(--light-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--radius);
+            margin-bottom: var(--spacing-sm);
         }
-        
-        .course-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
+
+        .enroll-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1rem;
+            margin-top: var(--spacing-md);
+            transition: background-color 0.3s ease;
         }
-        
-        .course-price {
-            font-size: 18px;
-            font-weight: bold;
-            color: #28a745;
+
+        .enroll-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        @media screen and (max-width: 768px) {
+            .courses-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
         }
     </style>
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div class="container">
+        
 
-    <!-- JavaScript Files -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+        <div class="categories">
+            <button class="category-btn active" data-category="all">All Courses</button>
+            <button class="category-btn" data-category="programming">Programming</button>
+            <button class="category-btn" data-category="design">Design</button>
+            <button class="category-btn" data-category="business">Business</button>
+            <button class="category-btn" data-category="marketing">Marketing</button>
+            <button class="category-btn" data-category="personal-development">Personal Development</button>
+        </div>
+
+        <div class="courses-grid" id="courses-grid">
+            <!-- Courses will be dynamically added here -->
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="course-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Course Title</h2>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Course data
+        const courseData = [
+            {
+                id: 1,
+                title: "Complete JavaScript Development",
+                category: "programming",
+                instructor: "John Smith",
+                price: 49.99,
+                rating: 4.8,
+                students: 15420,
+                description: "Master JavaScript from scratch! Learn modern JavaScript, ES6+, DOM manipulation, asynchronous programming, and build real-world projects to solidify your skills.",
+                image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "30 hours",
+                level: "Beginner to Advanced",
+                lastUpdated: "October 2023",
+                curriculum: [
+                    "JavaScript Basics and Core Concepts",
+                    "DOM Manipulation and Events",
+                    "Asynchronous JavaScript: Promises, Async/Await",
+                    "Error Handling and Debugging",
+                    "Building Real-World Applications"
+                ]
+            },
+            {
+                id: 2,
+                title: "UI/UX Design Fundamentals",
+                category: "design",
+                instructor: "Sarah Johnson",
+                price: 59.99,
+                rating: 4.7,
+                students: 12680,
+                description: "Learn UI/UX design principles from an industry expert. Master user research, wireframing, prototyping, and design systems to create beautiful and functional user interfaces.",
+                image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "24 hours",
+                level: "Beginner to Intermediate",
+                lastUpdated: "November 2023",
+                curriculum: [
+                    "Introduction to UI/UX Design",
+                    "User Research and Personas",
+                    "Wireframing and Prototyping",
+                    "Visual Design Principles",
+                    "Design Systems and Style Guides"
+                ]
+            },
+            {
+                id: 3,
+                title: "Digital Marketing Masterclass",
+                category: "marketing",
+                instructor: "Michael Brown",
+                price: 79.99,
+                rating: 4.9,
+                students: 18920,
+                description: "Comprehensive digital marketing course covering SEO, SEM, social media marketing, email marketing, and analytics to help you grow your business online.",
+                image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "36 hours",
+                level: "All Levels",
+                lastUpdated: "December 2023",
+                curriculum: [
+                    "Digital Marketing Strategy",
+                    "Search Engine Optimization (SEO)",
+                    "Social Media Marketing",
+                    "Email Marketing Campaigns",
+                    "Analytics and Performance Measurement"
+                ]
+            },
+            {
+                id: 4,
+                title: "Python for Data Science",
+                category: "programming",
+                instructor: "Emily Chen",
+                price: 69.99,
+                rating: 4.8,
+                students: 14250,
+                description: "Learn Python programming specifically for data science applications. Master data manipulation, visualization, and machine learning fundamentals.",
+                image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "28 hours",
+                level: "Intermediate",
+                lastUpdated: "September 2023",
+                curriculum: [
+                    "Python Fundamentals for Data Science",
+                    "Data Manipulation with Pandas",
+                    "Data Visualization with Matplotlib and Seaborn",
+                    "Statistical Analysis with Python",
+                    "Introduction to Machine Learning"
+                ]
+            },
+            {
+                id: 5,
+                title: "Entrepreneurship: Start Your Business",
+                category: "business",
+                instructor: "David Wilson",
+                price: 89.99,
+                rating: 4.6,
+                students: 9840,
+                description: "A complete guide to starting your own business from scratch, covering business planning, funding, marketing, legal requirements, and growth strategies.",
+                image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "20 hours",
+                level: "Beginner",
+                lastUpdated: "October 2023",
+                curriculum: [
+                    "Business Idea Validation",
+                    "Business Plan Development",
+                    "Funding and Financial Planning",
+                    "Legal Setup and Requirements",
+                    "Marketing and Growth Strategies"
+                ]
+            },
+            {
+                id: 6,
+                title: "Adobe Photoshop Mastery",
+                category: "design",
+                instructor: "Lisa Taylor",
+                price: 54.99,
+                rating: 4.7,
+                students: 11760,
+                description: "Master Adobe Photoshop from beginner to advanced level. Learn photo editing, manipulation, retouching, and graphic design techniques used by professionals.",
+                image: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "22 hours",
+                level: "All Levels",
+                lastUpdated: "November 2023",
+                curriculum: [
+                    "Photoshop Interface and Tools",
+                    "Photo Editing and Retouching",
+                    "Layers and Masks",
+                    "Typography and Text Effects",
+                    "Advanced Compositing Techniques"
+                ]
+            },
+            {
+                id: 7,
+                title: "Personal Productivity and Time Management",
+                category: "personal-development",
+                instructor: "Robert Green",
+                price: 39.99,
+                rating: 4.9,
+                students: 20340,
+                description: "Boost your productivity and manage your time effectively. Learn proven techniques, tools, and habits to accomplish more in less time.",
+                image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "15 hours",
+                level: "All Levels",
+                lastUpdated: "December 2023",
+                curriculum: [
+                    "Productivity Mindset",
+                    "Goal Setting and Prioritization",
+                    "Time Management Techniques",
+                    "Overcoming Procrastination",
+                    "Building Productive Habits"
+                ]
+            },
+            {
+                id: 8,
+                title: "Full Stack Web Development",
+                category: "programming",
+                instructor: "Alex Rodriguez",
+                price: 99.99,
+                rating: 4.8,
+                students: 16890,
+                description: "Become a full stack web developer. Learn front-end and back-end technologies including HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
+                image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "45 hours",
+                level: "Intermediate to Advanced",
+                lastUpdated: "November 2023",
+                curriculum: [
+                    "HTML, CSS, and Responsive Design",
+                    "JavaScript and Modern ES6+",
+                    "React.js for Front-End Development",
+                    "Node.js and Express for Back-End",
+                    "MongoDB and Database Integration"
+                ]
+            },
+            {
+                id: 9,
+                title: "Social Media Marketing Strategy",
+                category: "marketing",
+                instructor: "Jessica Lee",
+                price: 49.99,
+                rating: 4.6,
+                students: 13570,
+                description: "Create effective social media marketing strategies for any business. Learn content creation, audience engagement, paid advertising, and analytics.",
+                image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "18 hours",
+                level: "All Levels",
+                lastUpdated: "October 2023",
+                curriculum: [
+                    "Social Media Strategy Development",
+                    "Content Creation and Curation",
+                    "Community Building and Engagement",
+                    "Paid Social Media Advertising",
+                    "Analytics and ROI Measurement"
+                ]
+            },
+            {
+                id: 10,
+                title: "Financial Literacy: Personal Finance",
+                category: "business",
+                instructor: "Thomas Moore",
+                price: 59.99,
+                rating: 4.9,
+                students: 19840,
+                description: "Take control of your personal finances. Learn budgeting, saving, investing, debt management, and how to build wealth for a secure financial future.",
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "16 hours",
+                level: "Beginner",
+                lastUpdated: "December 2023",
+                curriculum: [
+                    "Budgeting and Financial Planning",
+                    "Debt Management and Reduction",
+                    "Saving and Emergency Funds",
+                    "Investment Fundamentals",
+                    "Retirement Planning"
+                ]
+            },
+            {
+                id: 11,
+                title: "Mobile App Design with Figma",
+                category: "design",
+                instructor: "Nina Martinez",
+                price: 64.99,
+                rating: 4.7,
+                students: 10620,
+                description: "Design beautiful mobile apps using Figma. Learn UI/UX principles specific to mobile interfaces, prototyping, and design systems.",
+                image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "20 hours",
+                level: "Intermediate",
+                lastUpdated: "November 2023",
+                curriculum: [
+                    "Introduction to Figma",
+                    "Mobile UI/UX Design Principles",
+                    "Creating Components and Design Systems",
+                    "Interactive Prototyping",
+                    "Design Handoff to Developers"
+                ]
+            },
+            {
+                id: 12,
+                title: "Public Speaking and Presentation Skills",
+                category: "personal-development",
+                instructor: "Amanda White",
+                price: 44.99,
+                rating: 4.8,
+                students: 14280,
+                description: "Overcome fear of public speaking and deliver powerful presentations. Learn speech writing, delivery techniques, and audience engagement.",
+                image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "14 hours",
+                level: "All Levels",
+                lastUpdated: "October 2023",
+                curriculum: [
+                    "Overcoming Speaking Anxiety",
+                    "Structuring Compelling Presentations",
+                    "Verbal and Non-verbal Communication",
+                    "Visual Aid Design",
+                    "Handling Q&A Sessions"
+                ]
+            },
+            {
+                id: 13,
+                title: "React.js: From Zero to Hero",
+                category: "programming",
+                instructor: "Daniel Kim",
+                price: 79.99,
+                rating: 4.9,
+                students: 17650,
+                description: "Master React.js from basic to advanced concepts. Build modern, reactive web applications with the most popular JavaScript library.",
+                image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "26 hours",
+                level: "Intermediate",
+                lastUpdated: "December 2023",
+                curriculum: [
+                    "React Fundamentals and JSX",
+                    "Components, Props, and State",
+                    "Hooks and Context API",
+                    "Routing and Navigation",
+                    "State Management with Redux"
+                ]
+            },
+            {
+                id: 14,
+                title: "Email Marketing Automation",
+                category: "marketing",
+                instructor: "Christopher Adams",
+                price: 54.99,
+                rating: 4.6,
+                students: 9870,
+                description: "Learn to create automated email marketing campaigns that convert. Master list building, segmentation, copywriting, and analytics.",
+                image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "16 hours",
+                level: "Intermediate",
+                lastUpdated: "November 2023",
+                curriculum: [
+                    "Email List Building Strategies",
+                    "Segmentation and Personalization",
+                    "Copywriting for Email Campaigns",
+                    "Automation Workflows and Triggers",
+                    "A/B Testing and Performance Analysis"
+                ]
+            },
+            {
+                id: 15,
+                title: "Business Analytics with Excel",
+                category: "business",
+                instructor: "Olivia Harris",
+                price: 49.99,
+                rating: 4.7,
+                students: 12340,
+                description: "Master Microsoft Excel for business analytics. Learn formulas, pivot tables, dashboards, and data analysis techniques for better business decisions.",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "22 hours",
+                level: "All Levels",
+                lastUpdated: "October 2023",
+                curriculum: [
+                    "Excel Formulas and Functions",
+                    "Data Analysis Tools",
+                    "Pivot Tables and Reports",
+                    "Dashboard Creation",
+                    "Business Forecasting"
+                ]
+            },
+            {
+                id: 16,
+                title: "Adobe Illustrator for Beginners",
+                category: "design",
+                instructor: "Paul Thompson",
+                price: 44.99,
+                rating: 4.8,
+                students: 11230,
+                description: "Learn Adobe Illustrator from scratch. Master vector graphics creation, typography, and illustration techniques for logos, icons, and more.",
+                image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "18 hours",
+                level: "Beginner",
+                lastUpdated: "November 2023",
+                curriculum: [
+                    "Illustrator Interface and Tools",
+                    "Creating Vector Shapes",
+                    "Typography and Text Effects",
+                    "Logo Design Principles",
+                    "Exporting for Different Media"
+                ]
+            },
+            {
+                id: 17,
+                title: "Mindfulness and Stress Management",
+                category: "personal-development",
+                instructor: "Sophia Clark",
+                price: 39.99,
+                rating: 4.9,
+                students: 16780,
+                description: "Reduce stress and improve wellbeing through mindfulness practices. Learn meditation techniques, breathing exercises, and daily mindfulness habits.",
+                image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "12 hours",
+                level: "All Levels",
+                lastUpdated: "December 2023",
+                curriculum: [
+                    "Introduction to Mindfulness",
+                    "Meditation Techniques",
+                    "Breathing Exercises",
+                    "Mindfulness in Daily Activities",
+                    "Stress Response and Management"
+                ]
+            },
+            {
+                id: 18,
+                title: "Machine Learning Fundamentals",
+                category: "programming",
+                instructor: "James Wilson",
+                price: 89.99,
+                rating: 4.7,
+                students: 13420,
+                description: "Learn the fundamentals of machine learning using Python. Cover regression, classification, clustering, and practical ML applications.",
+                image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "30 hours",
+                level: "Intermediate to Advanced",
+                lastUpdated: "November 2023",
+                curriculum: [
+                    "Introduction to Machine Learning",
+                    "Supervised Learning Algorithms",
+                    "Unsupervised Learning",
+                    "Model Evaluation and Validation",
+                    "Practical Machine Learning Projects"
+                ]
+            },
+            {
+                id: 19,
+                title: "Content Marketing Strategy",
+                category: "marketing",
+                instructor: "Rebecca Miller",
+                price: 59.99,
+                rating: 4.8,
+                students: 10980,
+                description: "Create an effective content marketing strategy. Learn content planning, creation, distribution, and analytics to attract and convert customers.",
+                image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "20 hours",
+                level: "Intermediate",
+                lastUpdated: "October 2023",
+                curriculum: [
+                    "Content Strategy Development",
+                    "Content Creation Frameworks",
+                    "SEO for Content Marketing",
+                    "Content Distribution Channels",
+                    "Measuring Content Performance"
+                ]
+            },
+            {
+                id: 20,
+                title: "Project Management Essentials",
+                category: "business",
+                instructor: "William Scott",
+                price: 69.99,
+                rating: 4.6,
+                students: 15230,
+                description: "Master essential project management skills. Learn planning, scheduling, risk management, and team leadership to successfully deliver projects.",
+                image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                duration: "24 hours",
+                level: "All Levels",
+                lastUpdated: "December 2023",
+                curriculum: [
+                    "Project Initiation and Planning",
+                    "Scope, Schedule, and Budget Management",
+                    "Risk Assessment and Mitigation",
+                    "Team Leadership and Communication",
+                    "Project Monitoring and Closing"
+                ]
+            }
+        ];
+
+        // Function to render courses
+        function renderCourses(category = 'all') {
+            const coursesGrid = document.getElementById('courses-grid');
+            coursesGrid.innerHTML = '';
+            
+            const filteredCourses = category === 'all' 
+                ? courseData 
+                : courseData.filter(course => course.category === category);
+            
+            filteredCourses.forEach(course => {
+                const courseCard = document.createElement('div');
+                courseCard.className = 'course-card';
+                courseCard.dataset.courseId = course.id;
+                
+                courseCard.innerHTML = `
+                    <img src="${course.image}" alt="${course.title}" class="course-image">
+                    <div class="course-info">
+                        <h3 class="course-title">${course.title}</h3>
+                        <p class="course-category">${getCategoryName(course.category)}</p>
+                        <p class="course-instructor">By ${course.instructor}</p>
+                        <div class="course-price">
+                            <span>$${course.price.toFixed(2)}</span>
+                            <span class="rating">★ ${course.rating}</span>
+                        </div>
+                    </div>
+                `;
+                
+                courseCard.addEventListener('click', () => openModal(course.id));
+                coursesGrid.appendChild(courseCard);
+            });
+        }
+        
+        // Function to get readable category name
+        function getCategoryName(categorySlug) {
+            const categories = {
+                'programming': 'Programming',
+                'design': 'Design',
+                'business': 'Business',
+                'marketing': 'Marketing',
+                'personal-development': 'Personal Development'
+            };
+            
+            return categories[categorySlug] || categorySlug;
+        }
+        
+        // Function to open course modal
+        function openModal(courseId) {
+            const course = courseData.find(course => course.id === courseId);
+            if (!course) return;
+            
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+            const modal = document.getElementById('course-modal');
+            
+            modalTitle.textContent = course.title;
+            
+            modalBody.innerHTML = `
+                <img src="${course.image}" alt="${course.title}" class="modal-image">
+                
+                <div class="modal-info">
+                    <div class="modal-info-item">
+                        <span class="modal-info-label">Instructor</span>
+                        <span class="modal-info-value">${course.instructor}</span>
+                    </div>
+                    <div class="modal-info-item">
+                        <span class="modal-info-label">Category</span>
+                        <span class="modal-info-value">${getCategoryName(course.category)}</span>
+                    </div>
+                    <div class="modal-info-item">
+                        <span class="modal-info-label">Level</span>
+                        <span class="modal-info-value">${course.level}</span>
+                    </div>
+                    <div class="modal-info-item">
+                        <span class="modal-info-label">Duration</span>
+                        <span class="modal-info-value">${course.duration}</span>
+                    </div>
+                    <div class="modal-info-item">
+                        <span class="modal-info-label">Rating</span>
+                        <span class="modal-info-value">★ ${course.rating} (${course.students.toLocaleString()} students)</span>
+                    </div>
+                    <div class="modal-info-item">
+                        <span class="modal-info-label">Last Updated</span>
+                        <span class="modal-info-value">${course.lastUpdated}</span>
+                    </div>
+                </div>
+                
+                <h4>About This Course</h4>
+                <p>${course.description}</p>
+                
+                <div class="curriculum">
+                    <h4>What You'll Learn</h4>
+                    ${course.curriculum.map(item => `
+                        <div class="curriculum-item">
+                            <p>${item}</p>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <button class="enroll-btn">Enroll Now - $${course.price.toFixed(2)}</button>
+            `;
+            
+            modal.classList.add('active');
+            
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+        
+        // Function to close modal
+        function closeModal() {
+            const modal = document.getElementById('course-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable scrolling
+        }
+        
+        // Event listener for category buttons
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelector('.category-btn.active').classList.remove('active');
+                button.classList.add('active');
+                renderCourses(button.dataset.category);
+            });
+        });
+        
+        // Event listener for close modal button
+        document.getElementById('close-modal').addEventListener('click', closeModal);
+        
+        // Close modal when clicking outside the content
+        document.getElementById('course-modal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('course-modal')) {
+                closeModal();
+            }
+        });
+        
+        // Initial render
+        renderCourses();
+    </script>
 </body>
 </html>

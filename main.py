@@ -53,6 +53,22 @@ async def index(request: Request):
         "is_logged_in": request.session.get("is_logged_in", False),
         "username": request.session.get("username", "")
     })
+    
+@app.get("/blog", response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse("blog.html", {
+        "request": request,
+        "is_logged_in": request.session.get("is_logged_in", False),
+        "username": request.session.get("username", "")
+    })
+    
+@app.get("/course", response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse("course.html", {
+        "request": request,
+        "is_logged_in": request.session.get("is_logged_in", False),
+        "username": request.session.get("username", "")
+    })
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

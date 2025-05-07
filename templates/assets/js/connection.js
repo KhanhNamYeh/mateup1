@@ -175,11 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </div>
                                 <button class="btn btn-primary btn-sm view-connection-btn" 
                                         data-partner="${escapeHtml(partnerUsername)}">
-                                    View To-Do Listssss
-                                </button>
-                                <button class="btn btn-primary btn-sm view-connection-btn" 
-                                        data-partner="${escapeHtml(partnerUsername)}">
-                                    Chati
+                                    View To-Do Lists
                                 </button>
                             `;
                             connectionsList.appendChild(connectionElement);

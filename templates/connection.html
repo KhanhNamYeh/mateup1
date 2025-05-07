@@ -1,4 +1,3 @@
-<!-- filepath: templates/connection.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Your Custom CSS -->
     <link rel="stylesheet" href="/static/css/style.css"> <!-- Adjust path as needed -->
-    <!-- Font Awesome for Icons (Optional) -->
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Custom styles for connection page */
@@ -142,6 +141,148 @@
         .badge {
             font-size: 0.75rem;
         }
+
+        /* Chat window styles - Facebook-like */
+        .chat-container {
+            position: fixed;
+            bottom: 0;
+            right: 20px;
+            width: 300px;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            background-color: #fff;
+            border: 1px solid #dddfe2;
+            border-bottom: none;
+        }
+
+        .chat-header {
+            background-color: #0084ff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .chat-header .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-header .user-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: #e4e6eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-header .user-name {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .chat-header .actions {
+            display: flex;
+        }
+
+        .chat-header .action-button {
+            background: none;
+            border: none;
+            color: white;
+            margin-left: 8px;
+            cursor: pointer;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .chat-body {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f1f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-message {
+            max-width: 80%;
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            border-radius: 18px;
+            position: relative;
+            word-wrap: break-word;
+        }
+
+        .message-received {
+            background-color: #e4e6eb;
+            align-self: flex-start;
+        }
+
+        .message-sent {
+            background-color: #0084ff;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .chat-footer {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #dddfe2;
+        }
+
+        .chat-input {
+            flex-grow: 1;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 12px;
+            background-color: #f1f0f0;
+            margin-right: 8px;
+        }
+
+        .chat-input:focus {
+            outline: none;
+        }
+
+        .send-button {
+            background-color: transparent;
+            border: none;
+            color: #0084ff;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .chat-minimized {
+            height: auto;
+        }
+
+        .chat-minimized .chat-body,
+        .chat-minimized .chat-footer {
+            display: none;
+        }
+
+        /* Add these styles for multiple chat windows */
+        .chat-container-wrapper {
+            position: fixed;
+            bottom: 0;
+            right: 20px;
+            display: flex;
+            flex-direction: row-reverse;
+            z-index: 999;
+        }
+
+        .chat-container {
+            position: relative;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <!-- Pass username from Jinja2 if available -->
@@ -273,27 +414,224 @@
         </div>
     </section>
 
-    <!-- ================ Start Footer Area ================= -->
-    <footer class="footer-area section_gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="footer-text text-center">
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | MateUp
-                    </p>
+    <!-- Facebook-like Chat Windows Container -->
+    <div class="chat-container-wrapper" id="chatWindowsContainer">
+        <!-- Chat windows will be dynamically added here -->
+        <!-- Example of a single chat window -->
+        <div class="chat-container" id="chat-1">
+            <div class="chat-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-name">Bot chat</div>
+                </div>
+                <div class="actions">
+                    <button class="action-button minimize-chat">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="action-button close-chat">
+                        <i class="fas fa-times"></i>
+                    </button>
                 </div>
             </div>
+            <div class="chat-body">
+                <div class="chat-message message-received">
+                    Hey, how's it going with the shared task list {{username}}?
+                </div>
+                <div class="chat-message message-sent">
+                    Almost done! Just need to finish the last item.
+                </div>
+                <div class="chat-message message-received">
+                    Great, let me know when you're finished.
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" class="chat-input" placeholder="Type a message...">
+                <button class="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
         </div>
-    </footer>
-    <!-- ================ End Footer Area ================= -->
+    </div>
 
     <!-- ================ Optional JavaScript ================= -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Font Awesome Script (if using icons) -->
-    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <script src="/static/assets/js/connection.js"></script>
+    
+    <!-- Chat functionality script -->
+    <script>
+        $(document).ready(function() {
+            // Chat window toggle
+            $(document).on('click', '.chat-header', function(e) {
+                if (!$(e.target).hasClass('action-button') && 
+                    !$(e.target).parent().hasClass('action-button')) {
+                    $(this).closest('.chat-container').toggleClass('chat-minimized');
+                }
+            });
+            
+            // Close chat window
+            $(document).on('click', '.close-chat', function() {
+                $(this).closest('.chat-container').remove();
+            });
+            
+            // Minimize chat window
+            $(document).on('click', '.minimize-chat', function() {
+                $(this).closest('.chat-container').addClass('chat-minimized');
+            });
+            
+            // Send message
+            $(document).on('click', '.send-button', function() {
+                const chatContainer = $(this).closest('.chat-container');
+                const messageInput = chatContainer.find('.chat-input');
+                const message = messageInput.val().trim();
+                
+                if (message) {
+                    const chatBody = chatContainer.find('.chat-body');
+                    chatBody.append(`
+                        <div class="chat-message message-sent">
+                            ${message}
+                        </div>
+                    `);
+                    messageInput.val('');
+                    chatBody.scrollTop(chatBody[0].scrollHeight);
+                    
+                    // Simulate response (for demo purposes)
+                    setTimeout(() => {
+                        chatBody.append(`
+                            <div class="chat-message message-received">
+                                Thanks for your message! I'll check this out.
+                            </div>
+                        `);
+                        chatBody.scrollTop(chatBody[0].scrollHeight);
+                    }, 1000);
+                }
+            });
+            
+            // Send message on Enter key
+            $(document).on('keypress', '.chat-input', function(e) {
+                if (e.which === 13) {
+                    $(this).closest('.chat-footer').find('.send-button').click();
+                    e.preventDefault();
+                }
+            });
+            
+            // Function to open a new chat window
+            window.openChat = function(userId, userName) {
+                // Check if chat is already open
+                if ($(`#chat-${userId}`).length) {
+                    $(`#chat-${userId}`).removeClass('chat-minimized');
+                    return;
+                }
+                
+                // Create new chat window
+                const chatWindow = `
+                    <div class="chat-container" id="chat-${userId}">
+                        <div class="chat-header">
+                            <div class="user-info">
+                                <div class="user-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-name">${userName}</div>
+                            </div>
+                            <div class="actions">
+                                <button class="action-button minimize-chat">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button class="action-button close-chat">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="chat-body">
+                            <div class="chat-message message-received">
+                                Hey there! How can I help you today?
+                            </div>
+                        </div>
+                        <div class="chat-footer">
+                            <input type="text" class="chat-input" placeholder="Type a message...">
+                            <button class="send-button">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                $('#chatWindowsContainer').prepend(chatWindow);
+            };
+        });
+
+        function fetchConnections() {
+        if (!isLoggedIn) {
+            connectionsSection.style.display = 'none';
+            return;
+        }
+
+        // Since there's no direct API for getting all connections,
+        // we'll use our own function to get connections
+        // Create an API endpoint or use available data structure
+        connectionsList.innerHTML = '<p class="text-center text-muted">Loading connections...</p>';
+        
+        // For this example, let's simulate the API call that should be implemented
+        fetch('/api/connections')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                connectionsList.innerHTML = ''; // Clear loading message
+                
+                const connections = data.connections || [];
+                
+                if (connections.length > 0) {
+                    connections.forEach(connection => {
+                        // Find partner username (the one that's not current user)
+                        const partnerUsername = connection.users.find(user => user !== loggedInUsername);
+                        
+                        if (partnerUsername) {
+                            const connectionElement = document.createElement('div');
+                            connectionElement.className = 'list-group-item d-flex justify-content-between align-items-center';
+                            connectionElement.innerHTML = `
+                                <div>
+                                    <strong>${escapeHtml(partnerUsername)}</strong>
+                                    ${connection.project_id ? `<span class="badge badge-info ml-2">Project ID: ${connection.project_id}</span>` : ''}
+                                </div>
+                                <button class="btn btn-primary btn-sm view-connection-btn" 
+                                        data-partner="${escapeHtml(partnerUsername)}">
+                                    View To-Do Lists
+                                </button>
+                            `;
+                            connectionsList.appendChild(connectionElement);
+                        }
+                    });
+                    
+                    if (connectionsList.children.length > 0) {
+                        connectionsSection.style.display = 'block';
+                    } else {
+                        connectionsList.innerHTML = '<p class="text-center text-muted">No active connections found.</p>';
+                        connectionsSection.style.display = 'block';
+                    }
+                } else {
+                    connectionsList.innerHTML = '<p class="text-center text-muted">No active connections found.</p>';
+                    connectionsSection.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching connections:', error);
+                connectionsList.innerHTML = `
+                    <div class="alert alert-danger text-center">
+                        <p>Error loading connections.</p>
+                        <p class="mt-2">Please check if the API endpoint is implemented correctly.</p>
+                    </div>
+                `;
+                connectionsSection.style.display = 'block';
+            });
+    }
+    </script>
 </body>
 </html>
