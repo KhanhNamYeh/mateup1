@@ -416,8 +416,6 @@
 
     <!-- Facebook-like Chat Windows Container -->
     <div class="chat-container-wrapper" id="chatWindowsContainer">
-        <!-- Chat windows will be dynamically added here -->
-        <!-- Example of a single chat window -->
         <div class="chat-container" id="chat-1">
             <div class="chat-header">
                 <div class="user-info">
@@ -437,13 +435,10 @@
             </div>
             <div class="chat-body">
                 <div class="chat-message message-received">
-                    Hey, how's it going with the shared task list {{username}}?
-                </div>
-                <div class="chat-message message-sent">
-                    Almost done! Just need to finish the last item.
+                    Hi {{ username }}. Is this the first time you're using MatesUp? 
                 </div>
                 <div class="chat-message message-received">
-                    Great, let me know when you're finished.
+                    Do you need some help (connections, todo lists, tasks,...)? 
                 </div>
             </div>
             <div class="chat-footer">
@@ -464,6 +459,11 @@
     
     <!-- Chat functionality script -->
     <script>
+        const messageChat = [
+            'First you need to choose a connection to work with by click "View To-Do Lists". Then you can create lists and tasks.',
+            'The lists show the main work'
+        ];
+        
         $(document).ready(function() {
             // Chat window toggle
             $(document).on('click', '.chat-header', function(e) {
@@ -485,12 +485,26 @@
             
             // Send message
             $(document).on('click', '.send-button', function() {
-                const chatContainer = $(this).closest('.chat-container');
+                sendMessage($(this));
+            });
+            
+            // Send message on Enter key
+            $(document).on('keypress', '.chat-input', function(e) {
+                if (e.which === 13) {
+                    sendMessage($(this).closest('.chat-footer').find('.send-button'));
+                    e.preventDefault();
+                }
+            });
+            
+            // Function to send message (extracted to avoid code duplication)
+            function sendMessage($button) {
+                const chatContainer = $button.closest('.chat-container');
                 const messageInput = chatContainer.find('.chat-input');
                 const message = messageInput.val().trim();
                 
                 if (message) {
                     const chatBody = chatContainer.find('.chat-body');
+                    // Display the sent message in the chat
                     chatBody.append(`
                         <div class="chat-message message-sent">
                             ${message}
@@ -499,25 +513,49 @@
                     messageInput.val('');
                     chatBody.scrollTop(chatBody[0].scrollHeight);
                     
-                    // Simulate response (for demo purposes)
-                    setTimeout(() => {
-                        chatBody.append(`
-                            <div class="chat-message message-received">
-                                Thanks for your message! I'll check this out.
-                            </div>
-                        `);
-                        chatBody.scrollTop(chatBody[0].scrollHeight);
-                    }, 1000);
+                    // Send the message to the API
+                    $.ajax({
+                        url: '/api/message',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            message: message,
+                            chatId: chatContainer.attr('id'),
+                            username: $('body').data('username') || 'User' // Get username from body data attribute
+                        }),
+                        success: function(response) {
+                            // Display the response from the API
+                            let replyText = "";
+                            if (response && response.reply) {
+                                replyText = response.reply;
+                            } else if (response && typeof response === 'string') {
+                                // Handle if response is directly a string
+                                replyText = response;
+                            } else {
+                                // Fallback to default message
+                                replyText = messageChat[0];
+                            }
+                            
+                            chatBody.append(`
+                                <div class="chat-message message-received">
+                                    ${replyText}
+                                </div>
+                            `);
+                            chatBody.scrollTop(chatBody[0].scrollHeight);
+                        },
+                        error: function(error) {
+                            console.error('Error sending message:', error);
+                            // Fallback to simulated response if API call fails
+                            chatBody.append(`
+                                <div class="chat-message message-received">
+                                    Sorry, I couldn't process your message. Please try again.
+                                </div>
+                            `);
+                            chatBody.scrollTop(chatBody[0].scrollHeight);
+                        }
+                    });
                 }
-            });
-            
-            // Send message on Enter key
-            $(document).on('keypress', '.chat-input', function(e) {
-                if (e.which === 13) {
-                    $(this).closest('.chat-footer').find('.send-button').click();
-                    e.preventDefault();
-                }
-            });
+            }
             
             // Function to open a new chat window
             window.openChat = function(userId, userName) {
@@ -563,75 +601,75 @@
                 $('#chatWindowsContainer').prepend(chatWindow);
             };
         });
-
+    
         function fetchConnections() {
-        if (!isLoggedIn) {
-            connectionsSection.style.display = 'none';
-            return;
-        }
-
-        // Since there's no direct API for getting all connections,
-        // we'll use our own function to get connections
-        // Create an API endpoint or use available data structure
-        connectionsList.innerHTML = '<p class="text-center text-muted">Loading connections...</p>';
-        
-        // For this example, let's simulate the API call that should be implemented
-        fetch('/api/connections')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                connectionsList.innerHTML = ''; // Clear loading message
-                
-                const connections = data.connections || [];
-                
-                if (connections.length > 0) {
-                    connections.forEach(connection => {
-                        // Find partner username (the one that's not current user)
-                        const partnerUsername = connection.users.find(user => user !== loggedInUsername);
-                        
-                        if (partnerUsername) {
-                            const connectionElement = document.createElement('div');
-                            connectionElement.className = 'list-group-item d-flex justify-content-between align-items-center';
-                            connectionElement.innerHTML = `
-                                <div>
-                                    <strong>${escapeHtml(partnerUsername)}</strong>
-                                    ${connection.project_id ? `<span class="badge badge-info ml-2">Project ID: ${connection.project_id}</span>` : ''}
-                                </div>
-                                <button class="btn btn-primary btn-sm view-connection-btn" 
-                                        data-partner="${escapeHtml(partnerUsername)}">
-                                    View To-Do Lists
-                                </button>
-                            `;
-                            connectionsList.appendChild(connectionElement);
-                        }
-                    });
+            if (!isLoggedIn) {
+                connectionsSection.style.display = 'none';
+                return;
+            }
+    
+            // Since there's no direct API for getting all connections,
+            // we'll use our own function to get connections
+            // Create an API endpoint or use available data structure
+            connectionsList.innerHTML = '<p class="text-center text-muted">Loading connections...</p>';
+            
+            // For this example, let's simulate the API call that should be implemented
+            fetch('/api/connections')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    connectionsList.innerHTML = ''; // Clear loading message
                     
-                    if (connectionsList.children.length > 0) {
-                        connectionsSection.style.display = 'block';
+                    const connections = data.connections || [];
+                    
+                    if (connections.length > 0) {
+                        connections.forEach(connection => {
+                            // Find partner username (the one that's not current user)
+                            const partnerUsername = connection.users.find(user => user !== loggedInUsername);
+                            
+                            if (partnerUsername) {
+                                const connectionElement = document.createElement('div');
+                                connectionElement.className = 'list-group-item d-flex justify-content-between align-items-center';
+                                connectionElement.innerHTML = `
+                                    <div>
+                                        <strong>${escapeHtml(partnerUsername)}</strong>
+                                        ${connection.project_id ? `<span class="badge badge-info ml-2">Project ID: ${connection.project_id}</span>` : ''}
+                                    </div>
+                                    <button class="btn btn-primary btn-sm view-connection-btn" 
+                                            data-partner="${escapeHtml(partnerUsername)}">
+                                        View To-Do Lists
+                                    </button>
+                                `;
+                                connectionsList.appendChild(connectionElement);
+                            }
+                        });
+                        
+                        if (connectionsList.children.length > 0) {
+                            connectionsSection.style.display = 'block';
+                        } else {
+                            connectionsList.innerHTML = '<p class="text-center text-muted">No active connections found.</p>';
+                            connectionsSection.style.display = 'block';
+                        }
                     } else {
                         connectionsList.innerHTML = '<p class="text-center text-muted">No active connections found.</p>';
                         connectionsSection.style.display = 'block';
                     }
-                } else {
-                    connectionsList.innerHTML = '<p class="text-center text-muted">No active connections found.</p>';
+                })
+                .catch(error => {
+                    console.error('Error fetching connections:', error);
+                    connectionsList.innerHTML = `
+                        <div class="alert alert-danger text-center">
+                            <p>Error loading connections.</p>
+                            <p class="mt-2">Please check if the API endpoint is implemented correctly.</p>
+                        </div>
+                    `;
                     connectionsSection.style.display = 'block';
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching connections:', error);
-                connectionsList.innerHTML = `
-                    <div class="alert alert-danger text-center">
-                        <p>Error loading connections.</p>
-                        <p class="mt-2">Please check if the API endpoint is implemented correctly.</p>
-                    </div>
-                `;
-                connectionsSection.style.display = 'block';
-            });
-    }
+                });
+        }
     </script>
 </body>
 </html>

@@ -7,7 +7,6 @@ import json
 import os
 import math # Import math for ceiling function
 
-# Create router
 router = APIRouter()
 
 # Templates
