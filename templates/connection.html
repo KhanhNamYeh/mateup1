@@ -277,11 +277,12 @@
             display: flex;
             flex-direction: row-reverse;
             z-index: 999;
+            gap: 10px; /* Add space between chat windows */
         }
-
+    
         .chat-container {
             position: relative;
-            margin-left: 10px;
+            width: 300px; /* Ensure consistent width */
         }
     </style>
 </head>
@@ -416,13 +417,45 @@
 
     <!-- Facebook-like Chat Windows Container -->
     <div class="chat-container-wrapper" id="chatWindowsContainer">
+        <!-- Partner Chat -->
+        <div class="chat-container" id="chat-2">
+            <div class="chat-header">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-name">Canh Dien</div>
+                </div>
+                <div class="actions">
+                    <button class="action-button minimize-chat">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="action-button close-chat">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message message-received">
+                    Hi {{ username }}. I want to connect with you. 
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" class="chat-input" placeholder="Type a message...">
+                <button class="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mato Copilot Chat -->
         <div class="chat-container" id="chat-1">
             <div class="chat-header">
                 <div class="user-info">
                     <div class="user-avatar">
                         <i class="fas fa-user"></i>
                     </div>
-                    <div class="user-name">Bot chat</div>
+                    <div class="user-name">Mato Copilot</div>
                 </div>
                 <div class="actions">
                     <button class="action-button minimize-chat">
