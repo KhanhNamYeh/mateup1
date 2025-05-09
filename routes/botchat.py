@@ -89,7 +89,7 @@ def generate_reply(message: str, username: str) -> str:
             formatted = f"📝 {suggestions[key]['title']}:\n" + "\n".join([f"- {task}" for task in tasks])
             return formatted
 
-    if "introduce" in message and "mates" in message and "up" in message:
+    if "introduce" in message and "mates" in message or "mate" in message and "up" in message:
         return ("MatesUp offers a comprehensive solution for the startup community, covering everything from finding suitable "
                 "team members and supporting project development to connecting with investors...")
     
@@ -99,4 +99,7 @@ def generate_reply(message: str, username: str) -> str:
     if "how" in message and "todo" in message and "list" in message:
         return "There is a 'Create new lists' button. Click on it to create a new list and add tasks using the 'Add task' button."
 
+    if "ok" in message:
+        return "let's do it now !!!!!!" 
+    
     return "Sorry, I don't understand your question. Please try again."

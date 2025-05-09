@@ -122,7 +122,7 @@
         },
         {
             "title": "Vertical Farming Technology",
-            "description": "Vertical farming addresses the challenges of traditional agriculture by maximizing space efficiency and minimizing resource use. This innovative approach to food production uses stacked layers and controlled environments to grow crops all year — regardless of outdoor conditions. Startups",
+            "description": "Vertical farming addresses the challenges of traditional agriculture by maximizing space efficiency and minimizing resource use. This innovative approach to food production uses stacked layers and controlled environments to grow crops all year \u00e2\u20ac\u201d regardless of outdoor conditions. Startups",
             "category": "Business",
             "stage": "In Progress",
             "startDate": "2025-05-22",
@@ -133,14 +133,14 @@
         },
         {
             "title": "Subscription Box",
-            "description": "Skilled curators and marketers with a passion for a specific industry, why haven’t you started a subscription box startup yet? With 18.5 million subscription box shoppers in the US, the sky’s the limit for this business idea. The key to making a successful subscription box startup",
+            "description": "Skilled curators and marketers with a passion for a specific industry, why haven\u00e2\u20ac\u2122t you started a subscription box startup yet? With 18.5 million subscription box shoppers in the US, the sky\u00e2\u20ac\u2122s the limit for this business idea. The key to making a successful subscription box startup",
             "category": "Technology",
             "stage": "Idea",
             "startDate": "2005-12-31",
             "progress": 0,
             "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
             "id": 10,
-            "creator": "ab"
+            "creator": "Huy_Tin"
         },
         {
             "title": "Tustainable Packaging Solutions",
@@ -227,7 +227,7 @@
             "from": "Nguyen_Canh_Dien",
             "to": "Huy_Tin",
             "project_id": 10,
-            "status": false
+            "status": true
         },
         {
             "id": 10,
@@ -277,6 +277,14 @@
                 "Truong Cong B"
             ],
             "project_id": 6
+        },
+        {
+            "id": 7,
+            "users": [
+                "Huy_Tin",
+                "Nguyen_Canh_Dien"
+            ],
+            "project_id": 10
         }
     ],
     "todolists": [
@@ -369,6 +377,31 @@
                     "dueDate": null
                 }
             ]
+        },
+        {
+            "id": 7,
+            "title": "1",
+            "project_id": 10,
+            "users": [
+                "Huy_Tin",
+                "Nguyen_Canh_Dien"
+            ],
+            "tasks": [
+                {
+                    "id": 1,
+                    "title": "1",
+                    "status": true,
+                    "description": null,
+                    "dueDate": null
+                },
+                {
+                    "id": 2,
+                    "title": "2",
+                    "status": true,
+                    "description": null,
+                    "dueDate": null
+                }
+            ]
         }
     ],
     "investments": [
@@ -402,7 +435,7 @@
             "title": "HealthAI Field Trials",
             "category": "HealthTech",
             "stage": "Pilot",
-            "description": "HealthAI is conducting field trials to deploy its advanced AI-driven diagnostic platform in rural clinics. This phase will validate the technologyâ€™s effectiveness in improving healthcare access and outcomes for underserved populations.",
+            "description": "HealthAI is conducting field trials to deploy its advanced AI-driven diagnostic platform in rural clinics. This phase will validate the technology\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u201e\u00a2s effectiveness in improving healthcare access and outcomes for underserved populations.",
             "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
             "status": "invested",
             "target_investment": 250000,
@@ -491,6 +524,29 @@
                 "Truong Cong B"
             ],
             "use_of_funds": "MVP development, third-party validation, stakeholder onboarding"
+        },
+        {
+            "project_id": 10,
+            "title": "Subscription Box",
+            "category": "Technology",
+            "stage": "Idea",
+            "description": "Skilled curators and marketers with a passion for a specific industry, why haven\u00e2\u20ac\u2122t you started a subscription box startup yet? With 18.5 million subscription box shoppers in the US, the sky\u00e2\u20ac\u2122s the limit for this business idea. The key to making a successful subscription box startup",
+            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+            "status": "pending",
+            "target_investment": 5,
+            "total_invested": 0,
+            "valuation": 0,
+            "min_investment": 1,
+            "expected_roi": 1,
+            "duration_months": 2,
+            "region": "a",
+            "impact_area": "b",
+            "risk_level": "medium",
+            "founding_team": [
+                "c"
+            ],
+            "use_of_funds": "abc",
+            "id": 6
         }
     ]
 }
